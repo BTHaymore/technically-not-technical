@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WarmHub Design System v2 - Expanded Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .gradient-text { background: linear-gradient(135deg, #4177a6, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #CBD5DC; border-radius: 3px; }
+    .dark ::-webkit-scrollbar-thumb { background: #475569; }
+
+    /* Smooth transitions */
+    * { transition: background-color 0.2s, border-color 0.2s, color 0.2s; }
+  </style>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              50:  '#F8FAFB',
+              100: '#F1F5F7',
+              200: '#E2E8ED',
+              300: '#CBD5DC',
+              400: '#94A3B0',
+              500: '#64748B',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+              950: '#020617',
+            },
+            // Muted Sky Blue
+            sky: {
+              50:  '#f0f7fc',
+              100: '#e1eff8',
+              200: '#c3dfef',
+              300: '#9ac8e3',
+              400: '#6aadd4',
+              500: '#4177a6',
+              600: '#416d93',
+              700: '#3d6a91',
+              800: '#39688a',
+              900: '#2c4d6c',
+              950: '#1c3448',
+            },
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-700 dark:text-slate-200">
+
+  <!-- Sidebar + Main Layout -->
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 border-r border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 flex-shrink-0 relative">
+      <div class="p-6">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center">
+            <span class="text-white font-bold text-sm">W</span>
+          </div>
+          <span class="font-semibold text-lg text-slate-800 dark:text-slate-100">WarmHub</span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="space-y-1">
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 font-medium text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            Dashboard
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            Analytics
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            Users
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+            API
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            Documentation
+          </a>
+          <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Settings
+          </a>
+        </nav>
+
+        <!-- Divider -->
+        <div class="border-t border-slate-200 dark:border-slate-700 my-6"></div>
+
+        <!-- Usage Card -->
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-xs font-medium text-slate-500 dark:text-slate-400">API Usage</span>
+            <span class="text-xs font-semibold text-sky-600 dark:text-sky-400">75%</span>
+          </div>
+          <div class="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-sky-500 to-sky-400 rounded-full" style="width: 75%"></div>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-2">750K / 1M requests</p>
+        </div>
+      </div>
+
+      <!-- User Profile -->
+      <div class="absolute bottom-0 left-0 w-64 p-4 border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white text-sm font-medium">NC</div>
+          <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-slate-800 dark:text-slate-100 truncate">Niels</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 truncate">niels@warmhub.com</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-auto">
+      <!-- Top Bar -->
+      <header class="sticky top-0 z-40 border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm">
+        <div class="px-8 py-4 flex items-center justify-between">
+          <div>
+            <h1 class="text-xl font-semibold text-slate-800 dark:text-slate-100">Dashboard</h1>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Welcome back, here's what's happening today.</p>
+          </div>
+          <div class="flex items-center gap-4">
+            <!-- Search -->
+            <div class="relative">
+              <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 w-64 border border-slate-200 dark:border-slate-600 rounded-lg text-sm bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:bg-white dark:focus:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+            </div>
+            <!-- Notifications -->
+            <button class="relative p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700">
+              <svg class="w-5 h-5 text-slate-600 dark:text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
+              <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+            <!-- Theme Toggle -->
+            <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700" id="theme-toggle">
+              <svg class="w-5 h-5 text-slate-600 dark:text-slate-300 hidden dark:block" id="sun-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+              <svg class="w-5 h-5 text-slate-600 dark:text-slate-300 block dark:hidden" id="moon-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-8">
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <!-- Stat Card 1 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2 rounded-lg bg-sky-50 dark:bg-sky-900/30">
+                <svg class="w-5 h-5 text-sky-600 dark:text-sky-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-full">+12.5%</span>
+            </div>
+            <div class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-1">$48,352</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">Total Revenue</div>
+          </div>
+
+          <!-- Stat Card 2 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30">
+                <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+              </div>
+              <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-full">+8.2%</span>
+            </div>
+            <div class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-1">2,847</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">Active Users</div>
+          </div>
+
+          <!-- Stat Card 3 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2 rounded-lg bg-purple-50 dark:bg-purple-900/30">
+                <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-full">+23.1%</span>
+            </div>
+            <div class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-1">1.2M</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">API Requests</div>
+          </div>
+
+          <!-- Stat Card 4 -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-2 rounded-lg bg-amber-50 dark:bg-amber-900/30">
+                <svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <span class="text-xs font-medium text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/30 px-2 py-1 rounded-full">-2.4%</span>
+            </div>
+            <div class="text-2xl font-semibold text-slate-800 dark:text-slate-100 mb-1">48ms</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">Avg Response</div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Line Chart -->
+          <div class="lg:col-span-2 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100">Revenue Overview</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Monthly revenue for the past 6 months</p>
+              </div>
+              <select class="text-sm border border-slate-200 dark:border-slate-600 rounded-lg px-3 py-1.5 bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-sky-500/30">
+                <option>Last 6 months</option>
+                <option>Last year</option>
+              </select>
+            </div>
+            <!-- SVG Line Chart -->
+            <div class="h-64 relative">
+              <svg viewBox="0 0 600 200" class="w-full h-full">
+                <!-- Grid lines -->
+                <g class="stroke-slate-200 dark:stroke-slate-700" stroke-width="1">
+                  <line x1="50" y1="20" x2="580" y2="20" stroke-dasharray="4"/>
+                  <line x1="50" y1="60" x2="580" y2="60" stroke-dasharray="4"/>
+                  <line x1="50" y1="100" x2="580" y2="100" stroke-dasharray="4"/>
+                  <line x1="50" y1="140" x2="580" y2="140" stroke-dasharray="4"/>
+                  <line x1="50" y1="180" x2="580" y2="180"/>
+                </g>
+                <!-- Y-axis labels -->
+                <g class="fill-slate-400 dark:fill-slate-500" font-size="11">
+                  <text x="40" y="24" text-anchor="end">$60k</text>
+                  <text x="40" y="64" text-anchor="end">$45k</text>
+                  <text x="40" y="104" text-anchor="end">$30k</text>
+                  <text x="40" y="144" text-anchor="end">$15k</text>
+                  <text x="40" y="184" text-anchor="end">$0</text>
+                </g>
+                <!-- X-axis labels -->
+                <g class="fill-slate-400 dark:fill-slate-500" font-size="11" text-anchor="middle">
+                  <text x="95" y="198">Aug</text>
+                  <text x="185" y="198">Sep</text>
+                  <text x="275" y="198">Oct</text>
+                  <text x="365" y="198">Nov</text>
+                  <text x="455" y="198">Dec</text>
+                  <text x="545" y="198">Jan</text>
+                </g>
+                <!-- Area gradient -->
+                <defs>
+                  <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#4177a6" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#4177a6" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- Area fill -->
+                <path d="M95,120 L185,90 L275,110 L365,60 L455,80 L545,40 L545,180 L95,180 Z" fill="url(#areaGradient)"/>
+                <!-- Line -->
+                <path d="M95,120 L185,90 L275,110 L365,60 L455,80 L545,40" fill="none" stroke="#4177a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Data points -->
+                <g>
+                  <circle cx="95" cy="120" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                  <circle cx="185" cy="90" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                  <circle cx="275" cy="110" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                  <circle cx="365" cy="60" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                  <circle cx="455" cy="80" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                  <circle cx="545" cy="40" r="5" class="fill-white dark:fill-slate-800" stroke="#4177a6" stroke-width="3"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Donut Chart -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="mb-6">
+              <h3 class="font-semibold text-slate-800 dark:text-slate-100">Traffic Sources</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400">Where your users come from</p>
+            </div>
+            <!-- SVG Donut Chart -->
+            <div class="flex justify-center mb-6">
+              <svg viewBox="0 0 160 160" class="w-40 h-40">
+                <!-- Background circle -->
+                <circle cx="80" cy="80" r="60" fill="none" class="stroke-slate-200 dark:stroke-slate-700" stroke-width="20"/>
+                <!-- Segments -->
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#4177a6" stroke-width="20"
+                        stroke-dasharray="150.8 376.99" stroke-dashoffset="0" transform="rotate(-90 80 80)"/>
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#3B82F6" stroke-width="20"
+                        stroke-dasharray="113.1 376.99" stroke-dashoffset="-150.8" transform="rotate(-90 80 80)"/>
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#8B5CF6" stroke-width="20"
+                        stroke-dasharray="75.4 376.99" stroke-dashoffset="-263.9" transform="rotate(-90 80 80)"/>
+                <circle cx="80" cy="80" r="60" fill="none" stroke="#F59E0B" stroke-width="20"
+                        stroke-dasharray="37.7 376.99" stroke-dashoffset="-339.3" transform="rotate(-90 80 80)"/>
+                <!-- Center -->
+                <circle cx="80" cy="80" r="45" class="fill-white dark:fill-slate-800"/>
+                <text x="80" y="75" text-anchor="middle" font-size="20" font-weight="600" class="fill-slate-800 dark:fill-slate-100">2,847</text>
+                <text x="80" y="92" text-anchor="middle" font-size="11" class="fill-slate-400 dark:fill-slate-500">Total Users</text>
+              </svg>
+            </div>
+            <!-- Legend -->
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-sky-500"></div>
+                  <span class="text-sm text-slate-600 dark:text-slate-300">Direct</span>
+                </div>
+                <span class="text-sm font-medium text-slate-800 dark:text-slate-100">40%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                  <span class="text-sm text-slate-600 dark:text-slate-300">Organic</span>
+                </div>
+                <span class="text-sm font-medium text-slate-800 dark:text-slate-100">30%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                  <span class="text-sm text-slate-600 dark:text-slate-300">Referral</span>
+                </div>
+                <span class="text-sm font-medium text-slate-800 dark:text-slate-100">20%</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                  <span class="text-sm text-slate-600 dark:text-slate-300">Social</span>
+                </div>
+                <span class="text-sm font-medium text-slate-800 dark:text-slate-100">10%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bar Chart + Activity -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Bar Chart -->
+          <div class="lg:col-span-2 p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100">API Usage by Endpoint</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Request distribution across endpoints</p>
+              </div>
+            </div>
+            <!-- SVG Bar Chart -->
+            <div class="h-56 relative">
+              <svg viewBox="0 0 600 180" class="w-full h-full">
+                <!-- Grid lines -->
+                <g class="stroke-slate-200 dark:stroke-slate-700" stroke-width="1">
+                  <line x1="80" y1="20" x2="580" y2="20" stroke-dasharray="4"/>
+                  <line x1="80" y1="50" x2="580" y2="50" stroke-dasharray="4"/>
+                  <line x1="80" y1="80" x2="580" y2="80" stroke-dasharray="4"/>
+                  <line x1="80" y1="110" x2="580" y2="110" stroke-dasharray="4"/>
+                  <line x1="80" y1="140" x2="580" y2="140"/>
+                </g>
+                <!-- Y-axis labels -->
+                <g class="fill-slate-400 dark:fill-slate-500" font-size="11" text-anchor="end">
+                  <text x="70" y="24">500K</text>
+                  <text x="70" y="54">375K</text>
+                  <text x="70" y="84">250K</text>
+                  <text x="70" y="114">125K</text>
+                  <text x="70" y="144">0</text>
+                </g>
+                <!-- Bars -->
+                <g>
+                  <rect x="110" y="30" width="60" height="110" rx="4" fill="#4177a6"/>
+                  <rect x="200" y="50" width="60" height="90" rx="4" fill="#3B82F6"/>
+                  <rect x="290" y="70" width="60" height="70" rx="4" fill="#8B5CF6"/>
+                  <rect x="380" y="85" width="60" height="55" rx="4" fill="#F59E0B"/>
+                  <rect x="470" y="100" width="60" height="40" rx="4" fill="#EC4899"/>
+                </g>
+                <!-- X-axis labels -->
+                <g class="fill-slate-500 dark:fill-slate-400" font-size="11" text-anchor="middle">
+                  <text x="140" y="158">/chat</text>
+                  <text x="230" y="158">/complete</text>
+                  <text x="320" y="158">/embed</text>
+                  <text x="410" y="158">/analyze</text>
+                  <text x="500" y="158">/search</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Activity Feed -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-semibold text-slate-800 dark:text-slate-100">Recent Activity</h3>
+              <a href="#" class="text-sm text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300">View all</a>
+            </div>
+            <div class="space-y-4">
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm text-slate-800 dark:text-slate-200">New user registered</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">sarah@company.com</p>
+                </div>
+                <span class="text-xs text-slate-400 dark:text-slate-500 flex-shrink-0">2m ago</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm text-slate-800 dark:text-slate-200">API key generated</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Production environment</p>
+                </div>
+                <span class="text-xs text-slate-400 dark:text-slate-500 flex-shrink-0">15m ago</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm text-slate-800 dark:text-slate-200">Rate limit warning</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">80% threshold reached</p>
+                </div>
+                <span class="text-xs text-slate-400 dark:text-slate-500 flex-shrink-0">1h ago</span>
+              </div>
+              <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm text-slate-800 dark:text-slate-200">Payment received</p>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Invoice #INV-2024-001</p>
+                </div>
+                <span class="text-xs text-slate-400 dark:text-slate-500 flex-shrink-0">3h ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 overflow-hidden mb-8">
+          <div class="p-6 border-b border-slate-200 dark:border-slate-700">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="font-semibold text-slate-800 dark:text-slate-100">Team Members</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Manage your team and their access levels</p>
+              </div>
+              <button class="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white text-sm font-medium rounded-lg flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                Add Member
+              </button>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-slate-50 dark:bg-slate-900">
+                <tr class="border-b border-slate-200 dark:border-slate-700">
+                  <th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">User</th>
+                  <th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Role</th>
+                  <th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Status</th>
+                  <th class="text-left px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Usage</th>
+                  <th class="text-right px-6 py-4 text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-sky-400 to-sky-600 flex items-center justify-center text-white text-sm font-medium">AC</div>
+                      <div>
+                        <div class="font-medium text-slate-800 dark:text-slate-100">Alice Chen</div>
+                        <div class="text-sm text-slate-500 dark:text-slate-400">alice@warmhub.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium">Admin</span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                      <span class="text-sm text-slate-600 dark:text-slate-300">Active</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="w-24">
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-slate-500 dark:text-slate-400">1,234</span>
+                        <span class="text-slate-400 dark:text-slate-500">82%</span>
+                      </div>
+                      <div class="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-sky-500 rounded-full" style="width: 82%"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+                      <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" /></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-sm font-medium">BS</div>
+                      <div>
+                        <div class="font-medium text-slate-800 dark:text-slate-100">Bob Smith</div>
+                        <div class="text-sm text-slate-500 dark:text-slate-400">bob@warmhub.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="px-2.5 py-1 rounded-md bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-300 text-xs font-medium">Developer</span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                      <span class="text-sm text-slate-600 dark:text-slate-300">Active</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="w-24">
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-slate-500 dark:text-slate-400">856</span>
+                        <span class="text-slate-400 dark:text-slate-500">57%</span>
+                      </div>
+                      <div class="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500 rounded-full" style="width: 57%"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+                      <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" /></svg>
+                    </button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-sm font-medium">CD</div>
+                      <div>
+                        <div class="font-medium text-slate-800 dark:text-slate-100">Carol Davis</div>
+                        <div class="text-sm text-slate-500 dark:text-slate-400">carol@warmhub.com</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-medium">Viewer</span>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 bg-amber-500 rounded-full"></span>
+                      <span class="text-sm text-slate-600 dark:text-slate-300">Pending</span>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="w-24">
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-slate-500 dark:text-slate-400">0</span>
+                        <span class="text-slate-400 dark:text-slate-500">0%</span>
+                      </div>
+                      <div class="h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                        <div class="h-full bg-slate-300 dark:bg-slate-600 rounded-full" style="width: 0%"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 text-right">
+                    <button class="p-1.5 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg">
+                      <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" /></svg>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between bg-slate-50 dark:bg-slate-900">
+            <span class="text-sm text-slate-500 dark:text-slate-400">Showing 1-3 of 12 members</span>
+            <div class="flex gap-2">
+              <button class="px-3 py-1.5 text-sm rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 disabled:opacity-50" disabled>Previous</button>
+              <button class="px-3 py-1.5 text-sm rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts Section -->
+        <div class="mb-8">
+          <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4">Alerts & Notifications</h2>
+          <div class="space-y-4">
+            <div class="flex gap-4 p-4 rounded-xl border bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+              <div class="flex-shrink-0 w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-blue-800 dark:text-blue-200">New API version available</div>
+                <p class="text-sm text-blue-700 dark:text-blue-300 mt-1">Version 2.0 introduces breaking changes. Please review the migration guide.</p>
+              </div>
+              <button class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+
+            <div class="flex gap-4 p-4 rounded-xl border bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800">
+              <div class="flex-shrink-0 w-5 h-5 text-emerald-600 dark:text-emerald-400 mt-0.5">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-emerald-800 dark:text-emerald-200">Payment successful</div>
+                <p class="text-sm text-emerald-700 dark:text-emerald-300 mt-1">Your subscription has been renewed for another month.</p>
+              </div>
+              <button class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-200">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+
+            <div class="flex gap-4 p-4 rounded-xl border bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800">
+              <div class="flex-shrink-0 w-5 h-5 text-amber-600 dark:text-amber-400 mt-0.5">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-amber-800 dark:text-amber-200">Approaching rate limit</div>
+                <p class="text-sm text-amber-700 dark:text-amber-300 mt-1">You've used 80% of your monthly API quota.</p>
+              </div>
+              <button class="text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+
+            <div class="flex gap-4 p-4 rounded-xl border bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800">
+              <div class="flex-shrink-0 w-5 h-5 text-red-600 dark:text-red-400 mt-0.5">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div class="flex-1">
+                <div class="font-medium text-red-800 dark:text-red-200">Authentication error</div>
+                <p class="text-sm text-red-700 dark:text-red-300 mt-1">Invalid API key detected. Please regenerate your credentials.</p>
+              </div>
+              <button class="text-red-600 dark:text-red-400 hover:text-red-800 dark:hover:text-red-200">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons & Forms Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Buttons -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-6">Buttons</h3>
+
+            <div class="space-y-4">
+              <div>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Primary</span>
+                <div class="flex flex-wrap gap-3 mt-2">
+                  <button class="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-lg text-sm">Primary</button>
+                  <button class="px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-lg text-sm flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                    With Icon
+                  </button>
+                  <button class="px-4 py-2 bg-sky-300 dark:bg-sky-800 text-white dark:text-sky-400 font-medium rounded-lg cursor-not-allowed text-sm">Disabled</button>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Secondary</span>
+                <div class="flex flex-wrap gap-3 mt-2">
+                  <button class="px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium rounded-lg text-sm">Secondary</button>
+                  <button class="px-4 py-2 border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-medium rounded-lg text-sm">Outline</button>
+                  <button class="px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-medium rounded-lg text-sm">Ghost</button>
+                </div>
+              </div>
+
+              <div>
+                <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Destructive</span>
+                <div class="flex flex-wrap gap-3 mt-2">
+                  <button class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg text-sm">Delete</button>
+                  <button class="px-4 py-2 border border-red-300 dark:border-red-700 hover:bg-red-50 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 font-medium rounded-lg text-sm">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Elements -->
+          <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-6">Form Elements</h3>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5">Email</label>
+                <input type="email" placeholder="you@example.com" class="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-600 rounded-lg text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5">Select</label>
+                <select class="w-full px-4 py-2.5 border border-slate-200 dark:border-slate-600 rounded-lg text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+                  <option>Select an option...</option>
+                  <option>Option A</option>
+                  <option>Option B</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5">With Error</label>
+                <input type="text" value="invalid-input" class="w-full px-4 py-2.5 border border-red-300 dark:border-red-700 rounded-lg text-sm bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-red-500/30 focus:border-red-500">
+                <p class="mt-1 text-xs text-red-500 dark:text-red-400">This field contains an error.</p>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <input type="checkbox" id="check" class="w-4 h-4 rounded border-slate-300 dark:border-slate-600 text-sky-500 bg-white dark:bg-slate-700 focus:ring-sky-500/30">
+                <label for="check" class="text-sm text-slate-600 dark:text-slate-300">I agree to the terms</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color Palette Display -->
+        <div class="p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-8">
+          <h3 class="font-semibold text-slate-800 dark:text-slate-100 mb-6">Color Palette (Muted Sky Blue)</h3>
+
+          <div class="space-y-6">
+            <!-- Slate -->
+            <div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Slate (Neutrals)</span>
+              <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mt-2">
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1 border border-slate-200 dark:border-slate-600" style="background-color: #F8FAFB;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">50</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #F1F5F7;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">100</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #E2E8ED;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">200</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #CBD5DC;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">300</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #94A3B0;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">400</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #64748B;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">500</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #475569;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">600</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #334155;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">700</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #1E293B;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">800</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #0F172A;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">900</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cyan -->
+            <div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Sky (Primary - Muted Sky Blue)</span>
+              <div class="grid grid-cols-5 md:grid-cols-10 gap-2 mt-2">
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #f0f7fc;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">50</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #e1eff8;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">100</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #c3dfef;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">200</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #9ac8e3;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">300</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #6aadd4;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">400</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #4177a6;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">500</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #416d93;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">600</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #3d6a91;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">700</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #39688a;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">800</span>
+                </div>
+                <div class="text-center">
+                  <div class="h-12 rounded-lg mb-1" style="background-color: #2c4d6c;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">900</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart Colors -->
+            <div>
+              <span class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Chart Colors</span>
+              <div class="flex gap-3 mt-2">
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #4177a6;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Sky</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #3B82F6;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Blue</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #8B5CF6;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Purple</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #F59E0B;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Amber</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #EC4899;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Pink</span>
+                </div>
+                <div class="text-center">
+                  <div class="w-12 h-12 rounded-lg mb-1" style="background-color: #10B981;"></div>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">Emerald</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

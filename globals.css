@@ -1,0 +1,231 @@
+/*
+ * WARMHUB DESIGN SYSTEM - Global CSS Variables
+ *
+ * ShadCN UI compatible CSS custom properties
+ * Supports both light and dark modes
+ *
+ * Philosophy: 70% technical precision / 30% human warmth
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ========================================
+     * LIGHT MODE (Default)
+     * Clean, airy with subtle warmth
+     * ======================================== */
+
+    /* --- Core Backgrounds --- */
+    --background: 60 20% 98%;              /* Stone-50: #FAFAF8 */
+    --foreground: 60 10% 23%;              /* Stone-700: #3D3D35 */
+
+    /* --- Card/Surface --- */
+    --card: 0 0% 100%;                     /* Pure white for cards */
+    --card-foreground: 60 10% 23%;         /* Stone-700 */
+
+    /* --- Popover --- */
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 10% 23%;
+
+    /* --- Primary: Sage --- */
+    --primary: 120 13% 43%;                /* Sage-500: #5F7A5F */
+    --primary-foreground: 0 0% 100%;       /* White text on primary */
+
+    /* --- Secondary: Stone --- */
+    --secondary: 60 8% 91%;                /* Stone-200: #E8E8E4 */
+    --secondary-foreground: 60 10% 23%;    /* Stone-700 */
+
+    /* --- Muted --- */
+    --muted: 60 8% 96%;                    /* Stone-100: #F5F5F3 */
+    --muted-foreground: 60 5% 45%;         /* Stone-500: #737369 */
+
+    /* --- Accent: Terracotta --- */
+    --accent: 18 43% 59%;                  /* Terracotta-500: #C4826A */
+    --accent-foreground: 0 0% 100%;        /* White text */
+
+    /* --- Destructive --- */
+    --destructive: 8 70% 60%;              /* Error-500: #E06555 */
+    --destructive-foreground: 0 0% 100%;
+
+    /* --- Border & Input --- */
+    --border: 60 8% 91%;                   /* Stone-200 */
+    --input: 60 8% 91%;                    /* Stone-200 */
+    --ring: 120 13% 43%;                   /* Sage-500 (focus ring) */
+
+    /* --- Radius --- */
+    --radius: 0.375rem;                    /* 6px default */
+
+    /* --- Semantic Colors --- */
+    --success: 134 32% 43%;                /* Success-500 */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 74% 49%;                 /* Warning-500 */
+    --warning-foreground: 60 10% 15%;      /* Dark text */
+    --info: 209 31% 50%;                   /* Info-500 */
+    --info-foreground: 0 0% 100%;
+
+    /* --- Chart Colors (for data visualization) --- */
+    --chart-1: 120 13% 43%;                /* Sage */
+    --chart-2: 18 43% 59%;                 /* Terracotta */
+    --chart-3: 209 31% 50%;                /* Info Blue */
+    --chart-4: 134 32% 43%;                /* Success Green */
+    --chart-5: 38 74% 49%;                 /* Warning Amber */
+
+    /* --- Sidebar (for dashboard layouts) --- */
+    --sidebar-background: 60 20% 98%;
+    --sidebar-foreground: 60 10% 23%;
+    --sidebar-primary: 120 13% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 8% 91%;
+    --sidebar-accent-foreground: 60 10% 23%;
+    --sidebar-border: 60 8% 91%;
+    --sidebar-ring: 120 13% 43%;
+  }
+
+  .dark {
+    /* ========================================
+     * DARK MODE
+     * Deep, warm charcoal with subtle earthiness
+     * ======================================== */
+
+    /* --- Core Backgrounds --- */
+    --background: 60 14% 9%;               /* Stone-900: #1C1C18 */
+    --foreground: 60 8% 96%;               /* Stone-100: #F5F5F3 */
+
+    /* --- Card/Surface --- */
+    --card: 60 12% 12%;                    /* Stone-800: #282822 */
+    --card-foreground: 60 8% 96%;          /* Stone-100 */
+
+    /* --- Popover --- */
+    --popover: 60 12% 12%;
+    --popover-foreground: 60 8% 96%;
+
+    /* --- Primary: Sage (Adjusted for dark) --- */
+    --primary: 120 13% 56%;                /* Sage-400: #7D917D */
+    --primary-foreground: 60 14% 9%;       /* Dark bg for contrast */
+
+    /* --- Secondary --- */
+    --secondary: 60 8% 20%;                /* Darker stone */
+    --secondary-foreground: 60 8% 91%;     /* Stone-200 */
+
+    /* --- Muted --- */
+    --muted: 60 10% 15%;                   /* Subtle dark */
+    --muted-foreground: 60 5% 60%;         /* Stone-400 */
+
+    /* --- Accent: Terracotta (Adjusted for dark) --- */
+    --accent: 18 48% 52%;                  /* Terracotta-400: #D4A088 */
+    --accent-foreground: 60 14% 9%;
+
+    /* --- Destructive --- */
+    --destructive: 8 65% 55%;              /* Slightly muted for dark */
+    --destructive-foreground: 0 0% 100%;
+
+    /* --- Border & Input --- */
+    --border: 60 8% 20%;                   /* Dark stone */
+    --input: 60 8% 20%;
+    --ring: 120 13% 56%;                   /* Sage-400 */
+
+    /* --- Semantic Colors (Dark mode adjusted) --- */
+    --success: 134 28% 50%;
+    --success-foreground: 60 14% 9%;
+    --warning: 38 70% 52%;
+    --warning-foreground: 60 14% 9%;
+    --info: 209 28% 55%;
+    --info-foreground: 60 14% 9%;
+
+    /* --- Chart Colors (Dark mode adjusted) --- */
+    --chart-1: 120 13% 56%;
+    --chart-2: 18 48% 58%;
+    --chart-3: 209 28% 55%;
+    --chart-4: 134 28% 50%;
+    --chart-5: 38 70% 52%;
+
+    /* --- Sidebar --- */
+    --sidebar-background: 60 12% 7%;
+    --sidebar-foreground: 60 8% 91%;
+    --sidebar-primary: 120 13% 56%;
+    --sidebar-primary-foreground: 60 14% 9%;
+    --sidebar-accent: 60 8% 15%;
+    --sidebar-accent-foreground: 60 8% 91%;
+    --sidebar-border: 60 8% 18%;
+    --sidebar-ring: 120 13% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection color with brand */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+
+  /* Focus visible styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Text balance for headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Subtle background patterns */
+  .bg-grid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23a3a39c' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 20l2.83-2.83 1.41 1.41L1.41 22H0v-2zm0-18l2.83-2.83L4.24 0.59 1.41 3.41 0 2V0zm20 0l2.83-2.83 1.41 1.41-2.83 2.83L20 2V0zm18 0v2l-1.41-1.41-2.83 2.83-1.41-1.41L35.17 0H38zm0 20v2l-1.41-1.41-2.83 2.83-1.41-1.41 2.83-2.83L38 18zm0 18v2h-1.41l-2.83-2.83 1.41-1.41L38 36.59V38z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Noise texture overlay */
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  /* Prose adjustments for documentation */
+  .prose-warmhub {
+    --tw-prose-body: hsl(60 10% 23%);
+    --tw-prose-headings: hsl(60 10% 18%);
+    --tw-prose-links: hsl(120 13% 43%);
+    --tw-prose-code: hsl(60 10% 23%);
+    --tw-prose-pre-bg: hsl(60 8% 96%);
+  }
+
+  .dark .prose-warmhub {
+    --tw-prose-body: hsl(60 8% 91%);
+    --tw-prose-headings: hsl(60 8% 96%);
+    --tw-prose-links: hsl(120 13% 56%);
+    --tw-prose-code: hsl(60 8% 91%);
+    --tw-prose-pre-bg: hsl(60 12% 12%);
+  }
+}
