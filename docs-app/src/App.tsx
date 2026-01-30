@@ -14,6 +14,7 @@ import { ChartsPage } from '@/pages/components/ChartsPage'
 import BeliefsPage from '@/pages/components/BeliefsPage'
 import { HeroPage } from '@/pages/marketing/HeroPage'
 import { FeaturesPage } from '@/pages/marketing/FeaturesPage'
+import { WarmHubPage } from '@/pages/marketing/WarmHubPage'
 import { DashboardTemplate } from '@/pages/templates/DashboardTemplate'
 import { LandingTemplate } from '@/pages/templates/LandingTemplate'
 import { SandboxPage } from '@/pages/SandboxPage'
@@ -22,6 +23,9 @@ function App() {
   return (
     <BrowserRouter basename="/design-system">
       <Routes>
+        {/* Full-width marketing page (no sidebar) */}
+        <Route path="marketing/warmhub" element={<WarmHubPage />} />
+
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
 

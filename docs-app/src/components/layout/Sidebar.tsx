@@ -63,6 +63,7 @@ const navigation: NavSection[] = [
     items: [
       { title: 'Hero Sections', href: '/marketing/hero', icon: Sparkles },
       { title: 'Feature Blocks', href: '/marketing/features', icon: LayoutGrid },
+      { title: 'WarmHub.com', href: '/marketing/warmhub', icon: Globe },
     ],
   },
   {

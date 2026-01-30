@@ -73,32 +73,38 @@ const principles = [
 
 export function HomePage() {
   return (
-    <div className="space-y-16">
-      {/* Hero */}
-      <section className="space-y-6">
-        <Badge variant="secondary" className="mb-4">
-          Version 2.0
-        </Badge>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-          WarmHub Design System
-        </h1>
-        <p className="max-w-2xl text-lg text-muted-foreground">
-          A comprehensive design system for AI products that blends{' '}
-          <span className="font-medium text-foreground">technical precision</span> with{' '}
-          <span className="font-medium text-foreground">human warmth</span>. Built on ShadCN UI
-          with Tailwind CSS v4.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Button asChild>
-            <Link to="/foundations/colors">
-              Get Started <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link to="/components/button">Browse Components</Link>
-          </Button>
+    <div>
+      {/* Hero - full width, flush with header */}
+      <section className="relative max-w-none w-[calc(100vw-16rem)] ml-[calc(50%-50vw+8rem)] -mt-6 lg:-mt-8 mb-16 px-8 py-20 text-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_20%_40%,rgba(65,119,166,0.15),transparent)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_60%,rgba(20,184,166,0.1),transparent)]" />
+        <div className="relative max-w-5xl mx-auto">
+          <Badge variant="secondary" className="mb-4">
+            Version 2.0
+          </Badge>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            WarmHub Design System
+          </h1>
+          <p className="max-w-2xl mx-auto mt-4 text-lg text-slate-300">
+            A comprehensive design system for AI products that blends{' '}
+            <span className="font-medium text-white">technical precision</span> with{' '}
+            <span className="font-medium text-white">human warmth</span>. Built on ShadCN UI
+            with Tailwind CSS v4.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            <Button asChild>
+              <Link to="/foundations/colors">
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button variant="outline" asChild>
+              <Link to="/components/button">Browse Components</Link>
+            </Button>
+          </div>
         </div>
       </section>
+
+      <div className="space-y-16">
 
       {/* Color preview */}
       <section className="space-y-4">
@@ -213,6 +219,7 @@ export function HomePage() {
           </div>
         </div>
       </section>
+      </div>
     </div>
   )
 }
