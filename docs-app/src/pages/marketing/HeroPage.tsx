@@ -41,7 +41,7 @@ export function HeroPage() {
         <h2 className="text-xl font-semibold">Split Hero</h2>
         <div className="grid gap-8 rounded-xl border bg-card p-8 lg:grid-cols-2 lg:p-12">
           <div className="flex flex-col justify-center">
-            <Badge className="mb-4 w-fit bg-coral-500/10 text-coral-600">New Feature</Badge>
+            <Badge className="mb-4 w-fit bg-teal-500/10 text-teal-600">New Feature</Badge>
             <h1 className="text-3xl font-bold tracking-tight lg:text-4xl">
               Analytics that actually make sense
             </h1>

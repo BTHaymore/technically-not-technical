@@ -52,20 +52,20 @@ const colorGroups: ColorGroup[] = [
     ],
   },
   {
-    name: 'Coral (Accent)',
-    description: 'Restrained warmth for highlights and accent elements.',
+    name: 'Warm Teal (Accent)',
+    description: 'Fresh teal tones for highlights and accent elements.',
     colors: [
-      { name: '50', value: '#FFF5F5', className: 'bg-coral-50', textClass: 'text-coral-900' },
-      { name: '100', value: '#FEE8E7', className: 'bg-coral-100', textClass: 'text-coral-900' },
-      { name: '200', value: '#FECDD3', className: 'bg-coral-200', textClass: 'text-coral-900' },
-      { name: '300', value: '#FDA4AD', className: 'bg-coral-300', textClass: 'text-coral-900' },
-      { name: '400', value: '#FB7185', className: 'bg-coral-400', textClass: 'text-coral-900' },
-      { name: '500', value: '#E8636C', className: 'bg-coral-500', textClass: 'text-white' },
-      { name: '600', value: '#D14D55', className: 'bg-coral-600', textClass: 'text-white' },
-      { name: '700', value: '#B03A42', className: 'bg-coral-700', textClass: 'text-white' },
-      { name: '800', value: '#923238', className: 'bg-coral-800', textClass: 'text-white' },
-      { name: '900', value: '#7A2D32', className: 'bg-coral-900', textClass: 'text-white' },
-      { name: '950', value: '#430A0F', className: 'bg-coral-950', textClass: 'text-white' },
+      { name: '50', value: '#F0FDFA', className: 'bg-teal-50', textClass: 'text-teal-900' },
+      { name: '100', value: '#CCFBF1', className: 'bg-teal-100', textClass: 'text-teal-900' },
+      { name: '200', value: '#99F6E4', className: 'bg-teal-200', textClass: 'text-teal-900' },
+      { name: '300', value: '#5EEAD4', className: 'bg-teal-300', textClass: 'text-teal-900' },
+      { name: '400', value: '#2DD4BF', className: 'bg-teal-400', textClass: 'text-teal-900' },
+      { name: '500', value: '#14B8A6', className: 'bg-teal-500', textClass: 'text-white' },
+      { name: '600', value: '#0D9488', className: 'bg-teal-600', textClass: 'text-white' },
+      { name: '700', value: '#0F766E', className: 'bg-teal-700', textClass: 'text-white' },
+      { name: '800', value: '#115E59', className: 'bg-teal-800', textClass: 'text-white' },
+      { name: '900', value: '#134E4A', className: 'bg-teal-900', textClass: 'text-white' },
+      { name: '950', value: '#042F2E', className: 'bg-teal-950', textClass: 'text-white' },
     ],
   },
 ]
@@ -116,7 +116,7 @@ export function ColorsPage() {
         <div className="rounded-lg border bg-muted/50 p-4 font-mono text-sm">
           <code>--primary: #4177a6;</code>
           <br />
-          <code>--accent: #E8636C;</code>
+          <code>--accent: #14B8A6;</code>
           <br />
           <code>className="bg-primary text-primary-foreground"</code>
         </div>
@@ -187,7 +187,7 @@ export function ColorsPage() {
             <h3 className="font-medium text-success-600">Do</h3>
             <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               <li>Use Sky Blue for primary actions</li>
-              <li>Use Coral sparingly for accent highlights</li>
+              <li>Use Teal sparingly for accent highlights</li>
               <li>Maintain sufficient contrast ratios</li>
               <li>Use semantic colors for status indicators</li>
             </ul>

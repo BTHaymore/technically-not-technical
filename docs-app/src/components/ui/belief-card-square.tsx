@@ -35,10 +35,10 @@ function BeliefCardSquare({
 
   return (
     <Card
-      className="w-[380px] h-[380px] hover:bg-accent/80 hover:border-primary/30 hover:brightness-110 transition-all cursor-pointer"
+      className="w-[380px] h-[380px] hover:bg-sky-100 dark:hover:bg-sky-900/30 hover:border-primary/40 transition-all cursor-pointer"
       onClick={onClick}
     >
-      <CardContent className="px-5 py-5 h-full flex flex-col">
+      <CardContent className="px-3 py-3 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <h3 className="text-lg font-semibold leading-tight">{title}</h3>

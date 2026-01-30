@@ -73,7 +73,7 @@ const areaChartConfig = {
   },
   mobile: {
     label: 'Mobile',
-    color: '#E8636C',
+    color: '#14B8A6',
   },
 } satisfies ChartConfig
 
@@ -84,7 +84,7 @@ const barChartConfig = {
   },
   mobile: {
     label: 'Mobile',
-    color: '#E8636C',
+    color: '#14B8A6',
   },
 } satisfies ChartConfig
 
@@ -106,7 +106,7 @@ const pieChartConfig = {
   },
   safari: {
     label: 'Safari',
-    color: '#E8636C',
+    color: '#14B8A6',
   },
   firefox: {
     label: 'Firefox',
@@ -155,8 +155,8 @@ export function ChartsPage() {
                   <stop offset="95%" stopColor="#4177a6" stopOpacity={0.1} />
                 </linearGradient>
                 <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#E8636C" stopOpacity={0.8} />
-                  <stop offset="95%" stopColor="#E8636C" stopOpacity={0.1} />
+                  <stop offset="5%" stopColor="#14B8A6" stopOpacity={0.8} />
+                  <stop offset="95%" stopColor="#14B8A6" stopOpacity={0.1} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" vertical={false} />
@@ -167,7 +167,7 @@ export function ChartsPage() {
                 type="monotone"
                 dataKey="mobile"
                 stackId="1"
-                stroke="#E8636C"
+                stroke="#14B8A6"
                 fill="url(#fillMobile)"
               />
               <Area
@@ -238,7 +238,7 @@ export function ChartsPage() {
               <YAxis tickLine={false} axisLine={false} tickMargin={8} />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Bar dataKey="desktop" fill="#4177a6" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="mobile" fill="#E8636C" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="mobile" fill="#14B8A6" radius={[4, 4, 0, 0]} />
               <ChartLegend content={<ChartLegendContent />} />
             </BarChart>
           </ChartContainer>
@@ -259,7 +259,7 @@ export function ChartsPage() {
               <YAxis tickLine={false} axisLine={false} tickMargin={8} />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Bar dataKey="desktop" stackId="a" fill="#4177a6" radius={[0, 0, 0, 0]} />
-              <Bar dataKey="mobile" stackId="a" fill="#E8636C" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="mobile" stackId="a" fill="#14B8A6" radius={[4, 4, 0, 0]} />
               <ChartLegend content={<ChartLegendContent />} />
             </BarChart>
           </ChartContainer>

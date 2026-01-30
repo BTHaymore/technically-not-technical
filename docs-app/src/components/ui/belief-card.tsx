@@ -35,10 +35,10 @@ function BeliefCard({
 
   return (
     <Card
-      className="hover:bg-accent/80 hover:border-primary/30 hover:brightness-110 transition-all cursor-pointer"
+      className="hover:bg-sky-100 dark:hover:bg-sky-900/30 hover:border-primary/40 transition-all cursor-pointer"
       onClick={onClick}
     >
-      <CardContent className="p-4">
+      <CardContent className="">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 mb-1">

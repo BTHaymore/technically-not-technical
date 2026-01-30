@@ -99,7 +99,7 @@ export function FeaturesPage() {
               <Layers className="h-24 w-24 text-muted-foreground/30" />
             </div>
             <div className="order-1 flex flex-col justify-center lg:order-2">
-              <Badge className="mb-4 w-fit bg-coral-500/10 text-coral-600">Scalability</Badge>
+              <Badge className="mb-4 w-fit bg-teal-500/10 text-teal-600">Scalability</Badge>
               <h3 className="text-2xl font-bold">Scale without limits</h3>
               <p className="mt-4 text-muted-foreground">
                 From startup to enterprise, our platform grows with you. Handle millions

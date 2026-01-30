@@ -57,13 +57,13 @@ function ReputationCardSquare({
 
   return (
     <Card
-      className="w-[380px] h-[380px] hover:brightness-110 transition-all cursor-pointer border-amber-500/30 bg-gradient-to-br from-amber-500/5 to-transparent"
+      className="w-[380px] h-[380px] hover:bg-sky-100 dark:hover:bg-sky-900/30 hover:border-primary/40 transition-all cursor-pointer border-teal-500/30 bg-gradient-to-br from-teal-500/5 to-transparent"
       onClick={onClick}
     >
-      <CardContent className="px-5 py-5 h-full flex flex-col">
+      <CardContent className="px-3 py-3 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
-          <Badge variant="outline" className="bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 shrink-0">
+          <Badge variant="outline" className="bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20 shrink-0">
             Reputation
           </Badge>
           <Badge variant="secondary" className="text-xs">
@@ -111,7 +111,7 @@ function ReputationCardSquare({
         <div className="border-t border-border pt-3">
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <div className="text-xl font-bold text-amber-500">
+              <div className="text-xl font-bold text-teal-500">
                 {assertionCount}
               </div>
               <div className="text-xs text-muted-foreground">Total Assertions</div>

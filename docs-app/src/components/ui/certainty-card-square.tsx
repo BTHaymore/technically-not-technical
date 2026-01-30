@@ -55,10 +55,10 @@ function CertaintyCardSquare({
 
   return (
     <Card
-      className="w-[380px] h-[380px] hover:brightness-110 transition-all cursor-pointer border-sky-500/30 bg-gradient-to-br from-sky-500/5 to-transparent"
+      className="w-[380px] h-[380px] hover:bg-sky-100 dark:hover:bg-sky-900/30 hover:border-sky-500/50 transition-all cursor-pointer border-sky-500/30 bg-gradient-to-br from-sky-500/5 to-transparent"
       onClick={onClick}
     >
-      <CardContent className="px-5 py-5 h-full flex flex-col">
+      <CardContent className="px-3 py-3 h-full flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <Badge variant="outline" className="bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20 shrink-0">

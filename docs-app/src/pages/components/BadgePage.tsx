@@ -41,7 +41,7 @@ export function BadgePage() {
         <h2 className="text-xl font-semibold">With Custom Colors</h2>
         <div className="flex flex-wrap gap-4 rounded-lg border bg-card p-6">
           <Badge className="bg-sky-500/10 text-sky-600 hover:bg-sky-500/20">Sky</Badge>
-          <Badge className="bg-coral-500/10 text-coral-600 hover:bg-coral-500/20">Coral</Badge>
+          <Badge className="bg-teal-500/10 text-teal-600 hover:bg-teal-500/20">Teal</Badge>
           <Badge className="bg-slate-500/10 text-slate-600 hover:bg-slate-500/20">Slate</Badge>
         </div>
       </section>

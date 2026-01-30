@@ -38,18 +38,18 @@
   --color-sky-900: #2c4d6c;
   --color-sky-950: #1c3448;
 
-  /* Colors - Coral Accent */
-  --color-coral-50: #FFF5F5;
-  --color-coral-100: #FEE8E7;
-  --color-coral-200: #FECDD3;
-  --color-coral-300: #FDA4AD;
-  --color-coral-400: #FB7185;
-  --color-coral-500: #E8636C;
-  --color-coral-600: #D14D55;
-  --color-coral-700: #B03A42;
-  --color-coral-800: #923238;
-  --color-coral-900: #7A2D32;
-  --color-coral-950: #430A0F;
+  /* Colors - Teal Accent */
+  --color-teal-50: #F0FDFA;
+  --color-teal-100: #CCFBF1;
+  --color-teal-200: #99F6E4;
+  --color-teal-300: #5EEAD4;
+  --color-teal-400: #2DD4BF;
+  --color-teal-500: #14B8A6;
+  --color-teal-600: #0D9488;
+  --color-teal-700: #0F766E;
+  --color-teal-800: #115E59;
+  --color-teal-900: #134E4A;
+  --color-teal-950: #042F2E;
 
   /* Colors - Success */
   --color-success-50: #ECFDF5;
@@ -138,8 +138,8 @@
   --muted: #F1F5F7;
   --muted-foreground: #64748B;
 
-  /* Accent: Coral */
-  --accent: #E8636C;
+  /* Accent: Warm Teal */
+  --accent: #14B8A6;
   --accent-foreground: #FFFFFF;
 
   /* Destructive */
@@ -198,8 +198,8 @@
   --muted: #1E293B;
   --muted-foreground: #94A3B0;
 
-  /* Accent: Coral */
-  --accent: #FB7185;
+  /* Accent: Warm Teal */
+  --accent: #2DD4BF;
   --accent-foreground: #0F172A;
 
   /* Destructive */

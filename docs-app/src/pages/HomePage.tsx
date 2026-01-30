@@ -17,7 +17,7 @@ import {
 const quickLinks = [
   {
     title: 'Colors',
-    description: 'Explore the color palette with sky blue primary and coral accent.',
+    description: 'Explore the color palette with sky blue primary and teal accent.',
     href: '/foundations/colors',
     icon: Palette,
   },
@@ -108,9 +108,9 @@ export function HomePage() {
             <span className="text-sm font-medium">Sky Blue</span>
             <span className="text-xs opacity-80">#4177a6</span>
           </div>
-          <div className="flex items-center gap-2 rounded-lg bg-coral-500 px-4 py-2 text-white">
-            <span className="text-sm font-medium">Coral</span>
-            <span className="text-xs opacity-80">#E8636C</span>
+          <div className="flex items-center gap-2 rounded-lg bg-teal-500 px-4 py-2 text-white">
+            <span className="text-sm font-medium">Warm Teal</span>
+            <span className="text-xs opacity-80">#14B8A6</span>
           </div>
           <div className="flex items-center gap-2 rounded-lg bg-slate-700 px-4 py-2 text-white">
             <span className="text-sm font-medium">Slate</span>
@@ -190,7 +190,7 @@ export function HomePage() {
           </div>
 
           <div className="rounded-xl border border-border bg-card p-6">
-            <Badge className="mb-4 bg-coral-500/10 text-coral-600 hover:bg-coral-500/20">Marketing Usage</Badge>
+            <Badge className="mb-4 bg-teal-500/10 text-teal-600 hover:bg-teal-500/20">Marketing Usage</Badge>
             <h3 className="text-lg font-semibold">Marketing Pages</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               For landing pages, feature showcases, and conversion-focused content.
