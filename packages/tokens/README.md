@@ -127,6 +127,24 @@ For tooling integration (Figma plugins, Style Dictionary, etc.):
 const tokens = require('@warmhub/tokens/json');
 ```
 
+### Brand Assets
+
+Import logos and icons for consistent branding:
+
+```js
+// Icon only (SVG)
+import icon from '@warmhub/tokens/assets/icon.svg';
+
+// Full logo with wordmark
+import logoLight from '@warmhub/tokens/assets/logo-light.svg'; // Uses currentColor
+import logoDark from '@warmhub/tokens/assets/logo-dark.svg';   // White text
+```
+
+Available assets:
+- `icon.svg` - WarmHub flame icon (502x695)
+- `logo-light.svg` - Logo with wordmark for light backgrounds (uses `currentColor`)
+- `logo-dark.svg` - Logo with wordmark for dark backgrounds (white)
+
 ## Token Reference
 
 ### Colors

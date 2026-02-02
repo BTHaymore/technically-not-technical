@@ -14,12 +14,14 @@
     "./css": "./css/tokens.css",
     "./css/variables": "./css/variables.css",
     "./tailwind": "./tailwind/preset.js",
-    "./json": "./tokens.json"
+    "./json": "./tokens.json",
+    "./assets/*": "./assets/*"
   },
   "files": [
     "css",
     "js",
     "tailwind",
+    "assets",
     "tokens.json"
   ],
   "keywords": [
