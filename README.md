@@ -28,7 +28,7 @@ Visit [http://localhost:5173/design-system](http://localhost:5173/design-system)
 - Tailwind CSS v4
 - ShadCN UI components
 - React Router
-- Plus Jakarta Sans typography
+- Manrope typography
 
 ## License
 
