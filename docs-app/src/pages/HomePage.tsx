@@ -23,7 +23,7 @@ const quickLinks = [
   },
   {
     title: 'Typography',
-    description: 'Plus Jakarta Sans font with a 1.25 ratio type scale.',
+    description: 'Manrope font with a 1.25 ratio type scale.',
     href: '/foundations/typography',
     icon: Type,
   },

@@ -31,7 +31,7 @@ export function TypographyPage() {
         </Badge>
         <h1 className="text-3xl font-bold tracking-tight">Typography</h1>
         <p className="mt-2 text-lg text-muted-foreground">
-          Plus Jakarta Sans provides a modern, readable foundation with a 1.25 ratio type scale.
+          Manrope provides a modern, readable foundation with a 1.25 ratio type scale.
         </p>
       </div>
 
@@ -41,13 +41,13 @@ export function TypographyPage() {
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-lg border bg-card p-6">
             <p className="text-sm text-muted-foreground">Primary Font</p>
-            <p className="mt-2 text-2xl font-semibold">Plus Jakarta Sans</p>
+            <p className="mt-2 text-2xl font-semibold">Manrope</p>
             <p className="mt-4 text-muted-foreground">
               A geometric sans-serif with humanist touches. Clean and modern while
               remaining approachable.
             </p>
             <div className="mt-4 rounded bg-muted p-3 font-mono text-sm">
-              font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+              font-family: 'Manrope', system-ui, sans-serif;
             </div>
           </div>
           <div className="rounded-lg border bg-card p-6">
