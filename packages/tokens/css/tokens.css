@@ -1,0 +1,14 @@
+/**
+ * WarmHub Design System - Complete CSS Bundle
+ * @warmhub/tokens v2.0.0
+ *
+ * Usage:
+ *   @import '@warmhub/tokens/css';
+ *
+ * This file includes:
+ * - Google Fonts import (Manrope)
+ * - All CSS custom properties
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+@import './variables.css';

@@ -1,0 +1,177 @@
+/**
+ * WarmHub Design System - CSS Custom Properties
+ * @warmhub/tokens v2.0.0
+ *
+ * Usage:
+ *   @import '@warmhub/tokens/css/variables';
+ */
+
+:root {
+  /* ========================================
+   * COLOR PRIMITIVES
+   * ======================================== */
+
+  /* Slate Neutrals */
+  --wh-color-slate-50: #F8FAFB;
+  --wh-color-slate-100: #F1F5F7;
+  --wh-color-slate-200: #E2E8ED;
+  --wh-color-slate-300: #CBD5DC;
+  --wh-color-slate-400: #94A3B0;
+  --wh-color-slate-500: #64748B;
+  --wh-color-slate-600: #475569;
+  --wh-color-slate-700: #334155;
+  --wh-color-slate-800: #1E293B;
+  --wh-color-slate-900: #0F172A;
+  --wh-color-slate-950: #020617;
+
+  /* Sky Primary */
+  --wh-color-sky-50: #f0f7fc;
+  --wh-color-sky-100: #e1eff8;
+  --wh-color-sky-200: #c3dfef;
+  --wh-color-sky-300: #9ac8e3;
+  --wh-color-sky-400: #6aadd4;
+  --wh-color-sky-500: #4177a6;
+  --wh-color-sky-600: #416d93;
+  --wh-color-sky-700: #3d6a91;
+  --wh-color-sky-800: #39688a;
+  --wh-color-sky-900: #2c4d6c;
+  --wh-color-sky-950: #1c3448;
+
+  /* Teal Accent */
+  --wh-color-teal-50: #F0FDFA;
+  --wh-color-teal-100: #CCFBF1;
+  --wh-color-teal-200: #99F6E4;
+  --wh-color-teal-300: #5EEAD4;
+  --wh-color-teal-400: #2DD4BF;
+  --wh-color-teal-500: #14B8A6;
+  --wh-color-teal-600: #0D9488;
+  --wh-color-teal-700: #0F766E;
+  --wh-color-teal-800: #115E59;
+  --wh-color-teal-900: #134E4A;
+  --wh-color-teal-950: #042F2E;
+
+  /* Semantic Colors */
+  --wh-color-success-50: #ECFDF5;
+  --wh-color-success-500: #10B981;
+  --wh-color-success-600: #059669;
+
+  --wh-color-warning-50: #FFFBEB;
+  --wh-color-warning-500: #F59E0B;
+  --wh-color-warning-600: #D97706;
+
+  --wh-color-error-50: #FEF2F2;
+  --wh-color-error-500: #EF4444;
+  --wh-color-error-600: #DC2626;
+
+  --wh-color-info-50: #EFF6FF;
+  --wh-color-info-500: #3B82F6;
+  --wh-color-info-600: #2563EB;
+
+  /* ========================================
+   * TYPOGRAPHY
+   * ======================================== */
+  --wh-font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --wh-font-mono: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+
+  --wh-font-size-xs: 0.75rem;
+  --wh-font-size-sm: 0.875rem;
+  --wh-font-size-base: 1rem;
+  --wh-font-size-lg: 1.125rem;
+  --wh-font-size-xl: 1.25rem;
+  --wh-font-size-2xl: 1.5rem;
+  --wh-font-size-3xl: 1.875rem;
+  --wh-font-size-4xl: 2.25rem;
+  --wh-font-size-5xl: 3rem;
+  --wh-font-size-6xl: 3.75rem;
+
+  --wh-font-weight-light: 300;
+  --wh-font-weight-regular: 400;
+  --wh-font-weight-medium: 500;
+  --wh-font-weight-semibold: 600;
+  --wh-font-weight-bold: 700;
+
+  --wh-line-height-tight: 1.25;
+  --wh-line-height-normal: 1.5;
+  --wh-line-height-relaxed: 1.625;
+
+  /* ========================================
+   * SPACING
+   * ======================================== */
+  --wh-spacing-0: 0;
+  --wh-spacing-1: 0.25rem;
+  --wh-spacing-2: 0.5rem;
+  --wh-spacing-3: 0.75rem;
+  --wh-spacing-4: 1rem;
+  --wh-spacing-5: 1.25rem;
+  --wh-spacing-6: 1.5rem;
+  --wh-spacing-8: 2rem;
+  --wh-spacing-10: 2.5rem;
+  --wh-spacing-12: 3rem;
+  --wh-spacing-16: 4rem;
+  --wh-spacing-20: 5rem;
+  --wh-spacing-24: 6rem;
+
+  /* ========================================
+   * RADIUS
+   * ======================================== */
+  --wh-radius-none: 0;
+  --wh-radius-sm: 0.125rem;
+  --wh-radius-default: 0.375rem;
+  --wh-radius-md: 0.5rem;
+  --wh-radius-lg: 0.75rem;
+  --wh-radius-xl: 1rem;
+  --wh-radius-full: 9999px;
+
+  /* ========================================
+   * SHADOWS
+   * ======================================== */
+  --wh-shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --wh-shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
+  --wh-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --wh-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.06);
+
+  /* ========================================
+   * SEMANTIC TOKENS (Light Mode)
+   * ======================================== */
+  --wh-background: var(--wh-color-slate-50);
+  --wh-foreground: var(--wh-color-slate-700);
+  --wh-card: #FFFFFF;
+  --wh-card-foreground: var(--wh-color-slate-700);
+  --wh-primary: var(--wh-color-sky-500);
+  --wh-primary-foreground: #FFFFFF;
+  --wh-secondary: var(--wh-color-slate-200);
+  --wh-secondary-foreground: var(--wh-color-slate-700);
+  --wh-muted: var(--wh-color-slate-100);
+  --wh-muted-foreground: var(--wh-color-slate-500);
+  --wh-accent: var(--wh-color-teal-500);
+  --wh-accent-foreground: #FFFFFF;
+  --wh-destructive: var(--wh-color-error-500);
+  --wh-destructive-foreground: #FFFFFF;
+  --wh-border: var(--wh-color-slate-200);
+  --wh-input: var(--wh-color-slate-200);
+  --wh-ring: var(--wh-color-sky-500);
+}
+
+/* ========================================
+ * DARK MODE
+ * ======================================== */
+.dark,
+[data-theme="dark"] {
+  --wh-background: var(--wh-color-slate-900);
+  --wh-foreground: var(--wh-color-slate-200);
+  --wh-card: var(--wh-color-slate-800);
+  --wh-card-foreground: var(--wh-color-slate-200);
+  --wh-primary: #7eb3d8;
+  --wh-primary-foreground: var(--wh-color-slate-900);
+  --wh-secondary: var(--wh-color-slate-700);
+  --wh-secondary-foreground: var(--wh-color-slate-200);
+  --wh-muted: var(--wh-color-slate-800);
+  --wh-muted-foreground: var(--wh-color-slate-400);
+  --wh-accent: var(--wh-color-teal-400);
+  --wh-accent-foreground: var(--wh-color-slate-900);
+  --wh-destructive: #F87171;
+  --wh-destructive-foreground: #FFFFFF;
+  --wh-border: var(--wh-color-slate-700);
+  --wh-input: var(--wh-color-slate-700);
+  --wh-ring: #7eb3d8;
+}
