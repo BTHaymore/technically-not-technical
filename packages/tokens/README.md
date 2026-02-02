@@ -4,6 +4,52 @@ Design tokens for the WarmHub Design System. This package provides colors, typog
 
 ## Installation
 
+### From Git Repository
+
+Install directly from GitHub:
+
+```bash
+# npm
+npm install github:warmautomation/ui-design-system#main --workspace-package=packages/tokens
+
+# Using the full git URL
+npm install git+https://github.com/warmautomation/ui-design-system.git#main
+
+# yarn
+yarn add warmautomation/ui-design-system#main
+
+# pnpm
+pnpm add github:warmautomation/ui-design-system#main
+```
+
+Or add to your `package.json` directly:
+
+```json
+{
+  "dependencies": {
+    "@warmhub/tokens": "github:warmautomation/ui-design-system#main"
+  }
+}
+```
+
+**Note:** Since the tokens package is in a subdirectory, you may need to reference it as:
+
+```json
+{
+  "dependencies": {
+    "@warmhub/tokens": "https://gitpkg.now.sh/warmautomation/ui-design-system/packages/tokens?main"
+  }
+}
+```
+
+Or use [gitpkg](https://gitpkg.vercel.app/) to install subdirectories:
+
+```bash
+npm install https://gitpkg.now.sh/warmautomation/ui-design-system/packages/tokens?main
+```
+
+### From npm (when published)
+
 ```bash
 npm install @warmhub/tokens
 # or
