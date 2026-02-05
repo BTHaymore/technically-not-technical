@@ -70,7 +70,7 @@
   /* ========================================
    * TYPOGRAPHY
    * ======================================== */
-  --wh-font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --wh-font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
   --wh-font-mono: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
 
   --wh-font-size-xs: 0.75rem;

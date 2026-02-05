@@ -108,7 +108,7 @@ const semantic = {
 
 const typography = {
   fontFamily: {
-    sans: "'Plus Jakarta Sans', system-ui, -apple-system, sans-serif",
+    sans: "'Manrope', system-ui, -apple-system, sans-serif",
     mono: "'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace",
   },
   fontSize: {

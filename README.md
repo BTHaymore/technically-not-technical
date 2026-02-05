@@ -76,7 +76,7 @@ See [packages/tokens/README.md](packages/tokens/README.md) for full documentatio
 - Tailwind CSS v4
 - ShadCN UI components
 - React Router
-- Plus Jakarta Sans typography
+- Manrope typography
 
 ## License
 

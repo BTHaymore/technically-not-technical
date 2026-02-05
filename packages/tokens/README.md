@@ -97,7 +97,7 @@ colors.slate[700];   // '#334155' (text color)
 colors.teal[500];    // '#14B8A6' (accent)
 
 // Typography
-typography.fontFamily.sans;  // 'Plus Jakarta Sans', system-ui, ...
+typography.fontFamily.sans;  // 'Manrope', system-ui, ...
 typography.fontSize['2xl'];  // '1.5rem'
 
 // Spacing (4px base unit)
@@ -177,7 +177,7 @@ import logoDark from 'warmhub-tokens/assets/logo-dark.svg';
 
 ### Typography
 
-- **Font Family:** Plus Jakarta Sans (sans), Geist Mono (mono)
+- **Font Family:** Manrope (sans), Geist Mono (mono)
 - **Scale:** xs (12px) to 6xl (60px)
 - **Weights:** light (300), regular (400), medium (500), semibold (600), bold (700)
 
