@@ -1,0 +1,52 @@
+{
+  "name": "warmhub-tokens",
+  "version": "2.0.0",
+  "description": "WarmHub Design System tokens - colors, typography, spacing, and more",
+  "main": "./packages/tokens/js/index.js",
+  "module": "./packages/tokens/js/index.mjs",
+  "types": "./packages/tokens/js/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./packages/tokens/js/index.mjs",
+      "require": "./packages/tokens/js/index.js",
+      "types": "./packages/tokens/js/index.d.ts"
+    },
+    "./css": "./packages/tokens/css/tokens.css",
+    "./css/variables": "./packages/tokens/css/variables.css",
+    "./tailwind": "./packages/tokens/tailwind/preset.js",
+    "./json": "./packages/tokens/tokens.json",
+    "./assets/*": "./packages/tokens/assets/*"
+  },
+  "files": [
+    "packages/tokens/css",
+    "packages/tokens/js",
+    "packages/tokens/tailwind",
+    "packages/tokens/assets",
+    "packages/tokens/tokens.json"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "warmhub",
+    "tailwind",
+    "css-variables"
+  ],
+  "license": "MIT",
+  "author": "WarmHub",
+  "homepage": "https://warmautomation.github.io/ui-design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/warmautomation/ui-design-system.git"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    }
+  }
+}
