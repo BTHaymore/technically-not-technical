@@ -24,16 +24,16 @@ Visit [http://localhost:5173/design-system](http://localhost:5173/design-system)
 
 ## Using in Other Apps
 
-Install the tokens package from this repository:
+Install the tokens package from GitHub:
 
 ```bash
-npm install https://gitpkg.now.sh/warmautomation/ui-design-system/packages/tokens?main
+npm install github:warmautomation/ui-design-system#main
 ```
 
 ### CSS Variables
 
 ```css
-@import '@warmhub/tokens/css';
+@import 'warmhub-tokens/css';
 
 .my-component {
   background: var(--wh-background);
@@ -49,26 +49,23 @@ npm install https://gitpkg.now.sh/warmautomation/ui-design-system/packages/token
 ```js
 // tailwind.config.js
 module.exports = {
-  presets: [require('@warmhub/tokens/tailwind')],
+  presets: [require('warmhub-tokens/tailwind')],
 }
 ```
 
 ```css
-/* Import CSS variables for theming */
-@import '@warmhub/tokens/css/variables';
+@import 'warmhub-tokens/css/variables';
 @import 'tailwindcss';
 ```
 
 ### JavaScript / TypeScript
 
-```js
-import { colors, typography, spacing } from '@warmhub/tokens';
+```ts
+import { colors, typography, spacing } from 'warmhub-tokens';
 
-const styles = {
-  backgroundColor: colors.sky[500],
-  fontFamily: typography.fontFamily.sans,
-  padding: spacing[4],
-};
+colors.sky[500];     // '#4177a6'
+typography.fontFamily.sans;
+spacing[4];          // '1rem'
 ```
 
 See [packages/tokens/README.md](packages/tokens/README.md) for full documentation.
@@ -79,7 +76,7 @@ See [packages/tokens/README.md](packages/tokens/README.md) for full documentatio
 - Tailwind CSS v4
 - ShadCN UI components
 - React Router
-- Manrope typography
+- Plus Jakarta Sans typography
 
 ## License
 

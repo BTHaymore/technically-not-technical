@@ -1,5 +1,5 @@
 {
-  "name": "@warmhub/tokens",
+  "name": "warmhub-tokens",
   "version": "2.0.0",
   "description": "WarmHub Design System tokens - colors, typography, spacing, and more",
   "main": "./js/index.js",
@@ -24,18 +24,28 @@
     "assets",
     "tokens.json"
   ],
+  "sideEffects": [
+    "*.css"
+  ],
   "keywords": [
     "design-system",
     "design-tokens",
     "warmhub",
     "tailwind",
-    "css-variables"
+    "css-variables",
+    "css-custom-properties",
+    "theming"
   ],
   "license": "MIT",
+  "author": "WarmHub",
+  "homepage": "https://warmautomation.github.io/ui-design-system",
   "repository": {
     "type": "git",
     "url": "https://github.com/warmautomation/ui-design-system.git",
     "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "tailwindcss": ">=4.0.0"

@@ -1,181 +1,210 @@
-# @warmhub/tokens
+# warmhub-tokens
 
-Design tokens for the WarmHub Design System. This package provides colors, typography, spacing, and other design primitives in multiple formats for easy consumption.
+Design tokens for the WarmHub Design System. Colors, typography, spacing, and other design primitives in multiple formats.
 
 ## Installation
 
-### From Git Repository
-
-Install directly from GitHub:
+Install from GitHub:
 
 ```bash
-# npm
-npm install github:warmautomation/ui-design-system#main --workspace-package=packages/tokens
-
-# Using the full git URL
-npm install git+https://github.com/warmautomation/ui-design-system.git#main
-
-# yarn
-yarn add warmautomation/ui-design-system#main
-
-# pnpm
-pnpm add github:warmautomation/ui-design-system#main
+npm install github:warmautomation/ui-design-system#main
 ```
 
-Or add to your `package.json` directly:
+Or add to your `package.json`:
 
 ```json
 {
   "dependencies": {
-    "@warmhub/tokens": "github:warmautomation/ui-design-system#main"
+    "warmhub-tokens": "github:warmautomation/ui-design-system#main"
   }
 }
 ```
 
-**Note:** Since the tokens package is in a subdirectory, you may need to reference it as:
-
-```json
-{
-  "dependencies": {
-    "@warmhub/tokens": "https://gitpkg.now.sh/warmautomation/ui-design-system/packages/tokens?main"
-  }
-}
-```
-
-Or use [gitpkg](https://gitpkg.vercel.app/) to install subdirectories:
-
-```bash
-npm install https://gitpkg.now.sh/warmautomation/ui-design-system/packages/tokens?main
-```
-
-### From npm (when published)
-
-```bash
-npm install @warmhub/tokens
-# or
-yarn add @warmhub/tokens
-# or
-pnpm add @warmhub/tokens
-```
-
-## Usage
+## Quick Start
 
 ### CSS Variables
 
-Import the CSS file to get all tokens as CSS custom properties:
+Import CSS variables for use in any project:
 
 ```css
-/* Full bundle (includes Google Fonts import) */
-@import '@warmhub/tokens/css';
+/* Full bundle (includes Google Fonts) */
+@import 'warmhub-tokens/css';
 
-/* Variables only (no font import) */
-@import '@warmhub/tokens/css/variables';
+/* Variables only (bring your own fonts) */
+@import 'warmhub-tokens/css/variables';
 ```
 
-Then use the variables in your CSS:
+Use in your styles:
 
 ```css
-.my-component {
-  background: var(--wh-background);
-  color: var(--wh-foreground);
-  font-family: var(--wh-font-sans);
-  padding: var(--wh-spacing-4);
+.card {
+  background: var(--wh-card);
+  color: var(--wh-card-foreground);
+  border: 1px solid var(--wh-border);
   border-radius: var(--wh-radius-md);
+  padding: var(--wh-spacing-4);
+  font-family: var(--wh-font-sans);
+}
+
+.button-primary {
+  background: var(--wh-primary);
+  color: var(--wh-primary-foreground);
 }
 ```
 
 ### Tailwind CSS
 
-Use the preset in your `tailwind.config.js`:
+Use the Tailwind preset for instant design system integration:
 
 ```js
+// tailwind.config.js
 module.exports = {
-  presets: [require('@warmhub/tokens/tailwind')],
+  presets: [require('warmhub-tokens/tailwind')],
   // ... your config
 }
 ```
 
-**Important:** Also import the CSS variables for semantic color theming:
+Import the CSS variables for semantic color theming:
 
 ```css
-@import '@warmhub/tokens/css/variables';
+/* In your main CSS file */
+@import 'warmhub-tokens/css/variables';
 @import 'tailwindcss';
+```
+
+Now use Tailwind classes with WarmHub colors:
+
+```html
+<button class="bg-primary text-primary-foreground rounded-md px-4 py-2">
+  Click me
+</button>
+
+<div class="bg-card text-card-foreground border border-border rounded-lg p-6">
+  Card content
+</div>
 ```
 
 ### JavaScript / TypeScript
 
-Import tokens directly for use in JS/TS:
+Import tokens directly for CSS-in-JS, React Native, or programmatic use:
 
-```js
-import { colors, typography, spacing } from '@warmhub/tokens';
-// or
-import tokens from '@warmhub/tokens';
+```ts
+import { colors, typography, spacing } from 'warmhub-tokens';
 
-// Use in CSS-in-JS
-const styles = {
-  backgroundColor: colors.sky[500],
-  fontFamily: typography.fontFamily.sans,
-  padding: spacing[4],
-};
+// Access color scales
+colors.sky[500];     // '#4177a6' (primary blue)
+colors.slate[700];   // '#334155' (text color)
+colors.teal[500];    // '#14B8A6' (accent)
+
+// Typography
+typography.fontFamily.sans;  // 'Plus Jakarta Sans', system-ui, ...
+typography.fontSize['2xl'];  // '1.5rem'
+
+// Spacing (4px base unit)
+spacing[4];  // '1rem' (16px)
+spacing[8];  // '2rem' (32px)
 ```
 
-### JSON
+For semantic colors that respect light/dark mode:
 
-For tooling integration (Figma plugins, Style Dictionary, etc.):
+```ts
+import { semantic } from 'warmhub-tokens';
 
-```js
-const tokens = require('@warmhub/tokens/json');
+// Light mode colors
+semantic.light.background;  // '#F8FAFB'
+semantic.light.primary;     // '#4177a6'
+
+// Dark mode colors
+semantic.dark.background;   // '#0F172A'
+semantic.dark.primary;      // '#7eb3d8'
 ```
 
-### Brand Assets
+### JSON (for tooling)
 
-Import logos and icons for consistent branding:
+For Figma plugins, Style Dictionary, or other design tools:
 
 ```js
-// Icon only (SVG)
-import icon from '@warmhub/tokens/assets/icon.svg';
-
-// Full logo with wordmark
-import logoLight from '@warmhub/tokens/assets/logo-light.svg'; // Uses currentColor
-import logoDark from '@warmhub/tokens/assets/logo-dark.svg';   // White text
+const tokens = require('warmhub-tokens/json');
 ```
 
-Available assets:
-- `icon.svg` - WarmHub flame icon (502x695)
-- `logo-light.svg` - Logo with wordmark for light backgrounds (uses `currentColor`)
-- `logo-dark.svg` - Logo with wordmark for dark backgrounds (white)
+## Dark Mode
+
+Add `.dark` or `[data-theme="dark"]` to your root element:
+
+```html
+<html class="dark">
+  <!-- Dark mode active -->
+</html>
+```
+
+All semantic CSS variables automatically switch to dark mode values.
+
+## Brand Assets
+
+Import logos and icons:
+
+```js
+import icon from 'warmhub-tokens/assets/icon.svg';
+import logoLight from 'warmhub-tokens/assets/logo-light.svg';
+import logoDark from 'warmhub-tokens/assets/logo-dark.svg';
+```
+
+| Asset | Description | Use |
+|-------|-------------|-----|
+| `icon.svg` | WarmHub flame icon | Favicons, app icons |
+| `logo-light.svg` | Logo with wordmark | Light backgrounds |
+| `logo-dark.svg` | Logo with wordmark (white) | Dark backgrounds |
 
 ## Token Reference
 
 ### Colors
 
-| Scale | Primary (Sky) | Accent (Teal) | Neutral (Slate) |
+| Scale | Sky (Primary) | Teal (Accent) | Slate (Neutral) |
 |-------|---------------|---------------|-----------------|
-| 500   | `#4177a6`     | `#14B8A6`     | `#64748B`       |
+| 50 | `#f0f7fc` | `#F0FDFA` | `#F8FAFB` |
+| 500 | `#4177a6` | `#14B8A6` | `#64748B` |
+| 900 | `#2c4d6c` | `#134E4A` | `#0F172A` |
+
+### Semantic Colors
+
+| Token | Light | Dark |
+|-------|-------|------|
+| `--wh-background` | Slate 50 | Slate 900 |
+| `--wh-foreground` | Slate 700 | Slate 200 |
+| `--wh-primary` | Sky 500 | Sky 400 |
+| `--wh-accent` | Teal 500 | Teal 400 |
+| `--wh-border` | Slate 200 | Slate 700 |
 
 ### Typography
 
-- **Font Family:** Manrope (sans), Geist Mono (mono)
-- **Scale:** xs (12px) → 6xl (60px)
+- **Font Family:** Plus Jakarta Sans (sans), Geist Mono (mono)
+- **Scale:** xs (12px) to 6xl (60px)
 - **Weights:** light (300), regular (400), medium (500), semibold (600), bold (700)
 
 ### Spacing
 
-Based on 4px increments: `0, 1 (4px), 2 (8px), 3 (12px), 4 (16px), ...`
+4px base unit: `1 = 4px`, `2 = 8px`, `4 = 16px`, `8 = 32px`, etc.
 
-### Semantic Tokens
+### Border Radius
 
-Semantic tokens automatically switch between light and dark modes:
+| Token | Value |
+|-------|-------|
+| `--wh-radius-sm` | 2px |
+| `--wh-radius-md` | 8px |
+| `--wh-radius-lg` | 12px |
+| `--wh-radius-xl` | 16px |
 
-- `--wh-background` / `--wh-foreground`
-- `--wh-primary` / `--wh-primary-foreground`
-- `--wh-secondary` / `--wh-secondary-foreground`
-- `--wh-accent` / `--wh-accent-foreground`
-- `--wh-muted` / `--wh-muted-foreground`
-- `--wh-destructive` / `--wh-destructive-foreground`
-- `--wh-border`, `--wh-input`, `--wh-ring`
+## Package Exports
 
-Add `.dark` or `[data-theme="dark"]` to enable dark mode.
+```
+warmhub-tokens
+├── /           → JS/TS tokens (colors, typography, spacing, etc.)
+├── /css        → Complete CSS bundle with Google Fonts
+├── /css/variables → CSS variables only
+├── /tailwind   → Tailwind CSS preset
+├── /json       → Raw token data
+└── /assets/*   → SVG logos and icons
+```
 
 ## License
 
