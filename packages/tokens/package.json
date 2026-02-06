@@ -5,6 +5,9 @@
   "main": "./js/index.js",
   "module": "./js/index.mjs",
   "types": "./js/index.d.ts",
+  "scripts": {
+    "build": "node build.js"
+  },
   "exports": {
     ".": {
       "import": "./js/index.mjs",

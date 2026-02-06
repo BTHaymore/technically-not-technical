@@ -7,9 +7,9 @@
   "types": "./packages/tokens/js/index.d.ts",
   "exports": {
     ".": {
+      "types": "./packages/tokens/js/index.d.ts",
       "import": "./packages/tokens/js/index.mjs",
-      "require": "./packages/tokens/js/index.js",
-      "types": "./packages/tokens/js/index.d.ts"
+      "require": "./packages/tokens/js/index.js"
     },
     "./css": "./packages/tokens/css/tokens.css",
     "./css/variables": "./packages/tokens/css/variables.css",
@@ -36,6 +36,9 @@
   ],
   "license": "MIT",
   "author": "WarmHub",
+  "scripts": {
+    "build:tokens": "node packages/tokens/build.js"
+  },
   "homepage": "https://warmautomation.github.io/ui-design-system",
   "repository": {
     "type": "git",

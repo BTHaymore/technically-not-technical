@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -12,7 +13,35 @@ import {
   Zap,
   Heart,
   Shield,
+  Copy,
+  Check,
 } from 'lucide-react'
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(text)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0 text-slate-400 hover:text-white hover:bg-slate-700" onClick={handleCopy}>
+      {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+    </Button>
+  )
+}
+
+function CodeLine({ label, code }: { label: string; code: string }) {
+  return (
+    <div className="flex items-center gap-3 rounded-lg bg-slate-900 dark:bg-slate-950 px-4 py-2.5">
+      <span className="shrink-0 text-xs font-medium text-slate-400 w-10">{label}</span>
+      <code className="flex-1 text-sm text-slate-100 truncate">{code}</code>
+      <CopyButton text={code} />
+    </div>
+  )
+}
 
 const quickLinks = [
   {
@@ -217,6 +246,137 @@ export function HomePage() {
               </li>
             </ul>
           </div>
+        </div>
+      </section>
+      {/* Use the Tokens */}
+      <section className="space-y-6">
+        <h2 className="text-lg font-semibold">Use the Tokens</h2>
+        <p className="text-sm text-muted-foreground">
+          Install the <code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens</code> package to use these design tokens in your own project.
+        </p>
+
+        <div className="rounded-xl border border-border bg-card overflow-hidden divide-y divide-border">
+          {/* Install */}
+          <div className="p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">1</span>
+              <h3 className="text-sm font-semibold">Install</h3>
+            </div>
+            <CodeLine label="" code="npm install github:warmautomation/ui-design-system#main" />
+          </div>
+
+          {/* Import */}
+          <div className="p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">2</span>
+              <h3 className="text-sm font-semibold">Import</h3>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <CodeLine label="CSS" code="@import 'warmhub-tokens/css';" />
+              <CodeLine label="JS" code="import { colors } from 'warmhub-tokens';" />
+            </div>
+          </div>
+
+          {/* Stay Updated */}
+          <div className="p-5 space-y-3">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">3</span>
+              <h3 className="text-sm font-semibold">Stay Updated</h3>
+              <span className="text-xs text-muted-foreground">— CSS variables, JS exports, and Tailwind presets all update together.</span>
+            </div>
+            <CodeLine label="" code="npm update warmhub-tokens" />
+          </div>
+        </div>
+
+        {/* Available exports */}
+        <div className="rounded-xl border border-border bg-card overflow-hidden">
+          <div className="border-b border-border px-6 py-3">
+            <h3 className="text-sm font-semibold">Package Exports</h3>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border text-left">
+                  <th className="px-6 py-3 font-medium text-muted-foreground">Import</th>
+                  <th className="px-6 py-3 font-medium text-muted-foreground">Format</th>
+                  <th className="px-6 py-3 font-medium text-muted-foreground">Description</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-border">
+                <tr>
+                  <td className="px-6 py-3"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens</code></td>
+                  <td className="px-6 py-3 text-muted-foreground">JS / TS</td>
+                  <td className="px-6 py-3 text-muted-foreground">Colors, semantic, typography, spacing, radius, shadow</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens/css</code></td>
+                  <td className="px-6 py-3 text-muted-foreground">CSS</td>
+                  <td className="px-6 py-3 text-muted-foreground">Full bundle with Google Fonts + CSS variables</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens/css/variables</code></td>
+                  <td className="px-6 py-3 text-muted-foreground">CSS</td>
+                  <td className="px-6 py-3 text-muted-foreground">CSS variables only (no fonts)</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens/tailwind</code></td>
+                  <td className="px-6 py-3 text-muted-foreground">JS</td>
+                  <td className="px-6 py-3 text-muted-foreground">Tailwind CSS v4 preset</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">warmhub-tokens/json</code></td>
+                  <td className="px-6 py-3 text-muted-foreground">JSON</td>
+                  <td className="px-6 py-3 text-muted-foreground">Raw tokens in W3C Design Tokens format</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Updating Tokens Workflow */}
+      <section className="space-y-6">
+        <h2 className="text-lg font-semibold">Updating Tokens</h2>
+        <p className="text-sm text-muted-foreground">
+          All tokens are managed from a single source of truth. Here's the workflow for making changes:
+        </p>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              step: '1',
+              title: 'Edit tokens.json',
+              description: 'Change any value in packages/tokens/tokens.json — colors, typography, spacing, or semantic tokens.',
+            },
+            {
+              step: '2',
+              title: 'Build',
+              description: 'Run npm run build:tokens to regenerate all output files (CSS, JS, TypeScript).',
+              code: 'npm run build:tokens',
+            },
+            {
+              step: '3',
+              title: 'Verify',
+              description: 'All output files regenerate automatically. The docs-app picks up changes immediately in dev mode.',
+            },
+            {
+              step: '4',
+              title: 'Push to main',
+              description: 'Other teams get the updated tokens on their next npm install. No manual sync needed.',
+            },
+          ].map((item) => (
+            <div key={item.step} className="rounded-xl border border-border bg-card p-6">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground mb-3">
+                {item.step}
+              </div>
+              <h3 className="font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
+              {item.code && (
+                <pre className="mt-3 overflow-x-auto rounded-lg bg-slate-900 p-3 text-sm text-slate-100 dark:bg-slate-950">
+                  <code>{item.code}</code>
+                </pre>
+              )}
+            </div>
+          ))}
         </div>
       </section>
       </div>

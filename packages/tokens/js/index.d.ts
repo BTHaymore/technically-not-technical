@@ -1,6 +1,7 @@
 /**
  * WarmHub Design System - TypeScript Declarations
- * @warmhub/tokens v2.0.0
+ * Auto-generated from tokens.json — DO NOT EDIT
+ * Run "node build.js" to regenerate.
  */
 
 export interface ColorScale {
@@ -45,6 +46,22 @@ export interface SemanticColors {
   border: string;
   input: string;
   ring: string;
+  popover: string;
+  popoverForeground: string;
+  chart1: string;
+  chart2: string;
+  chart3: string;
+  chart4: string;
+  chart5: string;
+  sidebar: string;
+  sidebarBackground: string;
+  sidebarForeground: string;
+  sidebarPrimary: string;
+  sidebarPrimaryForeground: string;
+  sidebarAccent: string;
+  sidebarAccentForeground: string;
+  sidebarBorder: string;
+  sidebarRing: string;
 }
 
 export interface Semantic {
@@ -58,11 +75,11 @@ export interface Typography {
     mono: string;
   };
   fontSize: {
-    xs: string;
-    sm: string;
-    base: string;
-    lg: string;
-    xl: string;
+    'xs': string;
+    'sm': string;
+    'base': string;
+    'lg': string;
+    'xl': string;
     '2xl': string;
     '3xl': string;
     '4xl': string;

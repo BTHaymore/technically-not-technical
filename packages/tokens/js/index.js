@@ -1,6 +1,7 @@
 /**
  * WarmHub Design System - JavaScript Tokens (CommonJS)
- * @warmhub/tokens v2.0.0
+ * Auto-generated from tokens.json — DO NOT EDIT
+ * Run "node build.js" to regenerate.
  */
 
 const colors = {
@@ -84,6 +85,22 @@ const semantic = {
     border: '#E2E8ED',
     input: '#E2E8ED',
     ring: '#4177a6',
+    popover: '#FFFFFF',
+    popoverForeground: '#334155',
+    chart1: '#4177a6',
+    chart2: '#3B82F6',
+    chart3: '#8B5CF6',
+    chart4: '#F59E0B',
+    chart5: '#EC4899',
+    sidebar: '#F8FAFB',
+    sidebarBackground: '#F8FAFB',
+    sidebarForeground: '#334155',
+    sidebarPrimary: '#4177a6',
+    sidebarPrimaryForeground: '#FFFFFF',
+    sidebarAccent: '#E2E8ED',
+    sidebarAccentForeground: '#334155',
+    sidebarBorder: '#E2E8ED',
+    sidebarRing: '#4177a6',
   },
   dark: {
     background: '#0F172A',
@@ -103,6 +120,22 @@ const semantic = {
     border: '#334155',
     input: '#334155',
     ring: '#7eb3d8',
+    popover: '#1E293B',
+    popoverForeground: '#E2E8ED',
+    chart1: '#7eb3d8',
+    chart2: '#60A5FA',
+    chart3: '#A78BFA',
+    chart4: '#FBBF24',
+    chart5: '#F472B6',
+    sidebar: '#1E293B',
+    sidebarBackground: '#1E293B',
+    sidebarForeground: '#E2E8ED',
+    sidebarPrimary: '#7eb3d8',
+    sidebarPrimaryForeground: '#0F172A',
+    sidebarAccent: '#1c3448',
+    sidebarAccentForeground: '#E2E8ED',
+    sidebarBorder: '#334155',
+    sidebarRing: '#7eb3d8',
   },
 };
 
@@ -138,19 +171,19 @@ const typography = {
 };
 
 const spacing = {
-  0: '0',
-  1: '0.25rem',
-  2: '0.5rem',
-  3: '0.75rem',
-  4: '1rem',
-  5: '1.25rem',
-  6: '1.5rem',
-  8: '2rem',
-  10: '2.5rem',
-  12: '3rem',
-  16: '4rem',
-  20: '5rem',
-  24: '6rem',
+  '0': '0',
+  '1': '0.25rem',
+  '2': '0.5rem',
+  '3': '0.75rem',
+  '4': '1rem',
+  '5': '1.25rem',
+  '6': '1.5rem',
+  '8': '2rem',
+  '10': '2.5rem',
+  '12': '3rem',
+  '16': '4rem',
+  '20': '5rem',
+  '24': '6rem',
 };
 
 const radius = {

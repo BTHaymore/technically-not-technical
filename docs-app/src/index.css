@@ -1,91 +1,93 @@
 /*
  * WARMHUB DESIGN SYSTEM v2 - Docs App Styles
- * Tailwind CSS v4 with design tokens
+ * Tailwind CSS v4 with design tokens from warmhub-tokens
  */
 
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "warmhub-tokens/css/variables";
 
 @custom-variant dark (&:is(.dark *));
 
 /* ========================================
  * THEME CONFIGURATION
+ * Color scales sourced from warmhub-tokens
  * ======================================== */
 @theme {
   /* Colors - Slate Neutrals */
-  --color-slate-50: #F8FAFB;
-  --color-slate-100: #F1F5F7;
-  --color-slate-200: #E2E8ED;
-  --color-slate-300: #CBD5DC;
-  --color-slate-400: #94A3B0;
-  --color-slate-500: #64748B;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1E293B;
-  --color-slate-900: #0F172A;
-  --color-slate-950: #020617;
+  --color-slate-50: var(--wh-color-slate-50);
+  --color-slate-100: var(--wh-color-slate-100);
+  --color-slate-200: var(--wh-color-slate-200);
+  --color-slate-300: var(--wh-color-slate-300);
+  --color-slate-400: var(--wh-color-slate-400);
+  --color-slate-500: var(--wh-color-slate-500);
+  --color-slate-600: var(--wh-color-slate-600);
+  --color-slate-700: var(--wh-color-slate-700);
+  --color-slate-800: var(--wh-color-slate-800);
+  --color-slate-900: var(--wh-color-slate-900);
+  --color-slate-950: var(--wh-color-slate-950);
 
   /* Colors - Sky Primary */
-  --color-sky-50: #f0f7fc;
-  --color-sky-100: #e1eff8;
-  --color-sky-200: #c3dfef;
-  --color-sky-300: #9ac8e3;
-  --color-sky-400: #6aadd4;
-  --color-sky-500: #4177a6;
-  --color-sky-600: #416d93;
-  --color-sky-700: #3d6a91;
-  --color-sky-800: #39688a;
-  --color-sky-900: #2c4d6c;
-  --color-sky-950: #1c3448;
+  --color-sky-50: var(--wh-color-sky-50);
+  --color-sky-100: var(--wh-color-sky-100);
+  --color-sky-200: var(--wh-color-sky-200);
+  --color-sky-300: var(--wh-color-sky-300);
+  --color-sky-400: var(--wh-color-sky-400);
+  --color-sky-500: var(--wh-color-sky-500);
+  --color-sky-600: var(--wh-color-sky-600);
+  --color-sky-700: var(--wh-color-sky-700);
+  --color-sky-800: var(--wh-color-sky-800);
+  --color-sky-900: var(--wh-color-sky-900);
+  --color-sky-950: var(--wh-color-sky-950);
 
   /* Colors - Teal Accent */
-  --color-teal-50: #F0FDFA;
-  --color-teal-100: #CCFBF1;
-  --color-teal-200: #99F6E4;
-  --color-teal-300: #5EEAD4;
-  --color-teal-400: #2DD4BF;
-  --color-teal-500: #14B8A6;
-  --color-teal-600: #0D9488;
-  --color-teal-700: #0F766E;
-  --color-teal-800: #115E59;
-  --color-teal-900: #134E4A;
-  --color-teal-950: #042F2E;
+  --color-teal-50: var(--wh-color-teal-50);
+  --color-teal-100: var(--wh-color-teal-100);
+  --color-teal-200: var(--wh-color-teal-200);
+  --color-teal-300: var(--wh-color-teal-300);
+  --color-teal-400: var(--wh-color-teal-400);
+  --color-teal-500: var(--wh-color-teal-500);
+  --color-teal-600: var(--wh-color-teal-600);
+  --color-teal-700: var(--wh-color-teal-700);
+  --color-teal-800: var(--wh-color-teal-800);
+  --color-teal-900: var(--wh-color-teal-900);
+  --color-teal-950: var(--wh-color-teal-950);
 
   /* Colors - Success */
-  --color-success-50: #ECFDF5;
-  --color-success-500: #10B981;
-  --color-success-600: #059669;
+  --color-success-50: var(--wh-color-success-50);
+  --color-success-500: var(--wh-color-success-500);
+  --color-success-600: var(--wh-color-success-600);
 
   /* Colors - Warning */
-  --color-warning-50: #FFFBEB;
-  --color-warning-500: #F59E0B;
-  --color-warning-600: #D97706;
+  --color-warning-50: var(--wh-color-warning-50);
+  --color-warning-500: var(--wh-color-warning-500);
+  --color-warning-600: var(--wh-color-warning-600);
 
   /* Colors - Error */
-  --color-error-50: #FEF2F2;
-  --color-error-500: #EF4444;
-  --color-error-600: #DC2626;
+  --color-error-50: var(--wh-color-error-50);
+  --color-error-500: var(--wh-color-error-500);
+  --color-error-600: var(--wh-color-error-600);
 
   /* Colors - Info */
-  --color-info-50: #EFF6FF;
-  --color-info-500: #3B82F6;
-  --color-info-600: #2563EB;
+  --color-info-50: var(--wh-color-info-50);
+  --color-info-500: var(--wh-color-info-500);
+  --color-info-600: var(--wh-color-info-600);
 
   /* Typography */
-  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: var(--wh-font-sans);
+  --font-mono: var(--wh-font-mono);
 
-  /* Spacing */
+  /* Docs-app-only spacing extras */
   --spacing-4\.5: 1.125rem;
   --spacing-13: 3.25rem;
   --spacing-15: 3.75rem;
   --spacing-18: 4.5rem;
 
   /* Shadows */
-  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
-  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.06), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.06);
+  --shadow-xs: var(--wh-shadow-xs);
+  --shadow-sm: var(--wh-shadow-sm);
+  --shadow-md: var(--wh-shadow-md);
+  --shadow-lg: var(--wh-shadow-lg);
   --shadow-glow-sky: 0 0 20px -5px rgba(65, 119, 166, 0.3);
 
   /* Animations */
@@ -110,124 +112,52 @@
 }
 
 /* ========================================
- * WARMHUB V2 DESIGN SYSTEM COLORS
- * ShadCN Compatible CSS Custom Properties
+ * ALIAS LAYER: warmhub-tokens → ShadCN convention
+ * Dark mode works automatically because the
+ * underlying --wh-* vars change under .dark
  * ======================================== */
 :root {
-  /* Core Backgrounds */
-  --background: #F8FAFB;
-  --foreground: #334155;
-
-  /* Card/Surface */
-  --card: #FFFFFF;
-  --card-foreground: #334155;
-
-  /* Popover */
-  --popover: #FFFFFF;
-  --popover-foreground: #334155;
-
-  /* Primary: Sky Blue */
-  --primary: #4177a6;
-  --primary-foreground: #FFFFFF;
-
-  /* Secondary: Slate */
-  --secondary: #E2E8ED;
-  --secondary-foreground: #334155;
-
-  /* Muted */
-  --muted: #F1F5F7;
-  --muted-foreground: #64748B;
-
-  /* Accent: Warm Teal */
-  --accent: #14B8A6;
-  --accent-foreground: #FFFFFF;
-
-  /* Destructive */
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-
-  /* Border & Input */
-  --border: #E2E8ED;
-  --input: #E2E8ED;
-  --ring: #4177a6;
+  /* Core */
+  --background: var(--wh-background);
+  --foreground: var(--wh-foreground);
+  --card: var(--wh-card);
+  --card-foreground: var(--wh-card-foreground);
+  --popover: var(--wh-popover);
+  --popover-foreground: var(--wh-popover-foreground);
+  --primary: var(--wh-primary);
+  --primary-foreground: var(--wh-primary-foreground);
+  --secondary: var(--wh-secondary);
+  --secondary-foreground: var(--wh-secondary-foreground);
+  --muted: var(--wh-muted);
+  --muted-foreground: var(--wh-muted-foreground);
+  --accent: var(--wh-accent);
+  --accent-foreground: var(--wh-accent-foreground);
+  --destructive: var(--wh-destructive);
+  --destructive-foreground: var(--wh-destructive-foreground);
+  --border: var(--wh-border);
+  --input: var(--wh-input);
+  --ring: var(--wh-ring);
 
   /* Radius */
   --radius: 0.375rem;
 
-  /* Chart Colors */
-  --chart-1: #4177a6;
-  --chart-2: #3B82F6;
-  --chart-3: #8B5CF6;
-  --chart-4: #F59E0B;
-  --chart-5: #EC4899;
+  /* Charts */
+  --chart-1: var(--wh-chart1);
+  --chart-2: var(--wh-chart2);
+  --chart-3: var(--wh-chart3);
+  --chart-4: var(--wh-chart4);
+  --chart-5: var(--wh-chart5);
 
   /* Sidebar */
-  --sidebar: #F8FAFB;
-  --sidebar-background: #F8FAFB;
-  --sidebar-foreground: #334155;
-  --sidebar-primary: #4177a6;
-  --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E2E8ED;
-  --sidebar-accent-foreground: #334155;
-  --sidebar-border: #E2E8ED;
-  --sidebar-ring: #4177a6;
-}
-
-.dark {
-  /* Core Backgrounds */
-  --background: #0F172A;
-  --foreground: #E2E8ED;
-
-  /* Card/Surface */
-  --card: #1E293B;
-  --card-foreground: #E2E8ED;
-
-  /* Popover */
-  --popover: #1E293B;
-  --popover-foreground: #E2E8ED;
-
-  /* Primary: Sky Blue (brighter for dark) */
-  --primary: #7eb3d8;
-  --primary-foreground: #0F172A;
-
-  /* Secondary */
-  --secondary: #334155;
-  --secondary-foreground: #E2E8ED;
-
-  /* Muted */
-  --muted: #1E293B;
-  --muted-foreground: #94A3B0;
-
-  /* Accent: Warm Teal */
-  --accent: #2DD4BF;
-  --accent-foreground: #0F172A;
-
-  /* Destructive */
-  --destructive: #F87171;
-  --destructive-foreground: #FFFFFF;
-
-  /* Border & Input */
-  --border: #334155;
-  --input: #334155;
-  --ring: #7eb3d8;
-
-  /* Chart Colors (Dark mode) */
-  --chart-1: #7eb3d8;
-  --chart-2: #60A5FA;
-  --chart-3: #A78BFA;
-  --chart-4: #FBBF24;
-  --chart-5: #F472B6;
-
-  /* Sidebar */
-  --sidebar: #1E293B;
-  --sidebar-background: #1E293B;
-  --sidebar-foreground: #E2E8ED;
-  --sidebar-primary: #7eb3d8;
-  --sidebar-primary-foreground: #0F172A;
-  --sidebar-accent: #1c3448;
-  --sidebar-accent-foreground: #E2E8ED;
-  --sidebar-border: #334155;
-  --sidebar-ring: #7eb3d8;
+  --sidebar: var(--wh-sidebar);
+  --sidebar-background: var(--wh-sidebar-background);
+  --sidebar-foreground: var(--wh-sidebar-foreground);
+  --sidebar-primary: var(--wh-sidebar-primary);
+  --sidebar-primary-foreground: var(--wh-sidebar-primary-foreground);
+  --sidebar-accent: var(--wh-sidebar-accent);
+  --sidebar-accent-foreground: var(--wh-sidebar-accent-foreground);
+  --sidebar-border: var(--wh-sidebar-border);
+  --sidebar-ring: var(--wh-sidebar-ring);
 }
 
 /* ========================================
