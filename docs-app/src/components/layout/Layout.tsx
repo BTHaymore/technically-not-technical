@@ -35,7 +35,7 @@ export function Layout() {
       {/* Main content */}
       <div className="lg:pl-64">
         <Header />
-        <main className="min-h-[calc(100vh-4rem)] p-6 lg:p-8">
+        <main className="min-h-[calc(100vh-4rem)] p-6 lg:p-8 overflow-x-hidden">
           <div className="mx-auto max-w-5xl">
             <Outlet />
           </div>
