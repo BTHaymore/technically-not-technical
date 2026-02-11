@@ -203,6 +203,32 @@ const shadow = {
   lg: '0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.06)',
 };
 
+const component = {
+  table: {
+    borderRadius: 'var(--wh-radius-lg)',
+    borderColor: 'var(--wh-border)',
+    fontSize: 'var(--wh-font-size-sm)',
+    lineHeight: 'var(--wh-line-height-normal)',
+    cellPaddingY: 'var(--wh-spacing-3)',
+    cellPaddingX: 'var(--wh-spacing-4)',
+    headerBg: 'color-mix(in srgb, var(--wh-muted) 50%, var(--wh-background))',
+    headerColor: 'var(--wh-foreground)',
+    headerFontWeight: 'var(--wh-font-weight-medium)',
+  },
+  badge: {
+    borderRadius: 'var(--wh-radius-full)',
+    fontSize: 'var(--wh-font-size-xs)',
+    fontWeight: 'var(--wh-font-weight-medium)',
+    paddingY: '0.125rem',
+    paddingX: 'var(--wh-spacing-2)',
+    secondaryBg: 'color-mix(in srgb, var(--wh-primary) 15%, transparent)',
+    secondaryColor: 'var(--wh-primary)',
+    outlineBg: 'color-mix(in srgb, var(--wh-accent) 12%, transparent)',
+    outlineColor: 'var(--wh-accent)',
+    outlineBorder: 'color-mix(in srgb, var(--wh-accent) 25%, transparent)',
+  },
+};
+
 module.exports = {
   colors,
   semantic,
@@ -210,6 +236,7 @@ module.exports = {
   spacing,
   radius,
   shadow,
+  component,
 };
 
 module.exports.colors = colors;
@@ -218,3 +245,4 @@ module.exports.typography = typography;
 module.exports.spacing = spacing;
 module.exports.radius = radius;
 module.exports.shadow = shadow;
+module.exports.component = component;

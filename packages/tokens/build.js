@@ -118,6 +118,17 @@ function buildCSS() {
   }
   lines.push('');
 
+  // Component tokens
+  if (tokens.component) {
+    lines.push('  /* Component Tokens */');
+    for (const [component, props] of Object.entries(tokens.component)) {
+      for (const [key, token] of Object.entries(props)) {
+        lines.push(`  --wh-${component}-${camelToKebab(key)}: ${token.$value};`);
+      }
+      lines.push('');
+    }
+  }
+
   // Semantic light
   lines.push('  /* Semantic Tokens (Light) */');
   for (const [key, token] of Object.entries(tokens.semantic.light)) {
@@ -192,6 +203,22 @@ function buildFlatObj(obj, indent) {
   return lines.join('\n');
 }
 
+function buildComponentObj(indent) {
+  const pad = ' '.repeat(indent);
+  const pad2 = ' '.repeat(indent + 2);
+  const lines = [];
+  if (tokens.component) {
+    for (const [component, props] of Object.entries(tokens.component)) {
+      lines.push(`${pad}${component}: {`);
+      for (const [key, token] of Object.entries(props)) {
+        lines.push(`${pad2}${jsKey(key)}: ${jsVal(token.$value)},`);
+      }
+      lines.push(`${pad}},`);
+    }
+  }
+  return lines.join('\n');
+}
+
 // ─── CJS Generation ───────────────────────────────────────
 
 function buildCJS() {
@@ -221,6 +248,10 @@ const shadow = {
 ${buildFlatObj(tokens.shadow, 2)}
 };
 
+const component = {
+${buildComponentObj(2)}
+};
+
 module.exports = {
   colors,
   semantic,
@@ -228,6 +259,7 @@ module.exports = {
   spacing,
   radius,
   shadow,
+  component,
 };
 
 module.exports.colors = colors;
@@ -236,6 +268,7 @@ module.exports.typography = typography;
 module.exports.spacing = spacing;
 module.exports.radius = radius;
 module.exports.shadow = shadow;
+module.exports.component = component;
 `;
 }
 
@@ -268,6 +301,10 @@ export const shadow = {
 ${buildFlatObj(tokens.shadow, 2)}
 };
 
+export const component = {
+${buildComponentObj(2)}
+};
+
 // Default export with all tokens
 export default {
   colors,
@@ -276,6 +313,7 @@ export default {
   spacing,
   radius,
   shadow,
+  component,
 };
 `;
 }
@@ -392,6 +430,25 @@ function buildDTS() {
   }
   lines.push('}', '');
 
+  // Component interfaces
+  if (tokens.component) {
+    for (const [comp, props] of Object.entries(tokens.component)) {
+      const interfaceName = comp.charAt(0).toUpperCase() + comp.slice(1) + 'Tokens';
+      lines.push(`export interface ${interfaceName} {`);
+      for (const key of Object.keys(props)) {
+        lines.push(`  ${key}: string;`);
+      }
+      lines.push('}', '');
+    }
+
+    lines.push('export interface Component {');
+    for (const comp of Object.keys(tokens.component)) {
+      const interfaceName = comp.charAt(0).toUpperCase() + comp.slice(1) + 'Tokens';
+      lines.push(`  ${comp}: ${interfaceName};`);
+    }
+    lines.push('}', '');
+  }
+
   // Exports
   lines.push('export declare const colors: Colors;');
   lines.push('export declare const semantic: Semantic;');
@@ -399,6 +456,9 @@ function buildDTS() {
   lines.push('export declare const spacing: Spacing;');
   lines.push('export declare const radius: Radius;');
   lines.push('export declare const shadow: Shadow;');
+  if (tokens.component) {
+    lines.push('export declare const component: Component;');
+  }
   lines.push('');
   lines.push('declare const tokens: {');
   lines.push('  colors: Colors;');
@@ -407,6 +467,9 @@ function buildDTS() {
   lines.push('  spacing: Spacing;');
   lines.push('  radius: Radius;');
   lines.push('  shadow: Shadow;');
+  if (tokens.component) {
+    lines.push('  component: Component;');
+  }
   lines.push('};');
   lines.push('');
   lines.push('export default tokens;');

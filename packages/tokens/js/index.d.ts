@@ -133,12 +133,43 @@ export interface Shadow {
   lg: string;
 }
 
+export interface TableTokens {
+  borderRadius: string;
+  borderColor: string;
+  fontSize: string;
+  lineHeight: string;
+  cellPaddingY: string;
+  cellPaddingX: string;
+  headerBg: string;
+  headerColor: string;
+  headerFontWeight: string;
+}
+
+export interface BadgeTokens {
+  borderRadius: string;
+  fontSize: string;
+  fontWeight: string;
+  paddingY: string;
+  paddingX: string;
+  secondaryBg: string;
+  secondaryColor: string;
+  outlineBg: string;
+  outlineColor: string;
+  outlineBorder: string;
+}
+
+export interface Component {
+  table: TableTokens;
+  badge: BadgeTokens;
+}
+
 export declare const colors: Colors;
 export declare const semantic: Semantic;
 export declare const typography: Typography;
 export declare const spacing: Spacing;
 export declare const radius: Radius;
 export declare const shadow: Shadow;
+export declare const component: Component;
 
 declare const tokens: {
   colors: Colors;
@@ -147,6 +178,7 @@ declare const tokens: {
   spacing: Spacing;
   radius: Radius;
   shadow: Shadow;
+  component: Component;
 };
 
 export default tokens;
