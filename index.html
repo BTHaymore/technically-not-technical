@@ -3,25 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Claude for WarmHub — Field Guide</title>
+  <title>Technically Not Technical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    const theme = localStorage.getItem('wh-theme') || 'light';
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── WarmHub tokens — light ── */
     :root {
-      --bg: #f9f8f5;
-      --surface: #ffffff;
-      --border: #e8e4dd;
-      --text: #1a1917;
-      --muted: #6b6660;
-      --accent: #4177a6;
-      --accent-light: #eef4fa;
-      --accent-2: #d4602a;
-      --accent-2-light: #fdf2ec;
+      --wh-background:           #F8FAFB;
+      --wh-foreground:           #334155;
+      --wh-card:                 #FFFFFF;
+      --wh-card-foreground:      #334155;
+      --wh-primary:              #4177a6;
+      --wh-primary-foreground:   #FFFFFF;
+      --wh-secondary:            #E2E8ED;
+      --wh-secondary-foreground: #334155;
+      --wh-muted:                #F1F5F7;
+      --wh-muted-foreground:     #64748B;
+      --wh-accent:               #14B8A6;
+      --wh-accent-foreground:    #FFFFFF;
+      --wh-border:               #E2E8ED;
+      --wh-ring:                 #4177a6;
+      /* primitives */
+      --wh-color-sky-50:         #f0f7fc;
+      --wh-color-sky-900:        #2c4d6c;
+      --wh-color-teal-50:        #F0FDFA;
+      --wh-color-teal-900:       #134E4A;
+      /* typography */
+      --wh-font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+      --wh-font-mono: 'Geist Mono', 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    /* ── WarmHub tokens — dark ── */
+    .dark {
+      --wh-background:           #0F172A;
+      --wh-foreground:           #E2E8ED;
+      --wh-card:                 #1E293B;
+      --wh-card-foreground:      #E2E8ED;
+      --wh-primary:              #7eb3d8;
+      --wh-primary-foreground:   #0F172A;
+      --wh-secondary:            #334155;
+      --wh-secondary-foreground: #E2E8ED;
+      --wh-muted:                #1E293B;
+      --wh-muted-foreground:     #94A3B0;
+      --wh-accent:               #2DD4BF;
+      --wh-accent-foreground:    #0F172A;
+      --wh-border:               #334155;
+      --wh-ring:                 #7eb3d8;
+      --wh-color-sky-50:         #1c3448;
+      --wh-color-sky-900:        #1c3448;
+      --wh-color-teal-50:        #042F2E;
+      --wh-color-teal-900:       #042F2E;
+    }
+
+    /* ── Alias layer — maps local vars to tokens ── */
+    :root, .dark {
+      --bg:           var(--wh-background);
+      --surface:      var(--wh-card);
+      --border:       var(--wh-border);
+      --text:         var(--wh-foreground);
+      --muted:        var(--wh-muted-foreground);
+      --accent:       var(--wh-primary);
+      --accent-light: var(--wh-color-sky-50);
+      --accent-2:     var(--wh-accent);
+      --accent-2-light: var(--wh-color-teal-50);
       --sidebar-w: 260px;
       --header-h: 56px;
       --radius: 10px;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+      --font:      var(--wh-font-sans);
+      --font-mono: var(--wh-font-mono);
     }
 
     html { scroll-behavior: smooth; }
@@ -66,6 +122,27 @@
       padding-left: 12px;
       margin-left: 4px;
     }
+
+    .theme-toggle {
+      margin-left: auto;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--muted);
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .theme-toggle:hover { background: var(--border); color: var(--text); }
+
+    .theme-icon-dark { display: none; }
+    .dark .theme-icon-light { display: none; }
+    .dark .theme-icon-dark { display: inline; }
 
     /* ── Layout ── */
     .layout {
@@ -462,6 +539,10 @@
   <header class="site-header">
     <div class="logo">WarmHub <span>× Claude</span></div>
     <span class="tagline">Field Guide</span>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+      <span class="theme-icon-light">☀︎</span>
+      <span class="theme-icon-dark">☽</span>
+    </button>
   </header>
 
   <div class="layout">
@@ -506,7 +587,7 @@
 
       <!-- Hero -->
       <section class="hero">
-        <h1>Working with <em>Claude</em><br>at WarmHub</h1>
+        <h1>Technically <em>Not</em> Technical</h1>
         <p>A practical field guide — from getting your tools set up to building your own automations. No jargon, no fluff.</p>
       </section>
 
@@ -774,6 +855,12 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    // Dark mode toggle
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('wh-theme', isDark ? 'dark' : 'light');
+    }
   </script>
 </body>
 </html>
