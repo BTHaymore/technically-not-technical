@@ -559,24 +559,19 @@
 
     .checklist-item:last-child { border-bottom: none; }
 
-    .checklist-item input[type="checkbox"] {
+    .checklist-item .check-box {
       margin-top: 3px;
       flex-shrink: 0;
       width: 14px;
       height: 14px;
-      accent-color: var(--accent);
-      cursor: pointer;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+      background: var(--surface);
     }
 
     .checklist-item span {
-      cursor: pointer;
       color: var(--text);
       line-height: 1.5;
-    }
-
-    .checklist-item input[type="checkbox"]:checked + span {
-      color: var(--muted);
-      text-decoration: line-through;
     }
 
     /* ── Footer ── */
@@ -629,7 +624,6 @@
           <a href="#decision-framework" class="toc-link">Chat vs CoWork vs Code</a>
           <a href="#setting-up-tools" class="toc-link">Setting Up Your Tools</a>
           <a href="#first-claude-md" class="toc-link">Your First claude.md</a>
-          <a href="#settings-checklist" class="toc-link">101 Settings Checklist</a>
         </div>
       </div>
 
@@ -644,6 +638,7 @@
           <a href="#claude-md-projects" class="toc-link">claude.md for Projects</a>
           <a href="#first-skill" class="toc-link">Building Your First Skill</a>
           <a href="#first-workflow" class="toc-link">Building Your First Workflow</a>
+          <a href="#setting-up-tools-201" class="toc-link">Setting Up Your Tools</a>
           <a href="#personal-dashboard" class="toc-link">Your Personal Dashboard</a>
         </div>
       </div>
@@ -765,15 +760,106 @@
             <div class="icon icon-101">🛠</div>
             <div class="meta">
               <h3>Setting Up Your Tools</h3>
-              <p>VS Code, Typora, Chrome Extension</p>
+              <p>Configure Claude — settings, capabilities, and connectors</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">🛠</span>
-              <strong>Content coming soon</strong>
-              Step-by-step setup for VS Code with Claude Code, Typora for markdown editing, and the Claude Chrome Extension — with WarmHub-specific settings and recommendations.
+            <div class="checklist">
+
+              <!-- General -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  General
+                  <span class="checklist-group-sub">claude.ai/settings/general</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>What should Claude call you?</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>What best describes your work?</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Personal preferences — add your tone, style, and focus areas <a href="#first-claude-md" style="color: var(--accent); text-decoration: none;">(see prompt guide)</a></span>
+                </div>
+              </div>
+
+              <!-- Capabilities -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Capabilities
+                  <span class="checklist-group-sub">claude.ai/settings/capabilities</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Search and reference past chats — turn on</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Generate memory from chat history — turn on</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Artifacts — turn on</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Inline visualizations — turn on</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Code execution and file creation — turn on</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>AI-powered artifacts — turn on</span>
+                </div>
+              </div>
+
+              <!-- Connectors -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Connectors
+                  <span class="checklist-group-sub">install what applies to you</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>GitHub</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Atlassian</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Box</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Mem</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Slack</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Microsoft 365</span>
+                </div>
+              </div>
+
+              <!-- Desktop App -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">Desktop App</div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Dictation — coming in 201</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -796,115 +882,6 @@
             </div>
           </div>
         </div>
-        <!-- 1.5 Settings Checklist -->
-        <div class="section-card" id="settings-checklist">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">✅</div>
-            <div class="meta">
-              <h3>101 Settings Checklist</h3>
-              <p>Configure Claude before you do anything else</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div class="checklist">
-
-              <!-- General -->
-              <div class="checklist-group">
-                <div class="checklist-group-label">
-                  General
-                  <span class="checklist-group-sub">claude.ai/settings/general</span>
-                </div>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>What should Claude call you?</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>What best describes your work?</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Personal preferences — add your tone, style, and focus areas <a href="#first-claude-md" style="color: var(--accent); text-decoration: none;">(see prompt guide)</a></span>
-                </label>
-              </div>
-
-              <!-- Capabilities -->
-              <div class="checklist-group">
-                <div class="checklist-group-label">
-                  Capabilities
-                  <span class="checklist-group-sub">claude.ai/settings/capabilities</span>
-                </div>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Search and reference past chats — turn on</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Generate memory from chat history — turn on</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Artifacts — turn on</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Inline visualizations — turn on</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Code execution and file creation — turn on</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>AI-powered artifacts — turn on</span>
-                </label>
-              </div>
-
-              <!-- Connectors -->
-              <div class="checklist-group">
-                <div class="checklist-group-label">
-                  Connectors
-                  <span class="checklist-group-sub">install what applies to you</span>
-                </div>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>GitHub</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Atlassian</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Box</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Mem</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Slack</span>
-                </label>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Microsoft 365</span>
-                </label>
-              </div>
-
-              <!-- Desktop App -->
-              <div class="checklist-group">
-                <div class="checklist-group-label">Desktop App</div>
-                <label class="checklist-item">
-                  <input type="checkbox" />
-                  <span>Dictation — coming in 201</span>
-                </label>
-              </div>
-
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- ─── 201 ─── -->
@@ -915,7 +892,26 @@
           <p>Once you're comfortable</p>
         </div>
 
-        <!-- 2.1 claude.md for Projects -->
+        <!-- 2.1 Setting Up Your Tools -->
+        <div class="section-card" id="setting-up-tools-201">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">🛠</div>
+            <div class="meta">
+              <h3>Setting Up Your Tools</h3>
+              <p>VS Code, Typora</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">🛠</span>
+              <strong>Content coming soon</strong>
+              Step-by-step setup for VS Code with Claude Code and Typora for markdown editing — with WarmHub-specific settings and recommendations.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.3 claude.md for Projects -->
         <div class="section-card" id="claude-md-projects">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📁</div>
@@ -934,7 +930,7 @@
           </div>
         </div>
 
-        <!-- 2.2 First Skill -->
+        <!-- 2.4 First Skill -->
         <div class="section-card" id="first-skill">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">⚡</div>
@@ -953,7 +949,7 @@
           </div>
         </div>
 
-        <!-- 2.3 First Workflow -->
+        <!-- 2.5 First Workflow -->
         <div class="section-card" id="first-workflow">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">🔄</div>
@@ -972,7 +968,7 @@
           </div>
         </div>
 
-        <!-- 2.4 Personal Dashboard -->
+        <!-- 2.6 Personal Dashboard -->
         <div class="section-card" id="personal-dashboard">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📊</div>
