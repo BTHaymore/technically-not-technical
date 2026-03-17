@@ -370,6 +370,72 @@
     .section-index-item .title { font-weight: 500; }
     .section-index-item .desc { color: var(--muted); margin-top: 2px; font-size: 12px; }
 
+    /* ── Glossary table ── */
+    .glossary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
+    .glossary-table thead tr {
+      background: var(--bg);
+    }
+
+    .glossary-table th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .glossary-table td {
+      padding: 14px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.6;
+    }
+
+    .glossary-table tr:last-child td { border-bottom: none; }
+
+    .glossary-table tr:hover td { background: var(--bg); }
+
+    .glossary-table td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--text);
+      width: 200px;
+    }
+
+    .glossary-table td:last-child { color: var(--muted); }
+
+    .glossary-table .avail {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .glossary-section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 20px;
+      margin-bottom: 4px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
     /* ── Footer ── */
     .site-footer {
       margin-left: var(--sidebar-w);
@@ -463,11 +529,66 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">📖</span>
-              <strong>Content coming soon</strong>
-              Definitions for Claude, claude.md, skills, workflows, n8n, MCP, CoWork, and other terms you'll encounter working with AI at WarmHub.
-            </div>
+            <div class="glossary-section-label">Tools</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Claude Chat</td>
+                  <td>
+                    Claude that you have conversations with — brainstorm, write, think out loud. Think of it like texting a really smart friend who never gets tired of your questions.
+                    <span class="avail">Browser, mobile, desktop app</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Claude CoWork</td>
+                  <td>
+                    Claude that can actually do things — touch your files, open your browser, build real deliverables. Think of it like having an assistant who can sit down at your computer and handle the task for you.
+                    <span class="avail">Desktop app</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Claude Code</td>
+                  <td>
+                    Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.
+                    <span class="avail">Desktop app · Terminal inside VS Code</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Claude Chrome Extension</td>
+                  <td>
+                    Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.
+                    <span class="avail">Chrome</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Visual Studio Code (VS Code)</td>
+                  <td>
+                    A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.
+                    <span class="avail">Desktop</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Terminal</td>
+                  <td>
+                    Where you type commands that do things — install stuff, create files, navigate folders. Think of it like a direct line to your computer — instead of clicking through menus, you type exactly what you want it to do.
+                    <span class="avail">Inside VS Code · Standalone app</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Typora</td>
+                  <td>
+                    A markdown editor that makes .md files easy to read and edit. Think of it like opening a markdown file in Word instead of Notepad — clean and readable instead of full of symbols.
+                    <span class="avail">Desktop</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
