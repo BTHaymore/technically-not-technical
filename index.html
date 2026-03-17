@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude for WarmHub — Field Guide</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f8f5;
+      --surface: #ffffff;
+      --border: #e8e4dd;
+      --text: #1a1917;
+      --muted: #6b6660;
+      --accent: #4177a6;
+      --accent-light: #eef4fa;
+      --accent-2: #d4602a;
+      --accent-2-light: #fdf2ec;
+      --sidebar-w: 260px;
+      --header-h: 56px;
+      --radius: 10px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--header-h);
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 12px;
+      z-index: 100;
+    }
+
+    .site-header .logo {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+
+    .site-header .logo span {
+      color: var(--accent);
+    }
+
+    .site-header .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      border-left: 1px solid var(--border);
+      padding-left: 12px;
+      margin-left: 4px;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: flex;
+      padding-top: var(--header-h);
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      position: fixed;
+      top: var(--header-h);
+      bottom: 0;
+      left: 0;
+      overflow-y: auto;
+      padding: 24px 16px 40px;
+      border-right: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .toc-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 8px;
+      margin-bottom: 8px;
+    }
+
+    .toc-section {
+      margin-bottom: 20px;
+    }
+
+    .toc-section-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--text);
+      user-select: none;
+      transition: background 0.15s;
+    }
+
+    .toc-section-header:hover { background: var(--bg); }
+
+    .toc-section-header .badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 20px;
+      margin-right: 2px;
+    }
+
+    .badge-101 { background: var(--accent-light); color: var(--accent); }
+    .badge-201 { background: var(--accent-2-light); color: var(--accent-2); }
+
+    .toc-section-header .chevron {
+      margin-left: auto;
+      transition: transform 0.2s;
+      opacity: 0.4;
+      font-size: 11px;
+    }
+
+    .toc-section.open .chevron { transform: rotate(180deg); }
+
+    .toc-links {
+      display: none;
+      flex-direction: column;
+      gap: 1px;
+      margin-top: 4px;
+      padding-left: 8px;
+    }
+
+    .toc-section.open .toc-links { display: flex; }
+
+    .toc-link {
+      display: block;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background 0.12s, color 0.12s;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-link:hover {
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .toc-link.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    /* ── Main content ── */
+    .main {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      padding: 48px 64px 96px;
+      max-width: calc(var(--sidebar-w) + 760px);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 56px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    /* ── Level sections ── */
+    .level-block {
+      margin-bottom: 64px;
+    }
+
+    .level-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .level-badge {
+      font-size: 13px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .level-badge-101 {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .level-badge-201 {
+      background: var(--accent-2);
+      color: #fff;
+    }
+
+    .level-header h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    .level-header p {
+      font-size: 14px;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    /* ── Sub-section cards ── */
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .section-toggle {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 18px 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.12s;
+    }
+
+    .section-toggle:hover { background: var(--bg); }
+
+    .section-toggle .icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .icon-101 { background: var(--accent-light); }
+    .icon-201 { background: var(--accent-2-light); }
+
+    .section-toggle .meta {
+      flex: 1;
+    }
+
+    .section-toggle .meta h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .section-toggle .meta p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .section-toggle .expand-icon {
+      font-size: 18px;
+      color: var(--muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .section-card.open .expand-icon { transform: rotate(45deg); }
+
+    .section-body {
+      display: none;
+      padding: 0 22px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-card.open .section-body { display: block; }
+
+    .placeholder-banner {
+      background: var(--bg);
+      border: 1.5px dashed var(--border);
+      border-radius: 8px;
+      padding: 32px 24px;
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .placeholder-banner .placeholder-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .placeholder-banner strong {
+      display: block;
+      font-size: 15px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    /* ── Section index ── */
+    .section-index {
+      margin-top: 16px;
+    }
+
+    .section-index-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    .section-index-item:last-child { border-bottom: none; }
+
+    .section-index-item .num {
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 20px;
+    }
+
+    .section-index-item .title { font-weight: 500; }
+    .section-index-item .desc { color: var(--muted); margin-top: 2px; font-size: 12px; }
+
+    /* ── Footer ── */
+    .site-footer {
+      margin-left: var(--sidebar-w);
+      padding: 24px 64px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; padding: 24px 20px 64px; }
+      .site-footer { margin-left: 0; padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">WarmHub <span>× Claude</span></div>
+    <span class="tagline">Field Guide</span>
+  </header>
+
+  <div class="layout">
+
+    <!-- Sidebar -->
+    <nav class="sidebar" aria-label="Table of contents">
+      <div class="toc-label">Contents</div>
+
+      <!-- 101 Section -->
+      <div class="toc-section open" id="toc-101">
+        <div class="toc-section-header" onclick="toggleToc('toc-101')">
+          <span class="badge badge-101">101</span>
+          Getting Set Up
+          <span class="chevron">▾</span>
+        </div>
+        <div class="toc-links">
+          <a href="#glossary" class="toc-link">Glossary &amp; Acronyms</a>
+          <a href="#decision-framework" class="toc-link">Chat vs CoWork vs Code</a>
+          <a href="#setting-up-tools" class="toc-link">Setting Up Your Tools</a>
+          <a href="#first-claude-md" class="toc-link">Your First claude.md</a>
+        </div>
+      </div>
+
+      <!-- 201 Section -->
+      <div class="toc-section open" id="toc-201">
+        <div class="toc-section-header" onclick="toggleToc('toc-201')">
+          <span class="badge badge-201">201</span>
+          Going Deeper
+          <span class="chevron">▾</span>
+        </div>
+        <div class="toc-links">
+          <a href="#claude-md-projects" class="toc-link">claude.md for Projects</a>
+          <a href="#first-skill" class="toc-link">Building Your First Skill</a>
+          <a href="#first-workflow" class="toc-link">Building Your First Workflow</a>
+          <a href="#personal-dashboard" class="toc-link">Your Personal Dashboard</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main class="main">
+
+      <!-- Hero -->
+      <section class="hero">
+        <h1>Working with <em>Claude</em><br>at WarmHub</h1>
+        <p>A practical field guide — from getting your tools set up to building your own automations. No jargon, no fluff.</p>
+      </section>
+
+      <!-- ─── 101 ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <span class="level-badge level-badge-101">101</span>
+          <h2>Getting Set Up</h2>
+          <p>Start here</p>
+        </div>
+
+        <!-- 1.1 Glossary -->
+        <div class="section-card" id="glossary">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">📖</div>
+            <div class="meta">
+              <h3>Glossary &amp; Acronyms</h3>
+              <p>Terms you'll see everywhere — decoded</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">📖</span>
+              <strong>Content coming soon</strong>
+              Definitions for Claude, claude.md, skills, workflows, n8n, MCP, CoWork, and other terms you'll encounter working with AI at WarmHub.
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.2 Decision Framework -->
+        <div class="section-card" id="decision-framework">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">🧭</div>
+            <div class="meta">
+              <h3>Chat vs CoWork vs Code Decision Framework</h3>
+              <p>Which Claude tool to use and when</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">🧭</span>
+              <strong>Content coming soon</strong>
+              A decision guide for knowing when to reach for Claude Chat, Claude CoWork, or Claude Code — with real examples from WarmHub workflows.
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.3 Setting Up Tools -->
+        <div class="section-card" id="setting-up-tools">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">🛠</div>
+            <div class="meta">
+              <h3>Setting Up Your Tools</h3>
+              <p>VS Code, Typora, Chrome Extension</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">🛠</span>
+              <strong>Content coming soon</strong>
+              Step-by-step setup for VS Code with Claude Code, Typora for markdown editing, and the Claude Chrome Extension — with WarmHub-specific settings and recommendations.
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.4 First claude.md -->
+        <div class="section-card" id="first-claude-md">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">📝</div>
+            <div class="meta">
+              <h3>Your First claude.md + Prompt Guide</h3>
+              <p>Teaching Claude who you are and how to work with you</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">📝</span>
+              <strong>Content coming soon</strong>
+              How to write your personal claude.md file, what to include, and a starter prompt library for the most common WarmHub tasks.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── 201 ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <span class="level-badge level-badge-201">201</span>
+          <h2>Going Deeper</h2>
+          <p>Once you're comfortable</p>
+        </div>
+
+        <!-- 2.1 claude.md for Projects -->
+        <div class="section-card" id="claude-md-projects">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">📁</div>
+            <div class="meta">
+              <h3>claude.md for Projects</h3>
+              <p>Context files that live with your work</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">📁</span>
+              <strong>Content coming soon</strong>
+              How to create project-level claude.md files, what belongs in them vs. your personal one, and how Claude uses them when you open a folder in VS Code.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.2 First Skill -->
+        <div class="section-card" id="first-skill">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">⚡</div>
+            <div class="meta">
+              <h3>Building Your First Skill</h3>
+              <p>Reusable prompt templates for Claude Code</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">⚡</span>
+              <strong>Content coming soon</strong>
+              What a skill is, how it differs from a prompt, and a walkthrough of creating your first skill — from idea to working slash command in Claude Code.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.3 First Workflow -->
+        <div class="section-card" id="first-workflow">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">🔄</div>
+            <div class="meta">
+              <h3>Building Your First Workflow</h3>
+              <p>Connecting Claude to your tools with n8n</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">🔄</span>
+              <strong>Content coming soon</strong>
+              An end-to-end walkthrough of building a simple n8n workflow that uses Claude — from trigger to output, with a real WarmHub use case as the example.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.4 Personal Dashboard -->
+        <div class="section-card" id="personal-dashboard">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">📊</div>
+            <div class="meta">
+              <h3>Your Personal Dashboard</h3>
+              <p>A home base for your AI workflows</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">📊</span>
+              <strong>Content coming soon</strong>
+              How to set up a personal dashboard that surfaces your active workflows, recent outputs, and quick-launch shortcuts for the tools you use every day.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    WarmHub Internal · For team use only · Last updated March 2026
+  </footer>
+
+  <script>
+    // Toggle sidebar TOC groups
+    function toggleToc(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('open');
+    }
+
+    // Toggle section cards
+    function toggleSection(btn) {
+      const card = btn.closest('.section-card');
+      const isOpen = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    // Active link highlighting on scroll
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = [...tocLinks].map(l => document.querySelector(l.getAttribute('href')));
+
+    function onScroll() {
+      let current = null;
+      const scrollY = window.scrollY + 80;
+      sections.forEach((sec, i) => {
+        if (sec && sec.offsetTop <= scrollY) current = i;
+      });
+      tocLinks.forEach((l, i) => {
+        l.classList.toggle('active', i === current);
+      });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
