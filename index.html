@@ -104,25 +104,6 @@
       z-index: 100;
     }
 
-    .site-header .logo {
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: -0.3px;
-      color: var(--text);
-    }
-
-    .site-header .logo span {
-      color: var(--accent);
-    }
-
-    .site-header .tagline {
-      font-size: 13px;
-      color: var(--muted);
-      border-left: 1px solid var(--border);
-      padding-left: 12px;
-      margin-left: 4px;
-    }
-
     .theme-toggle {
       margin-left: auto;
       background: var(--bg);
@@ -328,6 +309,7 @@
       font-size: 14px;
       color: var(--muted);
       margin-left: auto;
+      font-style: italic;
     }
 
     /* ── Sub-section cards ── */
@@ -648,6 +630,69 @@
 
     .skill-copy-btn:hover { background: var(--border); color: var(--text); }
 
+    /* ── Nested cards ── */
+    .nested-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .nested-toggle {
+      width: 100%;
+      background: var(--bg);
+      border: none;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.12s;
+    }
+
+    .nested-toggle:hover { background: var(--border); }
+
+    .nested-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .nested-body {
+      display: none;
+      padding: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .nested-card.open .nested-body { display: block; }
+    .nested-card.open .expand-icon { transform: rotate(45deg); }
+
+    /* ── Mascot ── */
+    .mascot-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding: 16px 20px;
+      background: var(--accent-light);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .mascot-bubble {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+      font-style: italic;
+      padding-top: 4px;
+    }
+
+    .mascot-bubble strong {
+      font-style: normal;
+      color: var(--accent);
+    }
+
     /* ── Footer ── */
     .site-footer {
       margin-left: var(--sidebar-w);
@@ -672,8 +717,6 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="logo">WarmHub <span>× Claude</span></div>
-    <span class="tagline">Field Guide</span>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
       <span class="theme-icon-light">☀︎</span>
       <span class="theme-icon-dark">☽</span>
@@ -690,15 +733,15 @@
       <div class="toc-section open" id="toc-101">
         <div class="toc-section-header" onclick="toggleToc('toc-101')">
           <span class="badge badge-101">101</span>
-          Getting Set Up
+          The Toolbox
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#glossary" class="toc-link">Glossary &amp; Acronyms</a>
-          <a href="#decision-framework" class="toc-link">Chat vs CoWork vs Code</a>
-          <a href="#setting-up-tools" class="toc-link">Setting Up Your Tools</a>
-          <a href="#first-claude-md" class="toc-link">Your First claude.md</a>
-          <a href="#monthly-expense-report" class="toc-link">Monthly Expense Report</a>
+          <a href="#glossary" class="toc-link">Words You'll Actually Need</a>
+          <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
+          <a href="#setting-up-tools" class="toc-link">Stocking the Toolbox</a>
+          <a href="#first-claude-md" class="toc-link">Teaching Claude How You Work</a>
+          <a href="#monthly-expense-report" class="toc-link">Your First Automated Build</a>
         </div>
       </div>
 
@@ -706,14 +749,14 @@
       <div class="toc-section open" id="toc-201">
         <div class="toc-section-header" onclick="toggleToc('toc-201')">
           <span class="badge badge-201">201</span>
-          Going Deeper
+          From Toolbox to Workshop
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
           <a href="#setting-up-tools-201" class="toc-link">Setting Up Your Tools</a>
-          <a href="#claude-md-projects" class="toc-link">claude.md for Projects</a>
-          <a href="#first-skill" class="toc-link">Building Your First Skill</a>
-          <a href="#first-workflow" class="toc-link">Building Your First Workflow</a>
+          <a href="#claude-md-projects" class="toc-link">Custom Instructions for Every Job Site</a>
+          <a href="#first-skill" class="toc-link">Making Your Own Tools</a>
+          <a href="#first-workflow" class="toc-link">Your First Assembly Line</a>
           <a href="#glossary-201" class="toc-link">Going Deeper Glossary</a>
         </div>
       </div>
@@ -722,11 +765,11 @@
       <div class="toc-section open" id="toc-301">
         <div class="toc-section-header" onclick="toggleToc('toc-301')">
           <span class="badge badge-301">301</span>
-          Building Systems
+          Build What Didn't Exist Before
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#personal-dashboard" class="toc-link">Build Your Personal Dashboard</a>
+          <a href="#personal-dashboard" class="toc-link">The Blueprints: Custom Builds Only</a>
         </div>
       </div>
     </nav>
@@ -744,8 +787,38 @@
       <div class="level-block">
         <div class="level-header">
           <span class="level-badge level-badge-101">101</span>
-          <h2>Getting Set Up</h2>
-          <p>Start here</p>
+          <h2>The Toolbox: Everything You Need Before You Start</h2>
+          <p><em>'Every builder starts with an empty toolbox.'</em></p>
+        </div>
+
+        <!-- Mascot 101 -->
+        <div class="mascot-row">
+          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" flex-shrink="0" style="flex-shrink:0">
+            <!-- Body -->
+            <rect x="18" y="38" width="28" height="22" rx="4" fill="#4177a6"/>
+            <!-- Arms -->
+            <rect x="8" y="40" width="10" height="6" rx="3" fill="#4177a6"/>
+            <rect x="46" y="40" width="10" height="6" rx="3" fill="#4177a6"/>
+            <!-- Head -->
+            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
+            <!-- Red hair -->
+            <ellipse cx="32" cy="16" rx="14" ry="8" fill="#C0392B"/>
+            <ellipse cx="20" cy="22" rx="5" ry="9" fill="#C0392B"/>
+            <ellipse cx="44" cy="22" rx="5" ry="9" fill="#C0392B"/>
+            <!-- Eyes -->
+            <circle cx="27" cy="28" r="2" fill="#334155"/>
+            <circle cx="37" cy="28" r="2" fill="#334155"/>
+            <!-- Smile -->
+            <path d="M27 34 Q32 38 37 34" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <!-- Toolbox -->
+            <rect x="6" y="50" width="16" height="10" rx="2" fill="#e67e22"/>
+            <rect x="11" y="48" width="6" height="4" rx="1" fill="#d35400"/>
+            <line x1="6" y1="55" x2="22" y2="55" stroke="#d35400" stroke-width="1"/>
+          </svg>
+          <p class="mascot-bubble">"Don't worry — nobody knows what half this stuff means at first."</p>
         </div>
 
         <!-- 1.1 Glossary -->
@@ -753,7 +826,7 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-101">📖</div>
             <div class="meta">
-              <h3>Glossary &amp; Acronyms</h3>
+              <h3>Words You'll Actually Need</h3>
               <p>Terms you'll see everywhere — decoded</p>
             </div>
             <span class="expand-icon">+</span>
@@ -908,8 +981,8 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-101">🧭</div>
             <div class="meta">
-              <h3>Chat vs CoWork vs Code Decision Framework</h3>
-              <p>Which Claude tool to use and when</p>
+              <h3>Which Tool Do I Grab?</h3>
+              <p>Chat vs CoWork vs Code — knowing when to use what</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -927,7 +1000,7 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-101">🛠</div>
             <div class="meta">
-              <h3>Setting Up Your Tools</h3>
+              <h3>Stocking the Toolbox</h3>
               <p>Configure Claude — settings, capabilities, and connectors</p>
             </div>
             <span class="expand-icon">+</span>
@@ -1046,8 +1119,8 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-101">📝</div>
             <div class="meta">
-              <h3>Your First claude.md + Prompt Guide</h3>
-              <p>Teaching Claude who you are and how to work with you</p>
+              <h3>Teaching Claude How You Work</h3>
+              <p>Your CLAUDE.md + Prompt Guide</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1060,31 +1133,48 @@
           </div>
         </div>
 
-        <!-- 1.5 Monthly Expense Report -->
+        <!-- 1.5 Your First Automated Build -->
         <div class="section-card" id="monthly-expense-report">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-101">🧾</div>
             <div class="meta">
-              <h3>Monthly Expense Report</h3>
-              <p>Automated receipt scanning and report generation</p>
+              <h3>Your First Automated Build</h3>
+              <p>A scheduled task runs automatically — no clicking required</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
-              <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
-                <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
-                <li>Extract expense details from each receipt</li>
-                <li>Ask you for any mileage entries (dates and directions)</li>
-                <li>Build the Excel expense report using your template and employee info</li>
-                <li>Combine everything into a single PDF</li>
-              </ol>
-              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-                <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
-                <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide &rarr;</a>
+            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px;">A scheduled task runs automatically on a schedule — no clicking required. Here are some real examples to get you started.</p>
+
+            <!-- Nested: Monthly Expense Report -->
+            <div class="nested-card">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Monthly Expense Report</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
+                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
+                  <li>Extract expense details from each receipt</li>
+                  <li>Ask you for any mileage entries (dates and directions)</li>
+                  <li>Build the Excel expense report using your template and employee info</li>
+                  <li>Combine everything into a single PDF</li>
+                </ol>
+                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                  <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
+                  <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide →</a>
+                </div>
               </div>
             </div>
+
+            <!-- Nested: More coming soon -->
+            <div class="nested-card" style="opacity: 0.5;">
+              <button class="nested-toggle" style="cursor: default;" disabled>
+                <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
+              </button>
+            </div>
+
           </div>
         </div>
 
@@ -1094,8 +1184,39 @@
       <div class="level-block">
         <div class="level-header">
           <span class="level-badge level-badge-201">201</span>
-          <h2>Going Deeper</h2>
-          <p>Once you're comfortable</p>
+          <h2>From Toolbox to Workshop</h2>
+          <p><em>'You've got the tools. Time to make something.'</em></p>
+        </div>
+
+        <!-- Mascot 201 -->
+        <div class="mascot-row">
+          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
+            <!-- Body -->
+            <rect x="18" y="38" width="28" height="22" rx="4" fill="#4177a6"/>
+            <!-- Rolled sleeves -->
+            <rect x="8" y="38" width="10" height="5" rx="2" fill="#4177a6"/>
+            <rect x="8" y="43" width="10" height="3" rx="1" fill="#FDDBB4"/>
+            <rect x="46" y="38" width="10" height="5" rx="2" fill="#4177a6"/>
+            <rect x="46" y="43" width="10" height="3" rx="1" fill="#FDDBB4"/>
+            <!-- Head -->
+            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
+            <!-- Red hair -->
+            <ellipse cx="32" cy="16" rx="14" ry="8" fill="#C0392B"/>
+            <ellipse cx="20" cy="22" rx="5" ry="9" fill="#C0392B"/>
+            <ellipse cx="44" cy="22" rx="5" ry="9" fill="#C0392B"/>
+            <!-- Eyes (slight squint — focused) -->
+            <ellipse cx="27" cy="28" rx="2" ry="1.5" fill="#334155"/>
+            <ellipse cx="37" cy="28" rx="2" ry="1.5" fill="#334155"/>
+            <!-- Smile -->
+            <path d="M27 34 Q32 38 37 34" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <!-- Wrench in hand -->
+            <rect x="50" y="44" width="3" height="12" rx="1.5" fill="#64748B" transform="rotate(30 52 50)"/>
+            <circle cx="57" cy="43" r="3" fill="none" stroke="#64748B" stroke-width="2"/>
+          </svg>
+          <p class="mascot-bubble">"Look at you. Actually building things."</p>
         </div>
 
         <!-- 2.1 Setting Up Your Tools -->
@@ -1122,8 +1243,8 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📁</div>
             <div class="meta">
-              <h3>claude.md for Projects</h3>
-              <p>Context files that live with your work</p>
+              <h3>Custom Instructions for Every Job Site</h3>
+              <p>CLAUDE.md for Projects — context files that live with your work</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1195,7 +1316,7 @@
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">⚡</div>
             <div class="meta">
-              <h3>Building Your First Skill</h3>
+              <h3>Making Your Own Tools</h3>
               <p>Reusable prompt templates for Claude Code</p>
             </div>
             <span class="expand-icon">+</span>
@@ -1411,7 +1532,7 @@ Never write a preread that reads like a first meeting if it isn't one.
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">🔄</div>
             <div class="meta">
-              <h3>Building Your First Workflow</h3>
+              <h3>Your First Assembly Line</h3>
               <p>Connecting Claude to your tools with n8n</p>
             </div>
             <span class="expand-icon">+</span>
@@ -1479,8 +1600,43 @@ Never write a preread that reads like a first meeting if it isn't one.
       <div class="level-block">
         <div class="level-header">
           <span class="level-badge level-badge-301">301</span>
-          <h2>Building Systems</h2>
-          <p>For when you're ready to go further</p>
+          <h2>Build What Didn't Exist Before</h2>
+          <p><em>'This is where it gets interesting.'</em></p>
+        </div>
+
+        <!-- Mascot 301 -->
+        <div class="mascot-row">
+          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
+            <!-- Body -->
+            <rect x="18" y="38" width="28" height="22" rx="4" fill="#14B8A6"/>
+            <!-- Arms -->
+            <rect x="8" y="40" width="10" height="6" rx="3" fill="#14B8A6"/>
+            <rect x="46" y="40" width="10" height="6" rx="3" fill="#14B8A6"/>
+            <!-- Head -->
+            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
+            <!-- Red hair (mostly hidden under hat) -->
+            <ellipse cx="20" cy="26" rx="4" ry="6" fill="#C0392B"/>
+            <ellipse cx="44" cy="26" rx="4" ry="6" fill="#C0392B"/>
+            <!-- Hard hat -->
+            <ellipse cx="32" cy="17" rx="16" ry="7" fill="#F59E0B"/>
+            <rect x="16" y="17" width="32" height="5" rx="2" fill="#F59E0B"/>
+            <rect x="14" y="20" width="36" height="3" rx="1.5" fill="#D97706"/>
+            <!-- Eyes -->
+            <circle cx="27" cy="29" r="2" fill="#334155"/>
+            <circle cx="37" cy="29" r="2" fill="#334155"/>
+            <!-- Confident smile -->
+            <path d="M26 35 Q32 40 38 35" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <!-- Legs -->
+            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
+            <!-- Blueprint roll -->
+            <rect x="48" y="38" width="12" height="8" rx="2" fill="#93C5FD"/>
+            <line x1="50" y1="41" x2="58" y2="41" stroke="#3B82F6" stroke-width="1"/>
+            <line x1="50" y1="43" x2="56" y2="43" stroke="#3B82F6" stroke-width="1"/>
+            <rect x="47" y="37" width="3" height="10" rx="1.5" fill="#60A5FA"/>
+            <rect x="58" y="37" width="3" height="10" rx="1.5" fill="#60A5FA"/>
+          </svg>
+          <p class="mascot-bubble">"You don't need permission to build something new."</p>
         </div>
 
         <!-- Personal Dashboard -->
@@ -1488,7 +1644,7 @@ Never write a preread that reads like a first meeting if it isn't one.
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📊</div>
             <div class="meta">
-              <h3>Build Your Personal Dashboard</h3>
+              <h3>The Blueprints: Custom Builds Only</h3>
               <p>A home base for your AI workflows</p>
             </div>
             <span class="expand-icon">+</span>
@@ -1508,7 +1664,7 @@ Never write a preread that reads like a first meeting if it isn't one.
 
   <!-- Footer -->
   <footer class="site-footer">
-    WarmHub Internal · For team use only · Last updated March 2026
+    For team use only · Last updated March 2026
   </footer>
 
   <script>
@@ -1521,6 +1677,13 @@ Never write a preread that reads like a first meeting if it isn't one.
     // Toggle section cards
     function toggleSection(btn) {
       const card = btn.closest('.section-card');
+      const isOpen = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    }
+
+    // Toggle nested cards
+    function toggleNested(btn) {
+      const card = btn.closest('.nested-card');
       const isOpen = card.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen);
     }
