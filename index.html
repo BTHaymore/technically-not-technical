@@ -209,6 +209,7 @@
 
     .badge-101 { background: var(--accent-light); color: var(--accent); }
     .badge-201 { background: var(--accent-2-light); color: var(--accent-2); }
+    .badge-301 { background: var(--wh-color-teal-50); color: var(--accent-2); }
 
     .toc-section-header .chevron {
       margin-left: auto;
@@ -314,6 +315,8 @@
       background: var(--accent-2);
       color: #fff;
     }
+
+    .level-badge-301 { background: var(--accent-2); color: #fff; }
 
     .level-header h2 {
       font-size: 24px;
@@ -574,6 +577,77 @@
       line-height: 1.5;
     }
 
+    /* ── Skill blocks ── */
+    .skill-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+
+    .skill-block-header {
+      background: var(--bg);
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-block-header h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .skill-block-header p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .skill-block-when {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .skill-block-when strong {
+      color: var(--text);
+    }
+
+    .skill-code {
+      position: relative;
+      background: var(--bg);
+    }
+
+    .skill-code pre {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text);
+      padding: 16px 18px;
+      overflow-x: auto;
+      white-space: pre;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .skill-copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: background 0.12s, color 0.12s;
+    }
+
+    .skill-copy-btn:hover { background: var(--border); color: var(--text); }
+
     /* ── Footer ── */
     .site-footer {
       margin-left: var(--sidebar-w);
@@ -624,6 +698,7 @@
           <a href="#decision-framework" class="toc-link">Chat vs CoWork vs Code</a>
           <a href="#setting-up-tools" class="toc-link">Setting Up Your Tools</a>
           <a href="#first-claude-md" class="toc-link">Your First claude.md</a>
+          <a href="#monthly-expense-report" class="toc-link">Monthly Expense Report</a>
         </div>
       </div>
 
@@ -635,11 +710,23 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
+          <a href="#setting-up-tools-201" class="toc-link">Setting Up Your Tools</a>
           <a href="#claude-md-projects" class="toc-link">claude.md for Projects</a>
           <a href="#first-skill" class="toc-link">Building Your First Skill</a>
           <a href="#first-workflow" class="toc-link">Building Your First Workflow</a>
-          <a href="#setting-up-tools-201" class="toc-link">Setting Up Your Tools</a>
-          <a href="#personal-dashboard" class="toc-link">Your Personal Dashboard</a>
+          <a href="#glossary-201" class="toc-link">Going Deeper Glossary</a>
+        </div>
+      </div>
+
+      <!-- 301 Section -->
+      <div class="toc-section open" id="toc-301">
+        <div class="toc-section-header" onclick="toggleToc('toc-301')">
+          <span class="badge badge-301">301</span>
+          Building Systems
+          <span class="chevron">▾</span>
+        </div>
+        <div class="toc-links">
+          <a href="#personal-dashboard" class="toc-link">Build Your Personal Dashboard</a>
         </div>
       </div>
     </nav>
@@ -672,6 +759,7 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
+
             <div class="glossary-section-label">Tools</div>
             <table class="glossary-table">
               <thead>
@@ -732,6 +820,86 @@
                 </tr>
               </tbody>
             </table>
+
+            <div class="glossary-section-label">How Claude Works</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Prompt</td>
+                  <td>The instruction or question you give Claude to get a response. Think of it like placing an order — the more specific you are, the better what comes back. The better your prompt, the better your output.</td>
+                </tr>
+                <tr>
+                  <td>Agent</td>
+                  <td>An AI that works on its own — give it a goal, it figures out the steps.</td>
+                </tr>
+                <tr>
+                  <td>Workflow</td>
+                  <td>A series of steps that run in order, automatically.</td>
+                </tr>
+                <tr>
+                  <td>Skill</td>
+                  <td>A saved set of instructions Claude follows every time — write it once, reuse forever. Works in Chat, CoWork, and Code.</td>
+                </tr>
+                <tr>
+                  <td>Plugin</td>
+                  <td>
+                    A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.
+                    <span class="avail">CoWork (cross-compatible with Code)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="glossary-section-label">Claude Features</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Projects</td>
+                  <td>A workspace where Claude has the same context every time you open it — no re-explaining from scratch.</td>
+                </tr>
+                <tr>
+                  <td>Knowledge Base</td>
+                  <td>Info you store so Claude can reference it without you repeating yourself.</td>
+                </tr>
+                <tr>
+                  <td>Artifacts</td>
+                  <td>Things Claude creates in a side panel — documents, code, visualizations. Shareable via link.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="glossary-section-label">Text &amp; File Basics</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Markdown (MD)</td>
+                  <td>A simple way to format text using symbols — # makes a header, * makes a bullet. It's the language.</td>
+                </tr>
+                <tr>
+                  <td>README</td>
+                  <td>A specific file written in Markdown that introduces a project. Think of it like a cover letter for your code. Markdown = English. README = a cover letter written in English.</td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
         </div>
 
@@ -749,7 +917,7 @@
             <div class="placeholder-banner">
               <span class="placeholder-icon">🧭</span>
               <strong>Content coming soon</strong>
-              A decision guide for knowing when to reach for Claude Chat, Claude CoWork, or Claude Code — with real examples from WarmHub workflows.
+              A decision guide for knowing when to reach for Claude Chat, Claude CoWork, or Claude Code — with real examples.
             </div>
           </div>
         </div>
@@ -887,10 +1055,39 @@
             <div class="placeholder-banner">
               <span class="placeholder-icon">📝</span>
               <strong>Content coming soon</strong>
-              How to write your personal claude.md file, what to include, and a starter prompt library for the most common WarmHub tasks.
+              How to write your personal claude.md file, what to include, and a starter prompt library for the most common tasks.
             </div>
           </div>
         </div>
+
+        <!-- 1.5 Monthly Expense Report -->
+        <div class="section-card" id="monthly-expense-report">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">🧾</div>
+            <div class="meta">
+              <h3>Monthly Expense Report</h3>
+              <p>Automated receipt scanning and report generation</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
+              <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
+                <li>Extract expense details from each receipt</li>
+                <li>Ask you for any mileage entries (dates and directions)</li>
+                <li>Build the Excel expense report using your template and employee info</li>
+                <li>Combine everything into a single PDF</li>
+              </ol>
+              <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
+                <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- ─── 201 ─── -->
@@ -915,12 +1112,12 @@
             <div class="placeholder-banner">
               <span class="placeholder-icon">🛠</span>
               <strong>Content coming soon</strong>
-              Step-by-step setup for VS Code with Claude Code and Typora for markdown editing — with WarmHub-specific settings and recommendations.
+              Step-by-step setup for VS Code with Claude Code and Typora for markdown editing — with settings and recommendations.
             </div>
           </div>
         </div>
 
-        <!-- 2.3 claude.md for Projects -->
+        <!-- 2.2 claude.md for Projects -->
         <div class="section-card" id="claude-md-projects">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📁</div>
@@ -931,15 +1128,69 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">📁</span>
-              <strong>Content coming soon</strong>
-              How to create project-level claude.md files, what belongs in them vs. your personal one, and how Claude uses them when you open a folder in VS Code.
+            <div style="margin-top: 20px;">
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What's a Project?</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">A Project in Claude is a dedicated workspace where everything you need for a specific topic lives in one place — instructions, files, context. Every conversation inside that Project starts with Claude already knowing the background. No re-explaining from scratch. Think of it like a dedicated folder for a work project, except Claude automatically reads everything in it before you start talking.</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What's a CLAUDE.md file?</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">A CLAUDE.md is a plain text file Claude reads automatically at the start of every session. It holds instructions you'd otherwise repeat every single time — your tone preferences, how you want things formatted, what to avoid, what tools to use. Think of it like an onboarding doc for a new hire — except the hire reads it perfectly every time.</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What to put in it</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Who you are and what you're working on</li>
+                  <li>Your tone and style preferences</li>
+                  <li>Tools you use</li>
+                  <li>Things Claude should never do</li>
+                  <li>Anything you keep having to re-explain</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Where it lives</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <tbody>
+                    <tr>
+                      <td>Personal (applies to all your projects)</td>
+                      <td><code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">~/.claude/CLAUDE.md</code></td>
+                    </tr>
+                    <tr>
+                      <td>Project-specific (shared with a team)</td>
+                      <td><code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">CLAUDE.md</code> in the project folder</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Tips</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Keep it under 200 lines — shorter = better followed</li>
+                  <li>Be specific: 'use bullet points' beats 'keep it clean'</li>
+                  <li>Update it when Claude makes an assumption you want to correct — just say 'add this to my CLAUDE.md'</li>
+                  <li>Run <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">/init</code> in Claude Code to auto-generate a starter file</li>
+                </ul>
+              </div>
+
+              <div>
+                <div class="glossary-section-label">Resources</div>
+                <ul style="font-size: 14px; padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank" style="color: var(--accent); text-decoration: none;">Claude Code Docs: How Claude Remembers</a></li>
+                  <li><a href="https://www.builder.io/blog/claude-md-guide" target="_blank" style="color: var(--accent); text-decoration: none;">How to Write a Good CLAUDE.md — Builder.io</a></li>
+                  <li><a href="https://hannahstulberg.substack.com/p/claude-code-for-everything-the-best-personal-assistant-remembers-everything-about-you" target="_blank" style="color: var(--accent); text-decoration: none;">CLAUDE.md Deep Dive — Hannah Stulberg</a></li>
+                </ul>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <!-- 2.4 First Skill -->
+        <!-- 2.3 First Skill -->
         <div class="section-card" id="first-skill">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">⚡</div>
@@ -950,15 +1201,212 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">⚡</span>
-              <strong>Content coming soon</strong>
-              What a skill is, how it differs from a prompt, and a walkthrough of creating your first skill — from idea to working slash command in Claude Code.
+            <div style="margin-top: 4px;">
+              <p style="font-size: 14px; color: var(--muted); padding: 16px 0 4px;">Reusable instruction sets you write once and run any time. Each skill below includes a plain-English description and a copyable SKILL.md file you can drop into Claude Code.</p>
+
+              <!-- apply-brand-voice -->
+              <div class="skill-block">
+                <div class="skill-block-header">
+                  <h4>apply-brand-voice</h4>
+                  <p>Acts as your brand voice guide — writes copy, reviews drafts for consistency, and answers messaging questions.</p>
+                </div>
+                <div class="skill-block-when"><strong>When to use:</strong> Any time you're creating or reviewing customer-facing content.</div>
+                <div class="skill-code">
+                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                  <pre>---
+name: apply-brand-voice
+description: Your company's positioning, messaging, and brand voice guide. Use when writing marketing copy, reviewing content for brand consistency, or answering questions about your positioning.
+---
+
+Serves as your single source of truth for positioning, messaging, and brand voice. Helps you write brand-aligned content, review drafts for consistency, and quickly reference your messaging framework.
+
+&lt;quick_start&gt;
+Choose what you need:
+1. Write new copy
+2. Review existing content
+3. Look up messaging guidance
+&lt;/quick_start&gt;
+
+&lt;essential_principles&gt;
+Core Positioning: Define your category clearly. What problem do you solve and for whom?
+
+Your Audiences: List the distinct audiences you serve and what each one cares about.
+
+Tone Pillars (examples — replace with yours):
+- Clear over clever — No jargon. Concrete outcomes.
+- Educate, don't pitch — Lead with insight.
+- Specific over vague — Show, don't tell.
+&lt;/essential_principles&gt;
+
+What would you like to do?
+1. Write copy — Generate brand-aligned content
+2. Review content — Check a draft for brand consistency
+3. Look up messaging — Answer questions about positioning or tone
+
+&lt;customize_this&gt;
+- Add your actual positioning statement and category definition
+- Define your audience segments and what each cares about
+- Add your tone pillars with real examples of good vs. bad
+- Include your approved terminology and words to avoid
+- Add your key differentiators and proof points
+&lt;/customize_this&gt;</pre>
+                </div>
+              </div>
+
+              <!-- apply-brand -->
+              <div class="skill-block">
+                <div class="skill-block-header">
+                  <h4>apply-brand</h4>
+                  <p>Applies your brand styling to web projects — colors, typography, spacing, logos, light/dark themes.</p>
+                </div>
+                <div class="skill-block-when"><strong>When to use:</strong> When building or updating any web project and you want it to look on-brand automatically.</div>
+                <div class="skill-code">
+                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                  <pre>---
+name: apply-brand
+description: Applies your company's brand styling to web projects. Use when setting up design tokens, adding brand colors/typography, or migrating to your design system.
+---
+
+Integrate your company's design system into any web project. This skill provides guidance for CSS variables, typography, colors, spacing, and logo usage.
+
+Your design system should provide:
+- Color primitives and semantic colors
+- Typography (fonts, sizes, weights)
+- Spacing scale, border radius, shadows
+- Light/dark theme support
+- Logo assets and usage rules
+
+&lt;quick_start&gt;
+1. Install your design system package
+2. Choose your integration method (CSS variables, Tailwind, JS/TS)
+3. Test both light and dark modes
+4. Validate logo usage against brand guidelines
+&lt;/quick_start&gt;
+
+&lt;essential_principles&gt;
+Semantic-First: Always prefer semantic tokens over raw color values.
+Gradual Migration: When migrating existing projects, create an alias layer first.
+Theme Support: Always test both light and dark modes.
+&lt;/essential_principles&gt;
+
+&lt;customize_this&gt;
+- Replace with your actual design token package and install instructions
+- Add your color palette, font names, and spacing scale
+- Add your logo usage rules and asset locations
+- Define your light/dark theme switching mechanism
+&lt;/customize_this&gt;</pre>
+                </div>
+              </div>
+
+              <!-- prepare-preread-internal -->
+              <div class="skill-block">
+                <div class="skill-block-header">
+                  <h4>prepare-preread-internal</h4>
+                  <p>Creates a confidential 7-section prep doc for your team before any external meeting — guest profile, objectives, talking points, landmines, questions, follow-up plan.</p>
+                </div>
+                <div class="skill-block-when"><strong>When to use:</strong> Before investor meetings, customer calls, partner conversations, or any meeting that benefits from shared team prep.</div>
+                <div class="skill-code">
+                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                  <pre>---
+name: prepare-preread-internal
+description: Create internal prereads — confidential strategy documents that prepare your team for external stakeholder meetings. Use when preparing for investor meetings, customer calls, partner conversations, or any external meeting that benefits from shared team prep.
+---
+
+Manages the full lifecycle of internal prereads — the confidential strategy documents your team uses to prepare for meetings with external stakeholders. These documents never leave your team.
+
+&lt;quick_start&gt;
+1. Create a folder for this contact
+2. Copy your internal preread template
+3. Research the guest thoroughly
+4. Fill in all 7 sections
+5. Circulate to your team 48 hours before the meeting
+&lt;/quick_start&gt;
+
+&lt;document_structure&gt;
+1. Guest Profile — Detailed bio, career arc, relevance to your company. Go beyond a LinkedIn summary.
+2. Meeting Objectives — Primary goal (one sentence), secondary goals, and the explicit ask.
+3. Talking Points — Your narrative tailored for this guest.
+4. Relevant Materials — Papers, articles, prior interactions.
+5. Landmines &amp; Sensitivities — Minimum 2 specific, actionable entries.
+6. Questions to Ask — Up to 5 questions, prioritized.
+7. Follow-Up Plan — Action items with owner and concrete timeline.
+&lt;/document_structure&gt;
+
+&lt;writing_guidelines&gt;
+Be candid. This is internal only.
+Be specific. Vague warnings don't help anyone.
+Do your homework. The guest profile must show real research.
+Landmines are the most valuable section. Anyone can Google a bio.
+The ask must be honest — even 'no direct ask yet' should be stated explicitly.
+Timelines must be concrete — not 'soon', use 'within 48 hours' or 'by Friday'.
+&lt;/writing_guidelines&gt;
+
+&lt;customize_this&gt;
+- Add your company's talking points and positioning narrative
+- Add your template file location
+- Define your folder/file naming convention
+- Include a real example preread (sensitive info removed) for reference
+&lt;/customize_this&gt;</pre>
+                </div>
+              </div>
+
+              <!-- prepare-preread-external -->
+              <div class="skill-block">
+                <div class="skill-block-header">
+                  <h4>prepare-preread-external</h4>
+                  <p>Creates a polished 5-section doc to send to the person you're meeting — who's attending, what your company does, why their perspective matters, topics to discuss.</p>
+                </div>
+                <div class="skill-block-when"><strong>When to use:</strong> When you want to send a professional pre-read to an external stakeholder before a meeting.</div>
+                <div class="skill-code">
+                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                  <pre>---
+name: prepare-preread-external
+description: Create external prereads — polished documents sent to stakeholders before meetings. Use when preparing a document to share with an external contact before a call or meeting.
+---
+
+Creates polished, branded documents sent directly to external stakeholders before meetings. Shows the guest who they're meeting, what your company does, why their perspective matters, and what topics you'd like to discuss.
+
+&lt;quick_start&gt;
+1. Create a folder for this contact
+2. Copy your external preread template
+3. Fill in all 5 sections
+4. Export to your sharing format
+5. Send the shareable link to the guest
+&lt;/quick_start&gt;
+
+&lt;document_structure&gt;
+Keep it to 2 pages max — respect the guest's time.
+
+1. Header — Title, meeting date, your logo
+2. Attendees — Both sides, with names and roles
+3. About [Your Company] / Since We Last Spoke — Tailored narrative.
+4. Why We'd Value Your Perspective — Show you've done your homework.
+5. Topics We'd Love to Discuss — 3 to 5 open-ended questions.
+
+Never include internal strategy (objectives, the ask, landmines, follow-up plans). That belongs in the internal preread.
+&lt;/document_structure&gt;
+
+&lt;writing_guidelines&gt;
+Tailor the narrative to the guest — different audiences care about different things.
+Show genuine research. Reference their actual work, not generic praise.
+Keep it conversational — this is not a sales brochure.
+Never write a preread that reads like a first meeting if it isn't one.
+&lt;/writing_guidelines&gt;
+
+&lt;customize_this&gt;
+- Add your company's one-liner and positioning narrative
+- Add your logo and brand colors
+- Define your folder/file naming convention
+- Include a real example preread (sensitive info removed) for reference
+&lt;/customize_this&gt;</pre>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <!-- 2.5 First Workflow -->
+        <!-- 2.4 First Workflow -->
         <div class="section-card" id="first-workflow">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">🔄</div>
@@ -972,17 +1420,75 @@
             <div class="placeholder-banner">
               <span class="placeholder-icon">🔄</span>
               <strong>Content coming soon</strong>
-              An end-to-end walkthrough of building a simple n8n workflow that uses Claude — from trigger to output, with a real WarmHub use case as the example.
+              An end-to-end walkthrough of building a simple n8n workflow that uses Claude — from trigger to output, with a real use case as the example.
             </div>
           </div>
         </div>
 
-        <!-- 2.6 Personal Dashboard -->
+        <!-- 2.5 Going Deeper Glossary -->
+        <div class="section-card" id="glossary-201">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">📖</div>
+            <div class="meta">
+              <h3>Going Deeper Glossary</h3>
+              <p>Terms you'll need as you build</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+
+            <div class="glossary-section-label">Technical Terms</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>API (Application Programming Interface)</td>
+                  <td>
+                    A way for two apps to talk to each other. Think of it like a waiter — you place your order, they go to the kitchen, and bring back the result. You probably won't need this until you're building something custom.
+                    <span class="avail">Everywhere, behind the scenes</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SDK (Software Development Kit)</td>
+                  <td>
+                    A pre-packaged toolkit developers use to connect Claude to their own apps. Think of it like IKEA instructions — everything you need, in one box. You probably won't need this until you're building something from scratch.
+                    <span class="avail">For developers building custom tools</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MCP (Model Context Protocol)</td>
+                  <td>
+                    A standard way to connect Claude to tools you already use — like Google Drive, Slack, or your calendar. Think of it like a universal adapter that lets Claude plug into your existing apps.
+                    <span class="avail">CoWork and Code</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ─── 301 ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <span class="level-badge level-badge-301">301</span>
+          <h2>Building Systems</h2>
+          <p>For when you're ready to go further</p>
+        </div>
+
+        <!-- Personal Dashboard -->
         <div class="section-card" id="personal-dashboard">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📊</div>
             <div class="meta">
-              <h3>Your Personal Dashboard</h3>
+              <h3>Build Your Personal Dashboard</h3>
               <p>A home base for your AI workflows</p>
             </div>
             <span class="expand-icon">+</span>
@@ -1041,6 +1547,15 @@
     function toggleTheme() {
       const isDark = document.documentElement.classList.toggle('dark');
       localStorage.setItem('wh-theme', isDark ? 'dark' : 'light');
+    }
+
+    // Copy skill block
+    function copySkill(btn) {
+      const pre = btn.nextElementSibling;
+      navigator.clipboard.writeText(pre.textContent).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+      });
     }
   </script>
 </body>
