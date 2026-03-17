@@ -513,6 +513,72 @@
       border-bottom: 1px solid var(--border);
     }
 
+    /* ── Checklist ── */
+    .checklist {
+      margin-top: 16px;
+    }
+
+    .checklist-group {
+      margin-bottom: 24px;
+    }
+
+    .checklist-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .checklist-group-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .checklist-group-sub {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      opacity: 0.7;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .checklist-item:last-child { border-bottom: none; }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 3px;
+      flex-shrink: 0;
+      width: 14px;
+      height: 14px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .checklist-item span {
+      cursor: pointer;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + span {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
     /* ── Footer ── */
     .site-footer {
       margin-left: var(--sidebar-w);
@@ -563,6 +629,7 @@
           <a href="#decision-framework" class="toc-link">Chat vs CoWork vs Code</a>
           <a href="#setting-up-tools" class="toc-link">Setting Up Your Tools</a>
           <a href="#first-claude-md" class="toc-link">Your First claude.md</a>
+          <a href="#settings-checklist" class="toc-link">101 Settings Checklist</a>
         </div>
       </div>
 
@@ -726,6 +793,115 @@
               <span class="placeholder-icon">📝</span>
               <strong>Content coming soon</strong>
               How to write your personal claude.md file, what to include, and a starter prompt library for the most common WarmHub tasks.
+            </div>
+          </div>
+        </div>
+        <!-- 1.5 Settings Checklist -->
+        <div class="section-card" id="settings-checklist">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">✅</div>
+            <div class="meta">
+              <h3>101 Settings Checklist</h3>
+              <p>Configure Claude before you do anything else</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="checklist">
+
+              <!-- General -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  General
+                  <span class="checklist-group-sub">claude.ai/settings/general</span>
+                </div>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>What should Claude call you?</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>What best describes your work?</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Personal preferences — add your tone, style, and focus areas <a href="#first-claude-md" style="color: var(--accent); text-decoration: none;">(see prompt guide)</a></span>
+                </label>
+              </div>
+
+              <!-- Capabilities -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Capabilities
+                  <span class="checklist-group-sub">claude.ai/settings/capabilities</span>
+                </div>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Search and reference past chats — turn on</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Generate memory from chat history — turn on</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Artifacts — turn on</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Inline visualizations — turn on</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Code execution and file creation — turn on</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>AI-powered artifacts — turn on</span>
+                </label>
+              </div>
+
+              <!-- Connectors -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Connectors
+                  <span class="checklist-group-sub">install what applies to you</span>
+                </div>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>GitHub</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Atlassian</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Box</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Mem</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Slack</span>
+                </label>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Microsoft 365</span>
+                </label>
+              </div>
+
+              <!-- Desktop App -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">Desktop App</div>
+                <label class="checklist-item">
+                  <input type="checkbox" />
+                  <span>Dictation — coming in 201</span>
+                </label>
+              </div>
+
             </div>
           </div>
         </div>
