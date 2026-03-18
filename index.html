@@ -1302,8 +1302,80 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div style="margin-top: 4px;">
-              <p style="font-size: 14px; color: var(--muted); padding: 16px 0 12px;">Reusable instruction sets you write once and run any time. Click any skill to see the description and copyable SKILL.md file.</p>
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever.</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">When should you build one?</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>You've typed the same prompt 5+ times</li>
+                  <li>You're manually fixing the same things every time</li>
+                  <li>You want someone on your team to run it without knowing how to prompt</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Three ways to get Skills</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>What it is</th>
+                      <th>Where it works</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Pre-built</strong></td>
+                      <td>Ships with Claude — loads automatically when relevant. No setup needed. Examples: pdf, docx, pptx, xlsx</td>
+                      <td>Chat, CoWork, and Code</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Your own</strong></td>
+                      <td>You write it for your personal workflow. Lives at <code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/skills/</code> and applies across all your projects</td>
+                      <td>Chat, CoWork, and Code</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Your company's</strong></td>
+                      <td>Built once and distributed across your team via a marketplace. Everyone gets the same output without knowing how to prompt</td>
+                      <td>Depends on where it's built — see note below</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-bottom: 24px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+                <div class="glossary-section-label" style="margin-top: 0;">A note on company Skills and where they work</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">This matters and is easy to get wrong.</p>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Skills built in a <strong>Code marketplace</strong> (like the examples below) are available in <strong>Claude Code only</strong> — they don't automatically show up in CoWork or Chat</li>
+                  <li>To use the same Skill in <strong>CoWork</strong>, it needs to be packaged and installed as a CoWork plugin</li>
+                  <li>In <strong>Chat</strong>, the closest equivalent is adding those instructions to a Project with custom instructions</li>
+                </ul>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">So if your company builds a brand voice Skill in Code and you want your whole team to use it regardless of which tool they're in, you'll need to set it up in both places.</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What kinds of Skills are worth building?</div>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 10px;">Based on how Anthropic's own team uses them internally:</p>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li><strong>Writing &amp; Content</strong> — tone, format, brand voice, templates</li>
+                  <li><strong>Business Process</strong> — recurring tasks you run the same way every time</li>
+                  <li><strong>Research &amp; Analysis</strong> — how to pull, summarize, and report on specific information</li>
+                  <li><strong>Verification &amp; Review</strong> — checking that output meets your standards before it goes out</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Tips before you build</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Start with a Gotchas section — document the mistakes Claude keeps making so it stops making them</li>
+                  <li>Don't over-instruct — give Claude what it needs, not a rigid script</li>
+                  <li>The description field is critical — it's how Claude decides when to trigger the Skill automatically</li>
+                </ul>
+              </div>
+
+              <p style="font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 16px;">The four Skills below are real examples built for a marketing and people ops role — generalized so you can adapt them to yours. These are Code Skills — see the note above about using them in CoWork or Chat.</p>
 
               <!-- apply-brand-voice -->
               <div class="nested-card">
