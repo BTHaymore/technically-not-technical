@@ -762,11 +762,11 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#glossary-workshop" class="toc-link">New Words for New Builds</a>
+          <a href="#glossary-workshop" class="toc-link">Building Your Vocabulary</a>
+          <a href="#build-prompts" class="toc-link">Build Prompts</a>
           <a href="#scheduled-task" class="toc-link">Build Scheduled Tasks</a>
-          <a href="#claude-md-projects" class="toc-link">CLAUDE.md for Projects</a>
           <a href="#first-skill" class="toc-link">Build Skills</a>
-          <a href="#first-workflow" class="toc-link">Build Workflows</a>
+          <a href="#first-workflow" class="toc-link">Connect Your Tools</a>
         </div>
       </div>
 
@@ -896,7 +896,7 @@
                 <tr>
                   <td>How Claude Works</td>
                   <td>Workflow</td>
-                  <td>A series of steps that run in order, automatically.</td>
+                  <td>A series of connected steps that run automatically, often linking Claude to other tools like Slack, email, or your calendar. Think of it like setting up dominoes — you arrange them once and they fall in order every time.</td>
                 </tr>
                 <tr>
                   <td>How Claude Works</td>
@@ -1001,6 +1001,7 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
+            <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 16px; margin-bottom: 16px;"><strong>Why this matters:</strong> Claude starts every session with zero memory of the last one. Without this file, you're re-explaining yourself every time. Set it up once and Claude already knows how you work before you say a word.</p>
             <div style="margin-top: 16px;">
               <p style="font-size: 14px; color: var(--text); margin-bottom: 16px;">A plain text file Claude reads automatically at the start of every session — your tone, tools, preferences, and rules in one place.</p>
 
@@ -1022,6 +1023,7 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
+            <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;"><strong>Why this matters:</strong> These settings control what Claude can do, what it remembers, and what tools it can connect to. Most people never touch them — which means most people are using maybe half of what Claude can actually do.</p>
             <div class="checklist">
 
               <!-- General -->
@@ -1161,11 +1163,11 @@
           <p class="mascot-bubble">"Look at you. Actually building things."</p>
         </div>
 
-        <!-- 1. New Words for New Builds -->
+        <!-- 1. Building Your Vocabulary -->
         <div class="section-card" id="glossary-workshop">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
-              <h3>New Words for New Builds</h3>
+              <h3>Building Your Vocabulary</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1204,7 +1206,56 @@
           </div>
         </div>
 
-        <!-- 2. Build a Scheduled Task -->
+        <!-- 2. Build Prompts -->
+        <div class="section-card" id="build-prompts">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Build Prompts</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;"><strong>Why this matters:</strong> The quality of what Claude gives you is directly tied to the quality of what you ask. A good prompt is not about magic words — it's about being specific, giving context, and telling Claude what you actually want.</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What makes a good prompt</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Say who you are and what you're trying to do</li>
+                  <li>Give Claude the context it needs — audience, tone, format, length</li>
+                  <li>Tell it what you don't want, not just what you do</li>
+                  <li>Be specific: "write a 3-sentence summary for a non-technical audience" beats "summarize this"</li>
+                  <li>If it gives you something close but not right, say so — Claude can iterate</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Starter template — copy and adapt this</div>
+                <div class="skill-code" style="margin-top: 10px;">
+                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                  <pre>I am a [your role] at [type of company].
+
+I need you to [specific task].
+
+Audience: [who will read or use this]
+Tone: [casual / professional / direct / friendly]
+Format: [bullet points / paragraph / table / email]
+Length: [short / under 200 words / one page]
+
+Do not: [anything you want Claude to avoid]
+
+Here is the relevant context: [paste anything Claude needs to know]</pre>
+                </div>
+              </div>
+
+              <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
+                <span style="font-style: italic;">Prompt Library → </span><a href="#" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK — coming soon]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Build a Scheduled Task -->
         <div class="section-card" id="scheduled-task">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
@@ -1244,53 +1295,9 @@
           </div>
         </div>
 
-        <!-- 3. CLAUDE.md for Projects -->
-        <div class="section-card" id="claude-md-projects">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>CLAUDE.md for Projects</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 20px;">
-
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 24px;">Your project CLAUDE.md lives inside the specific folder you open in CoWork or Code. Claude reads it automatically before starting any task in that folder. Think of it like a briefing note that lives with the project — not with you personally.</p>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">What to put in it</div>
-                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li>What this project is and what you're trying to do</li>
-                  <li>Any tools, formats, or preferences specific to this project</li>
-                  <li>Things Claude should never do in this project</li>
-                  <li>File naming conventions or folder structure</li>
-                </ul>
-              </div>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">Where it lives</div>
-                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li>Drop a file called <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">CLAUDE.md</code> into the root of your project folder</li>
-                  <li><strong>CoWork:</strong> Claude reads it when you open that folder</li>
-                  <li><strong>Code:</strong> Claude reads it automatically at session start</li>
-                </ul>
-              </div>
-
-              <div style="margin-bottom: 24px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
-                <p style="font-size: 13px; color: var(--muted);"><strong style="color: var(--text);">For Chat users:</strong> The equivalent is setting up a Project with custom instructions — not a CLAUDE.md file.</p>
-              </div>
-
-              <div>
-                <div class="glossary-section-label">To create it</div>
-                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li>Open your project folder in CoWork or Code</li>
-                  <li>Type: 'Create a CLAUDE.md for this project' and Claude will generate a starter based on what it sees in the folder</li>
-                  <li>Or run <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">/init</code> in Claude Code to auto-generate one</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
+        <!-- CLAUDE.md callout -->
+        <div style="margin-bottom: 16px; padding: 16px; background: var(--accent-light); border: 1px solid var(--border); border-radius: 10px;">
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8;">Before you build a Skill, drop a CLAUDE.md file into your project folder. Claude reads it automatically before starting any task — so it already knows the context, your preferences, and what to avoid. You don't need this for Scheduled Tasks. Open your project folder in CoWork or Code, type "Create a CLAUDE.md for this project" and Claude will generate one based on what it sees.</p>
         </div>
 
         <!-- 4. Skills -->
@@ -1303,6 +1310,8 @@
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">This is where Claude Code comes in — and before you panic, you don't need to know how to code. Claude Code is just Claude with the ability to work directly inside your project folders. Think of it like giving Claude a key to your filing cabinet instead of having to hand it one document at a time. If you can describe what you want done, you can build a Skill.</p>
+
               <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever.</p>
 
               <div style="margin-bottom: 24px;">
@@ -1591,19 +1600,24 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- 5. Workflows -->
+        <!-- 5. Connect Your Tools -->
         <div class="section-card" id="first-workflow">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
-              <h3>Build Workflows</h3>
+              <h3>Connect Your Tools</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">🔄</span>
-              <strong>Content coming soon</strong>
-              An end-to-end walkthrough of building a simple workflow that uses Claude — from trigger to output.
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;"><strong>Why this matters:</strong> A workflow connects Claude to the other tools you already use — so instead of copying outputs from one place to another, it all happens automatically.</p>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">This is where Claude Code, CoWork, and tools like n8n work together. You build the pipeline once and it runs on its own.</p>
+
+              <div class="placeholder-banner">
+                <strong>Content coming soon</strong>
+                Real examples from a marketing and people ops workflow including meeting notes, content radar, and weekly wins.
+              </div>
             </div>
           </div>
         </div>
