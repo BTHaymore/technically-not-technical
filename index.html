@@ -1255,65 +1255,37 @@
           <div class="section-body">
             <div style="margin-top: 20px;">
 
-              <div style="margin-bottom: 24px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8;">Your project CLAUDE.md lives inside the specific folder you open in CoWork or Code. Claude reads it automatically before starting any task in that folder. Think of it like a briefing note that lives with the project — not with you personally.</p>
-                <p style="font-size: 13px; color: var(--muted); margin-top: 10px;"><strong style="color: var(--text);">Works in:</strong> CoWork and Code</p>
-                <p style="font-size: 13px; color: var(--muted); margin-top: 4px;"><strong style="color: var(--text);">For Chat:</strong> the equivalent is setting up a Project with custom instructions — not a CLAUDE.md file.</p>
-              </div>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">What's a Project?</div>
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">A Project in Claude is a dedicated workspace where everything you need for a specific topic lives in one place — instructions, files, context. Every conversation inside that Project starts with Claude already knowing the background. No re-explaining from scratch. Think of it like a dedicated folder for a work project, except Claude automatically reads everything in it before you start talking.</p>
-              </div>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">What's a CLAUDE.md file?</div>
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">A CLAUDE.md is a plain text file Claude reads automatically at the start of every session. It holds instructions you'd otherwise repeat every single time — your tone preferences, how you want things formatted, what to avoid, what tools to use. Think of it like an onboarding doc for a new hire — except the hire reads it perfectly every time.</p>
-              </div>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 24px;">Your project CLAUDE.md lives inside the specific folder you open in CoWork or Code. Claude reads it automatically before starting any task in that folder. Think of it like a briefing note that lives with the project — not with you personally.</p>
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">What to put in it</div>
                 <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li>Who you are and what you're working on</li>
-                  <li>Your tone and style preferences</li>
-                  <li>Tools you use</li>
-                  <li>Things Claude should never do</li>
-                  <li>Anything you keep having to re-explain</li>
+                  <li>What this project is and what you're trying to do</li>
+                  <li>Any tools, formats, or preferences specific to this project</li>
+                  <li>Things Claude should never do in this project</li>
+                  <li>File naming conventions or folder structure</li>
                 </ul>
               </div>
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">Where it lives</div>
-                <table class="glossary-table" style="margin-top: 10px;">
-                  <tbody>
-                    <tr>
-                      <td>Personal (applies to all your projects)</td>
-                      <td><code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">~/.claude/CLAUDE.md</code></td>
-                    </tr>
-                    <tr>
-                      <td>Project-specific (shared with a team)</td>
-                      <td><code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">CLAUDE.md</code> in the project folder</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">Tips</div>
                 <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li>Keep it under 200 lines — shorter = better followed</li>
-                  <li>Be specific: 'use bullet points' beats 'keep it clean'</li>
-                  <li>Update it when Claude makes an assumption you want to correct — just say 'add this to my CLAUDE.md'</li>
-                  <li>Run <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">/init</code> in Claude Code to auto-generate a starter file</li>
+                  <li>Drop a file called <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">CLAUDE.md</code> into the root of your project folder</li>
+                  <li><strong>CoWork:</strong> Claude reads it when you open that folder</li>
+                  <li><strong>Code:</strong> Claude reads it automatically at session start</li>
                 </ul>
               </div>
 
+              <div style="margin-bottom: 24px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+                <p style="font-size: 13px; color: var(--muted);"><strong style="color: var(--text);">For Chat users:</strong> The equivalent is setting up a Project with custom instructions — not a CLAUDE.md file.</p>
+              </div>
+
               <div>
-                <div class="glossary-section-label">Resources</div>
-                <ul style="font-size: 14px; padding-left: 20px; line-height: 2.2; margin-top: 10px;">
-                  <li><a href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank" style="color: var(--accent); text-decoration: none;">Claude Code Docs: How Claude Remembers</a></li>
-                  <li><a href="https://www.builder.io/blog/claude-md-guide" target="_blank" style="color: var(--accent); text-decoration: none;">How to Write a Good CLAUDE.md — Builder.io</a></li>
-                  <li><a href="https://hannahstulberg.substack.com/p/claude-code-for-everything-the-best-personal-assistant-remembers-everything-about-you" target="_blank" style="color: var(--accent); text-decoration: none;">CLAUDE.md Deep Dive — Hannah Stulberg</a></li>
+                <div class="glossary-section-label">To create it</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Open your project folder in CoWork or Code</li>
+                  <li>Type: 'Create a CLAUDE.md for this project' and Claude will generate a starter based on what it sees in the folder</li>
+                  <li>Or run <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 6px; border-radius: 4px;">/init</code> in Claude Code to auto-generate one</li>
                 </ul>
               </div>
 
