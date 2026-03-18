@@ -1,6 +1,6 @@
 # CLAUDE.md Setup Guide
 
-Build your CLAUDE.md once. Deploy it across Chat, CoWork, and Code so Claude knows your world and you can work more effectively together.
+Build your CLAUDE.md once. Deploy it to CoWork and Code — for Chat, paste the relevant parts into Settings > Profile and your Projects.
 
 ---
 
@@ -10,7 +10,7 @@ Claude doesn't share memory across tools. Each one needs its own setup:
 
 | Tool | Where context lives | How to set it |
 |---|---|---|
-| Chat | Settings > Profile | Type it in once |
+| Chat | Settings > Profile (personal preferences) + Projects (topic-specific context) | Settings > Profile for tone and style. Create a Project for recurring topics and paste context into Project instructions. |
 | CoWork | Global Instructions | Paste it in (inside the app) |
 | Code | `~/.claude/CLAUDE.md` | Save a file on your computer |
 
@@ -20,7 +20,7 @@ Claude doesn't share memory across tools. Each one needs its own setup:
 
 ## What Goes Where
 
-- **Chat settings** — communication style and tone (applies to Chat only)
+- **Chat** has two places — Settings > Profile for your personal preferences (tone, style, pet peeves — applies to every Chat conversation), and Projects for topic or project-specific context (only applies inside that Project). Don't try to put everything in one place.
 - **CLAUDE.md** — everything Claude needs to work effectively: context about your world AND communication style, since Code has no settings panel
 - **CoWork global instructions** — same as CLAUDE.md, paste the same content
 - **Don't duplicate between Chat settings and CLAUDE.md** — but do expect CLAUDE.md to cover both context and style

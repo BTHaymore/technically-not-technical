@@ -751,6 +751,7 @@
           <a href="#glossary" class="toc-link">Build Your Vocabulary — Part 1</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
+          <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
           <a href="#setting-up-tools" class="toc-link">Set Up Your Claude Preferences</a>
         </div>
       </div>
@@ -1011,6 +1012,110 @@
                 <span style="font-style: italic;">Prompt coming soon — </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Set Up Your Chat Project -->
+        <div class="section-card" id="chat-project-setup">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Set Up Your Chat Project</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;"><strong>Why this matters:</strong> Chat does not read CLAUDE.md files. But if you use Chat regularly, you are probably re-explaining yourself every conversation. A Chat Project fixes that — it gives Claude the same context every time you open it.</p>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Chat has two places for context — you need both:</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Settings > Profile</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Your personal preferences. Applies to every Chat conversation globally. Go to claude.ai/settings/general and fill in the personal preferences field. This is where your tone, style, and pet peeves live.</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Projects</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Context specific to one topic or project. Only applies inside that Project. Go to Claude Chat, click Projects in the left sidebar, create a new Project, and click Set Instructions.</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What to put in your Project instructions</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Who you are and your role</li>
+                  <li>What this project is for</li>
+                  <li>Your audience and goals</li>
+                  <li>Tools and resources relevant to this project</li>
+                  <li>What Claude should always do</li>
+                  <li>What Claude should never do</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What makes instructions work</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>Be specific — "respond in bullet points under 5 lines" beats "keep it short"</li>
+                  <li>Front-load the most important rules</li>
+                  <li>Keep it under 500 words — longer instructions get followed less consistently</li>
+                  <li>Update them when Claude keeps getting something wrong — treat it like a living doc</li>
+                </ul>
+              </div>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 24px;">You can also add files — upload documents, brand guides, or reference material directly to the Project and Claude can pull from them in every conversation inside it.</p>
+
+              <div>
+                <div class="glossary-section-label">Tools to turn on per Project</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>Web search and Research</strong> — turn on for most projects</li>
+                  <li><strong>Extended thinking</strong> — good for complex strategic work, turns off automatically for quick tasks</li>
+                  <li><strong>Connectors</strong> — turn on the tools relevant to that project (Atlassian, Slack, Box, etc.)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Where Does Claude Remember You? callout -->
+        <div style="margin-bottom: 16px; padding: 20px 22px; background: var(--accent-light); border: 1px solid var(--border); border-radius: 12px;">
+          <h4 style="font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Where Does Claude Remember You?</h4>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Claude doesn't share memory across tools. Each one needs its own setup — but once it's done, Claude already knows you before you say a word.</p>
+          <table class="glossary-table" style="margin-bottom: 16px;">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Chat</th>
+                <th>CoWork</th>
+                <th>Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600;">Personal preferences</td>
+                <td>Settings > Profile</td>
+                <td>Global Instructions</td>
+                <td><code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">Project context</td>
+                <td>Project instructions</td>
+                <td>CLAUDE.md in project folder</td>
+                <td>CLAUDE.md in project folder</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600;">Reads a .md file?</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="font-size: 13px; color: var(--text); line-height: 1.8;">
+            <div class="glossary-section-label" style="margin-top: 0;">The simplest mental model</div>
+            <ul style="padding-left: 20px; margin-top: 8px;">
+              <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
+              <li><strong>Use CoWork or Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
+              <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Manually copy the relevant parts to Chat settings and Projects.</li>
+            </ul>
           </div>
         </div>
 
