@@ -478,11 +478,11 @@
     .glossary-table tr:hover td { background: var(--bg); }
 
     .glossary-table td:first-child {
-      font-weight: 600;
-      white-space: nowrap;
-      color: var(--text);
-      width: 200px;
+      vertical-align: top;
     }
+
+    .glossary-table td:nth-child(1) { white-space: nowrap; font-weight: 600; color: var(--muted); width: auto; }
+    .glossary-table td:nth-child(2) { font-weight: 600; white-space: nowrap; color: var(--text); }
 
     .glossary-table td:last-child { color: var(--muted); }
 
@@ -749,9 +749,9 @@
         </div>
         <div class="toc-links">
           <a href="#glossary" class="toc-link">Words You'll Actually Need</a>
-          <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
-          <a href="#setting-up-tools" class="toc-link">Stocking the Toolbox</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
+          <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
+          <a href="#setting-up-tools" class="toc-link">Settings</a>
         </div>
       </div>
 
@@ -762,11 +762,11 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#claude-md-projects" class="toc-link">Custom Instructions for Every Job Site</a>
-          <a href="#first-skill" class="toc-link">Making Your Own Tools</a>
-          <a href="#first-workflow" class="toc-link">Your First Assembly Line</a>
-          <a href="#scheduled-task" class="toc-link">Build a Scheduled Task in CoWork</a>
           <a href="#glossary-workshop" class="toc-link">New Words for New Builds</a>
+          <a href="#scheduled-task" class="toc-link">Build a Scheduled Task</a>
+          <a href="#claude-md-projects" class="toc-link">CLAUDE.md for Projects</a>
+          <a href="#first-skill" class="toc-link">Skills</a>
+          <a href="#first-workflow" class="toc-link">Workflows</a>
         </div>
       </div>
 
@@ -829,156 +829,112 @@
           <p class="mascot-bubble">"Don't worry — nobody knows what half this stuff means at first."</p>
         </div>
 
-        <!-- 1.1 Glossary -->
+        <!-- 1. Glossary -->
         <div class="section-card" id="glossary">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">📖</div>
             <div class="meta">
               <h3>Words You'll Actually Need</h3>
-              <p>Terms you'll see everywhere — decoded</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
 
-            <div class="glossary-section-label">Tools</div>
             <table class="glossary-table">
               <thead>
                 <tr>
+                  <th>Category</th>
                   <th>Term</th>
                   <th>What it actually means</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>Tools</td>
                   <td>Claude Chat</td>
-                  <td>
-                    Claude that you have conversations with — brainstorm, write, think out loud. Think of it like texting a really smart friend who never gets tired of your questions.
-                    <span class="avail">Browser, mobile, desktop app</span>
-                  </td>
+                  <td>Claude that you have conversations with — brainstorm, write, think out loud. Think of it like texting a really smart friend who never gets tired of your questions.<span class="avail">Browser, mobile, desktop app</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Claude CoWork</td>
-                  <td>
-                    Claude that can actually do things — touch your files, open your browser, build real deliverables. Think of it like having an assistant who can sit down at your computer and handle the task for you.
-                    <span class="avail">Desktop app</span>
-                  </td>
+                  <td>Claude that can actually do things — touch your files, open your browser, build real deliverables. Think of it like having an assistant who can sit down at your computer and handle the task for you.<span class="avail">Desktop app</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Claude Code</td>
-                  <td>
-                    Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.
-                    <span class="avail">Desktop app · Terminal inside VS Code</span>
-                  </td>
+                  <td>Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.<span class="avail">Desktop app · Terminal inside VS Code</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Claude Chrome Extension</td>
-                  <td>
-                    Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.
-                    <span class="avail">Chrome</span>
-                  </td>
+                  <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.<span class="avail">Chrome</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Visual Studio Code (VS Code)</td>
-                  <td>
-                    A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.
-                    <span class="avail">Desktop</span>
-                  </td>
+                  <td>A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.<span class="avail">Desktop</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Terminal</td>
-                  <td>
-                    Where you type commands that do things — install stuff, create files, navigate folders. Think of it like a direct line to your computer — instead of clicking through menus, you type exactly what you want it to do.
-                    <span class="avail">Inside VS Code · Standalone app</span>
-                  </td>
+                  <td>Where you type commands that do things — install stuff, create files, navigate folders. Think of it like a direct line to your computer — instead of clicking through menus, you type exactly what you want it to do.<span class="avail">Inside VS Code · Standalone app</span></td>
                 </tr>
                 <tr>
+                  <td>Tools</td>
                   <td>Typora</td>
-                  <td>
-                    A markdown editor that makes .md files easy to read and edit. Think of it like opening a markdown file in Word instead of Notepad — clean and readable instead of full of symbols.
-                    <span class="avail">Desktop</span>
-                  </td>
+                  <td>A markdown editor that makes .md files easy to read and edit. Think of it like opening a markdown file in Word instead of Notepad — clean and readable instead of full of symbols.<span class="avail">Desktop</span></td>
                 </tr>
-              </tbody>
-            </table>
-
-            <div class="glossary-section-label">How Claude Works</div>
-            <table class="glossary-table">
-              <thead>
                 <tr>
-                  <th>Term</th>
-                  <th>What it actually means</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
+                  <td>How Claude Works</td>
                   <td>Prompt</td>
                   <td>The instruction or question you give Claude to get a response. Think of it like placing an order — the more specific you are, the better what comes back. The better your prompt, the better your output.</td>
                 </tr>
                 <tr>
+                  <td>How Claude Works</td>
                   <td>Agent</td>
                   <td>An AI that works on its own — give it a goal, it figures out the steps.</td>
                 </tr>
                 <tr>
+                  <td>How Claude Works</td>
                   <td>Workflow</td>
                   <td>A series of steps that run in order, automatically.</td>
                 </tr>
                 <tr>
+                  <td>How Claude Works</td>
                   <td>Skill</td>
                   <td>A saved set of instructions Claude follows every time — write it once, reuse forever. Works in Chat, CoWork, and Code.</td>
                 </tr>
                 <tr>
+                  <td>How Claude Works</td>
                   <td>Plugin</td>
-                  <td>
-                    A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.
-                    <span class="avail">CoWork (cross-compatible with Code)</span>
-                  </td>
+                  <td>A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.<span class="avail">CoWork (cross-compatible with Code)</span></td>
                 </tr>
-              </tbody>
-            </table>
-
-            <div class="glossary-section-label">Claude Features</div>
-            <table class="glossary-table">
-              <thead>
                 <tr>
-                  <th>Term</th>
-                  <th>What it actually means</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
+                  <td>Claude Features</td>
                   <td>Projects</td>
                   <td>A workspace where Claude has the same context every time you open it — no re-explaining from scratch.</td>
                 </tr>
                 <tr>
+                  <td>Claude Features</td>
                   <td>Knowledge Base</td>
                   <td>Info you store so Claude can reference it without you repeating yourself.</td>
                 </tr>
                 <tr>
+                  <td>Claude Features</td>
                   <td>Artifacts</td>
                   <td>Things Claude creates in a side panel — documents, code, visualizations. Shareable via link.</td>
                 </tr>
-              </tbody>
-            </table>
-
-            <div class="glossary-section-label">Text &amp; File Basics</div>
-            <table class="glossary-table">
-              <thead>
                 <tr>
-                  <th>Term</th>
-                  <th>What it actually means</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
+                  <td>Text &amp; File Basics</td>
                   <td>Markdown (MD)</td>
                   <td>A simple way to format text using symbols — # makes a header, * makes a bullet. It's the language.</td>
                 </tr>
                 <tr>
+                  <td>Text &amp; File Basics</td>
                   <td>README</td>
                   <td>A specific file written in Markdown that introduces a project. Think of it like a cover letter for your code. Markdown = English. README = a cover letter written in English.</td>
                 </tr>
                 <tr>
+                  <td>Text &amp; File Basics</td>
                   <td>Token</td>
                   <td>The unit Claude uses to measure text — words, punctuation, spaces all count. Think of it like a meter on a taxi — the more you say (and the more Claude responds), the more tokens are used. Matters when you're hitting context limits.</td>
                 </tr>
@@ -988,49 +944,80 @@
           </div>
         </div>
 
-        <!-- CLAUDE.md Setup -->
+        <!-- 2. Decision Framework -->
+        <div class="section-card" id="decision-framework">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Which Tool Do I Grab?</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px; font-style: italic;">The right tool makes the job easier. The wrong one just makes it take longer.</p>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>If you need to…</th>
+                  <th>Grab this</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Write, brainstorm, think something through, or use a Skill</td>
+                  <td><strong>Chat</strong></td>
+                </tr>
+                <tr>
+                  <td>Create a finished file, automate a task, or work with files on your computer</td>
+                  <td><strong>CoWork</strong></td>
+                </tr>
+                <tr>
+                  <td>Build something from scratch — an HTML page, a site, a script</td>
+                  <td><strong>Code</strong></td>
+                </tr>
+                <tr>
+                  <td>Research a page or ask Claude about something you're looking at</td>
+                  <td><strong>Chrome Extension</strong></td>
+                </tr>
+                <tr>
+                  <td>Teach Claude a repeatable process you'll use over and over</td>
+                  <td><strong>Skill</strong></td>
+                </tr>
+                <tr>
+                  <td>Use a pre-built marketing, sales, or HR workflow</td>
+                  <td><strong>Plugin in CoWork</strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.7;">Still not sure? Doing something with a finished document or file? → CoWork. Having a conversation or thinking something through? → Chat. Building something that didn't exist yet? → Code.</p>
+          </div>
+        </div>
+
+        <!-- 3. CLAUDE.md Setup -->
         <div class="section-card" id="claude-md-setup">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">🗂</div>
             <div class="meta">
               <h3>Set Up Your CLAUDE.md</h3>
-              <p>Your single source of truth for how Claude works with you</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">CLAUDE.md is a file Claude reads automatically at the start of every session. Build it once, deploy it across all three tools.</p>
+              <p style="font-size: 14px; color: var(--text); margin-bottom: 16px;">A plain text file Claude reads automatically at the start of every session — your tone, tools, preferences, and rules in one place.</p>
 
-              <div style="margin-bottom: 20px;">
-                <div class="glossary-section-label">Where it lives</div>
-                <p style="font-size: 14px; color: var(--text); margin-top: 10px;">Personal CLAUDE.md (applies to all your projects) lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
-              </div>
+              <p style="font-size: 14px; color: var(--text); margin-bottom: 16px;">Personal CLAUDE.md (applies to all your projects) lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
 
-              <div style="margin-bottom: 20px;">
-                <div class="glossary-section-label">Set it up</div>
-                <div style="margin-top: 12px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
-                  <span style="font-style: italic;">Prompt coming soon — </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
-                </div>
-              </div>
-
-              <div>
-                <div class="glossary-section-label">Resources</div>
-                <ul style="font-size: 14px; padding-left: 20px; line-height: 2.2; margin-top: 10px;">
-                  <li><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none;">CLAUDE.md Setup Guide (in this repo)</a></li>
-                </ul>
+              <div style="margin-top: 16px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
+                <span style="font-style: italic;">Prompt coming soon — </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- 1.3 Setting Up Tools -->
+        <!-- 4. Settings -->
         <div class="section-card" id="setting-up-tools">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">🛠</div>
             <div class="meta">
-              <h3>Stocking the Toolbox</h3>
-              <p>Configure Claude — settings, capabilities, and connectors</p>
+              <h3>Settings</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1134,56 +1121,6 @@
           </div>
         </div>
 
-        <!-- 1.2 Decision Framework -->
-        <div class="section-card" id="decision-framework">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">🧭</div>
-            <div class="meta">
-              <h3>Which Tool Do I Grab?</h3>
-              <p>Chat vs CoWork vs Code — knowing when to use what</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px; font-style: italic;">The right tool makes the job easier. The wrong one just makes it take longer.</p>
-            <table class="glossary-table">
-              <thead>
-                <tr>
-                  <th>If you need to…</th>
-                  <th>Grab this</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Write, brainstorm, think something through, or use a Skill</td>
-                  <td><strong>Chat</strong></td>
-                </tr>
-                <tr>
-                  <td>Create a finished file, automate a task, or work with files on your computer</td>
-                  <td><strong>CoWork</strong></td>
-                </tr>
-                <tr>
-                  <td>Build something from scratch — an HTML page, a site, a script</td>
-                  <td><strong>Code</strong></td>
-                </tr>
-                <tr>
-                  <td>Research a page or ask Claude about something you're looking at</td>
-                  <td><strong>Chrome Extension</strong></td>
-                </tr>
-                <tr>
-                  <td>Teach Claude a repeatable process you'll use over and over</td>
-                  <td><strong>Skill</strong></td>
-                </tr>
-                <tr>
-                  <td>Use a pre-built marketing, sales, or HR workflow</td>
-                  <td><strong>Plugin in CoWork</strong></td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.7;">Still not sure? Doing something with a finished document or file? → CoWork. Having a conversation or thinking something through? → Chat. Building something that didn't exist yet? → Code.</p>
-          </div>
-        </div>
-
       </div>
 
       <!-- ─── 201 ─── -->
@@ -1224,13 +1161,94 @@
           <p class="mascot-bubble">"Look at you. Actually building things."</p>
         </div>
 
-        <!-- 2.1 claude.md for Projects -->
+        <!-- 1. New Words for New Builds -->
+        <div class="section-card" id="glossary-workshop">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>New Words for New Builds</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="glossary-section-label" style="margin-top: 16px;">Workshop Terms</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Context Window</td>
+                  <td>How much Claude can 'see' at once in a conversation. Think of it like short-term memory — once it's full, the oldest stuff starts to fall off.</td>
+                </tr>
+                <tr>
+                  <td>System Prompt</td>
+                  <td>Behind-the-scenes instructions that tell Claude how to behave before you say anything. Think of it like the briefing you give a new hire before their first day.</td>
+                </tr>
+                <tr>
+                  <td>Slash Command</td>
+                  <td>A shortcut that triggers a Skill or Plugin action. Type /something and Claude knows exactly what to do. Think of it like a speed dial.</td>
+                </tr>
+                <tr>
+                  <td>Connector</td>
+                  <td>A link between Claude and an external tool like Slack, Google Drive, or GitHub. Think of it like a phone cord — connects two things so they can talk.</td>
+                </tr>
+                <tr>
+                  <td>Scheduled Task</td>
+                  <td>A task that runs automatically on a timer without you triggering it. Set it once, forget it.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. Build a Scheduled Task -->
+        <div class="section-card" id="scheduled-task">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Build a Scheduled Task</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px;">A scheduled task runs automatically on a schedule — no clicking required. Here are some real examples to get you started.</p>
+
+            <div class="nested-card">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Monthly Expense Report</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
+                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
+                  <li>Extract expense details from each receipt</li>
+                  <li>Ask you for any mileage entries (dates and directions)</li>
+                  <li>Build the Excel expense report using your template and employee info</li>
+                  <li>Combine everything into a single PDF</li>
+                </ol>
+                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                  <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
+                  <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nested-card" style="opacity: 0.5;">
+              <button class="nested-toggle" style="cursor: default;" disabled>
+                <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. CLAUDE.md for Projects -->
         <div class="section-card" id="claude-md-projects">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">📁</div>
             <div class="meta">
-              <h3>Custom Instructions for Every Job Site</h3>
-              <p>CLAUDE.md for Projects — context files that live with your work</p>
+              <h3>CLAUDE.md for Projects</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1297,13 +1315,11 @@
           </div>
         </div>
 
-        <!-- 2.2 First Skill -->
+        <!-- 4. Skills -->
         <div class="section-card" id="first-skill">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">⚡</div>
             <div class="meta">
-              <h3>Making Your Own Tools</h3>
-              <p>Reusable prompt templates for Claude Code</p>
+              <h3>Skills</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1525,13 +1541,11 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- 2.3 First Workflow -->
+        <!-- 5. Workflows -->
         <div class="section-card" id="first-workflow">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">🔄</div>
             <div class="meta">
-              <h3>Your First Assembly Line</h3>
-              <p>An end-to-end walkthrough of building a simple automated workflow</p>
+              <h3>Workflows</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1541,97 +1555,6 @@ Never write a preread that reads like a first meeting if it isn't one.
               <strong>Content coming soon</strong>
               An end-to-end walkthrough of building a simple workflow that uses Claude — from trigger to output.
             </div>
-          </div>
-        </div>
-
-        <!-- Build a Scheduled Task in CoWork -->
-        <div class="section-card" id="scheduled-task">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">🧾</div>
-            <div class="meta">
-              <h3>Build a Scheduled Task in CoWork</h3>
-              <p>A scheduled task runs automatically — no clicking required</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px;">A scheduled task runs automatically on a schedule — no clicking required. Here are some real examples to get you started.</p>
-
-            <div class="nested-card">
-              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
-                <span class="nested-title">Monthly Expense Report</span>
-                <span class="expand-icon" style="font-size: 14px;">+</span>
-              </button>
-              <div class="nested-body">
-                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
-                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
-                  <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
-                  <li>Extract expense details from each receipt</li>
-                  <li>Ask you for any mileage entries (dates and directions)</li>
-                  <li>Build the Excel expense report using your template and employee info</li>
-                  <li>Combine everything into a single PDF</li>
-                </ol>
-                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-                  <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
-                  <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="nested-card" style="opacity: 0.5;">
-              <button class="nested-toggle" style="cursor: default;" disabled>
-                <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- New Words for New Builds -->
-        <div class="section-card" id="glossary-workshop">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">📖</div>
-            <div class="meta">
-              <h3>New Words for New Builds</h3>
-              <p>Terms you'll need as you start building</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div class="glossary-section-label" style="margin-top: 16px;">Workshop Terms</div>
-            <table class="glossary-table">
-              <thead>
-                <tr>
-                  <th>Term</th>
-                  <th>What it actually means</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Token</td>
-                  <td>Already covered in The Toolbox — <a href="#glossary" style="color: var(--accent); text-decoration: none;">see Words You'll Actually Need →</a></td>
-                </tr>
-                <tr>
-                  <td>Context Window</td>
-                  <td>How much Claude can 'see' at once in a conversation. Think of it like short-term memory — once it's full, the oldest stuff starts to fall off.</td>
-                </tr>
-                <tr>
-                  <td>System Prompt</td>
-                  <td>Behind-the-scenes instructions that tell Claude how to behave before you say anything. Think of it like the briefing you give a new hire before their first day.</td>
-                </tr>
-                <tr>
-                  <td>Slash Command</td>
-                  <td>A shortcut that triggers a Skill or Plugin action. Type /something and Claude knows exactly what to do. Think of it like a speed dial.</td>
-                </tr>
-                <tr>
-                  <td>Connector</td>
-                  <td>A link between Claude and an external tool like Slack, Google Drive, or GitHub. Think of it like a phone cord — connects two things so they can talk.</td>
-                </tr>
-                <tr>
-                  <td>Scheduled Task</td>
-                  <td>A task that runs automatically on a timer without you triggering it. Set it once, forget it.</td>
-                </tr>
-              </tbody>
-            </table>
           </div>
         </div>
 
@@ -1679,13 +1602,11 @@ Never write a preread that reads like a first meeting if it isn't one.
           <p class="mascot-bubble">"You don't need permission to build something new."</p>
         </div>
 
-        <!-- The Deep End -->
+        <!-- 1. The Deep End -->
         <div class="section-card" id="glossary-deep">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">📖</div>
             <div class="meta">
               <h3>The Deep End</h3>
-              <p>Terms you'll hit when building something from scratch</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1729,13 +1650,11 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- Custom Builds -->
+        <!-- 2. Custom Builds -->
         <div class="section-card" id="custom-builds">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">🏗</div>
             <div class="meta">
               <h3>Custom Builds</h3>
-              <p>Projects you build from the ground up</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
