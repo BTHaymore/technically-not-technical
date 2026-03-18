@@ -99,10 +99,21 @@
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
+      justify-content: space-between;
       padding: 0 24px;
       gap: 12px;
       z-index: 100;
     }
+
+    .site-logo {
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: -0.3px;
+      color: var(--text);
+      text-decoration: none;
+      margin-right: auto;
+    }
+    .site-logo:hover { color: var(--accent); }
 
     .theme-toggle {
       margin-left: auto;
@@ -717,6 +728,7 @@
 
   <!-- Header -->
   <header class="site-header">
+    <a href="https://bthaymore.github.io/technically-not-technical/" class="site-logo">Technically Not Technical</a>
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
       <span class="theme-icon-light">☀︎</span>
       <span class="theme-icon-dark">☽</span>
@@ -732,44 +744,42 @@
       <!-- 101 Section -->
       <div class="toc-section open" id="toc-101">
         <div class="toc-section-header" onclick="toggleToc('toc-101')">
-          <span class="badge badge-101">101</span>
           The Toolbox
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
           <a href="#glossary" class="toc-link">Words You'll Actually Need</a>
-          <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
+          <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#setting-up-tools" class="toc-link">Stocking the Toolbox</a>
+          <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
           <a href="#first-claude-md" class="toc-link">Teaching Claude How You Work</a>
-          <a href="#monthly-expense-report" class="toc-link">Your First Automated Build</a>
         </div>
       </div>
 
       <!-- 201 Section -->
       <div class="toc-section open" id="toc-201">
         <div class="toc-section-header" onclick="toggleToc('toc-201')">
-          <span class="badge badge-201">201</span>
           From Toolbox to Workshop
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#setting-up-tools-201" class="toc-link">Setting Up Your Tools</a>
           <a href="#claude-md-projects" class="toc-link">Custom Instructions for Every Job Site</a>
           <a href="#first-skill" class="toc-link">Making Your Own Tools</a>
           <a href="#first-workflow" class="toc-link">Your First Assembly Line</a>
-          <a href="#glossary-201" class="toc-link">Going Deeper Glossary</a>
+          <a href="#scheduled-task" class="toc-link">Build a Scheduled Task in CoWork</a>
+          <a href="#glossary-workshop" class="toc-link">New Words for New Builds</a>
         </div>
       </div>
 
       <!-- 301 Section -->
       <div class="toc-section open" id="toc-301">
         <div class="toc-section-header" onclick="toggleToc('toc-301')">
-          <span class="badge badge-301">301</span>
           Build What Didn't Exist Before
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#personal-dashboard" class="toc-link">The Blueprints: Custom Builds Only</a>
+          <a href="#glossary-deep" class="toc-link">The Deep End</a>
+          <a href="#custom-builds" class="toc-link">Custom Builds</a>
         </div>
       </div>
     </nav>
@@ -780,13 +790,12 @@
       <!-- Hero -->
       <section class="hero">
         <h1>Technically <em>Not</em> Technical</h1>
-        <p>A practical field guide — from getting your tools set up to building your own automations. No jargon, no fluff.</p>
+        <p>A practical field guide — from getting your tools set up to building your own automations.</p>
       </section>
 
       <!-- ─── 101 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <span class="level-badge level-badge-101">101</span>
           <h2>The Toolbox: Everything You Need Before You Start</h2>
           <p><em>'Every builder starts with an empty toolbox.'</em></p>
         </div>
@@ -970,27 +979,48 @@
                   <td>README</td>
                   <td>A specific file written in Markdown that introduces a project. Think of it like a cover letter for your code. Markdown = English. README = a cover letter written in English.</td>
                 </tr>
+                <tr>
+                  <td>Token</td>
+                  <td>The unit Claude uses to measure text — words, punctuation, spaces all count. Think of it like a meter on a taxi — the more you say (and the more Claude responds), the more tokens are used. Matters when you're hitting context limits.</td>
+                </tr>
               </tbody>
             </table>
 
           </div>
         </div>
 
-        <!-- 1.2 Decision Framework -->
-        <div class="section-card" id="decision-framework">
+        <!-- CLAUDE.md Setup -->
+        <div class="section-card" id="claude-md-setup">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">🧭</div>
+            <div class="icon icon-101">🗂</div>
             <div class="meta">
-              <h3>Which Tool Do I Grab?</h3>
-              <p>Chat vs CoWork vs Code — knowing when to use what</p>
+              <h3>Set Up Your CLAUDE.md</h3>
+              <p>Your single source of truth for how Claude works with you</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">🧭</span>
-              <strong>Content coming soon</strong>
-              A decision guide for knowing when to reach for Claude Chat, Claude CoWork, or Claude Code — with real examples.
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">CLAUDE.md is a file Claude reads automatically at the start of every session. Build it once, deploy it across all three tools.</p>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">Where it lives</div>
+                <p style="font-size: 14px; color: var(--text); margin-top: 10px;">Personal CLAUDE.md (applies to all your projects) lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">Set it up</div>
+                <div style="margin-top: 12px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
+                  <span style="font-style: italic;">Prompt coming soon — </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
+                </div>
+              </div>
+
+              <div>
+                <div class="glossary-section-label">Resources</div>
+                <ul style="font-size: 14px; padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none;">CLAUDE.md Setup Guide (in this repo)</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -1092,24 +1122,34 @@
                 </div>
               </div>
 
-              <!-- CLAUDE.md -->
-              <div class="checklist-group">
-                <div class="checklist-group-label">CLAUDE.md</div>
-                <div class="checklist-item">
-                  <div class="check-box"></div>
-                  <span>Set up your CLAUDE.md — <a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none;">prompt guide</a></span>
-                </div>
-              </div>
-
               <!-- Desktop App -->
               <div class="checklist-group">
                 <div class="checklist-group-label">Desktop App</div>
                 <div class="checklist-item">
                   <div class="check-box"></div>
-                  <span>Dictation — coming in 201</span>
+                  <span>Dictation — coming in From Toolbox to Workshop</span>
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.2 Decision Framework -->
+        <div class="section-card" id="decision-framework">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-101">🧭</div>
+            <div class="meta">
+              <h3>Which Tool Do I Grab?</h3>
+              <p>Chat vs CoWork vs Code — knowing when to use what</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="placeholder-banner">
+              <span class="placeholder-icon">🧭</span>
+              <strong>Content coming soon</strong>
+              A decision guide for knowing when to reach for Claude Chat, Claude CoWork, or Claude Code — with real examples.
             </div>
           </div>
         </div>
@@ -1133,57 +1173,11 @@
           </div>
         </div>
 
-        <!-- 1.5 Your First Automated Build -->
-        <div class="section-card" id="monthly-expense-report">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-101">🧾</div>
-            <div class="meta">
-              <h3>Your First Automated Build</h3>
-              <p>A scheduled task runs automatically — no clicking required</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px;">A scheduled task runs automatically on a schedule — no clicking required. Here are some real examples to get you started.</p>
-
-            <!-- Nested: Monthly Expense Report -->
-            <div class="nested-card">
-              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
-                <span class="nested-title">Monthly Expense Report</span>
-                <span class="expand-icon" style="font-size: 14px;">+</span>
-              </button>
-              <div class="nested-body">
-                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
-                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
-                  <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
-                  <li>Extract expense details from each receipt</li>
-                  <li>Ask you for any mileage entries (dates and directions)</li>
-                  <li>Build the Excel expense report using your template and employee info</li>
-                  <li>Combine everything into a single PDF</li>
-                </ol>
-                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
-                  <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
-                  <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide →</a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Nested: More coming soon -->
-            <div class="nested-card" style="opacity: 0.5;">
-              <button class="nested-toggle" style="cursor: default;" disabled>
-                <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
-              </button>
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
       <!-- ─── 201 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <span class="level-badge level-badge-201">201</span>
           <h2>From Toolbox to Workshop</h2>
           <p><em>'You've got the tools. Time to make something.'</em></p>
         </div>
@@ -1219,26 +1213,7 @@
           <p class="mascot-bubble">"Look at you. Actually building things."</p>
         </div>
 
-        <!-- 2.1 Setting Up Your Tools -->
-        <div class="section-card" id="setting-up-tools-201">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">🛠</div>
-            <div class="meta">
-              <h3>Setting Up Your Tools</h3>
-              <p>VS Code, Typora</p>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">🛠</span>
-              <strong>Content coming soon</strong>
-              Step-by-step setup for VS Code with Claude Code and Typora for markdown editing — with settings and recommendations.
-            </div>
-          </div>
-        </div>
-
-        <!-- 2.2 claude.md for Projects -->
+        <!-- 2.1 claude.md for Projects -->
         <div class="section-card" id="claude-md-projects">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">📁</div>
@@ -1311,7 +1286,7 @@
           </div>
         </div>
 
-        <!-- 2.3 First Skill -->
+        <!-- 2.2 First Skill -->
         <div class="section-card" id="first-skill">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">⚡</div>
@@ -1323,18 +1298,20 @@
           </button>
           <div class="section-body">
             <div style="margin-top: 4px;">
-              <p style="font-size: 14px; color: var(--muted); padding: 16px 0 4px;">Reusable instruction sets you write once and run any time. Each skill below includes a plain-English description and a copyable SKILL.md file you can drop into Claude Code.</p>
+              <p style="font-size: 14px; color: var(--muted); padding: 16px 0 12px;">Reusable instruction sets you write once and run any time. Click any skill to see the description and copyable SKILL.md file.</p>
 
               <!-- apply-brand-voice -->
-              <div class="skill-block">
-                <div class="skill-block-header">
-                  <h4>apply-brand-voice</h4>
-                  <p>Acts as your brand voice guide — writes copy, reviews drafts for consistency, and answers messaging questions.</p>
-                </div>
-                <div class="skill-block-when"><strong>When to use:</strong> Any time you're creating or reviewing customer-facing content.</div>
-                <div class="skill-code">
-                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
-                  <pre>---
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">apply-brand-voice</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Acts as your brand voice guide — writes copy, reviews drafts for consistency, and answers messaging questions.</p>
+                  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px;"><strong style="color: var(--text);">When to use:</strong> Any time you're creating or reviewing customer-facing content.</p>
+                  <div class="skill-code">
+                    <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                    <pre>---
 name: apply-brand-voice
 description: Your company's positioning, messaging, and brand voice guide. Use when writing marketing copy, reviewing content for brand consistency, or answering questions about your positioning.
 ---
@@ -1371,19 +1348,22 @@ What would you like to do?
 - Include your approved terminology and words to avoid
 - Add your key differentiators and proof points
 &lt;/customize_this&gt;</pre>
+                  </div>
                 </div>
               </div>
 
               <!-- apply-brand -->
-              <div class="skill-block">
-                <div class="skill-block-header">
-                  <h4>apply-brand</h4>
-                  <p>Applies your brand styling to web projects — colors, typography, spacing, logos, light/dark themes.</p>
-                </div>
-                <div class="skill-block-when"><strong>When to use:</strong> When building or updating any web project and you want it to look on-brand automatically.</div>
-                <div class="skill-code">
-                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
-                  <pre>---
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">apply-brand</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Applies your brand styling to web projects — colors, typography, spacing, logos, light/dark themes.</p>
+                  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px;"><strong style="color: var(--text);">When to use:</strong> When building or updating any web project and you want it to look on-brand automatically.</p>
+                  <div class="skill-code">
+                    <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                    <pre>---
 name: apply-brand
 description: Applies your company's brand styling to web projects. Use when setting up design tokens, adding brand colors/typography, or migrating to your design system.
 ---
@@ -1416,19 +1396,22 @@ Theme Support: Always test both light and dark modes.
 - Add your logo usage rules and asset locations
 - Define your light/dark theme switching mechanism
 &lt;/customize_this&gt;</pre>
+                  </div>
                 </div>
               </div>
 
               <!-- prepare-preread-internal -->
-              <div class="skill-block">
-                <div class="skill-block-header">
-                  <h4>prepare-preread-internal</h4>
-                  <p>Creates a confidential 7-section prep doc for your team before any external meeting — guest profile, objectives, talking points, landmines, questions, follow-up plan.</p>
-                </div>
-                <div class="skill-block-when"><strong>When to use:</strong> Before investor meetings, customer calls, partner conversations, or any meeting that benefits from shared team prep.</div>
-                <div class="skill-code">
-                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
-                  <pre>---
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">prepare-preread-internal</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Creates a confidential 7-section prep doc for your team before any external meeting — guest profile, objectives, talking points, landmines, questions, follow-up plan.</p>
+                  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px;"><strong style="color: var(--text);">When to use:</strong> Before investor meetings, customer calls, partner conversations, or any meeting that benefits from shared team prep.</p>
+                  <div class="skill-code">
+                    <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                    <pre>---
 name: prepare-preread-internal
 description: Create internal prereads — confidential strategy documents that prepare your team for external stakeholder meetings. Use when preparing for investor meetings, customer calls, partner conversations, or any external meeting that benefits from shared team prep.
 ---
@@ -1468,19 +1451,22 @@ Timelines must be concrete — not 'soon', use 'within 48 hours' or 'by Friday'.
 - Define your folder/file naming convention
 - Include a real example preread (sensitive info removed) for reference
 &lt;/customize_this&gt;</pre>
+                  </div>
                 </div>
               </div>
 
               <!-- prepare-preread-external -->
-              <div class="skill-block">
-                <div class="skill-block-header">
-                  <h4>prepare-preread-external</h4>
-                  <p>Creates a polished 5-section doc to send to the person you're meeting — who's attending, what your company does, why their perspective matters, topics to discuss.</p>
-                </div>
-                <div class="skill-block-when"><strong>When to use:</strong> When you want to send a professional pre-read to an external stakeholder before a meeting.</div>
-                <div class="skill-code">
-                  <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
-                  <pre>---
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">prepare-preread-external</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Creates a polished 5-section doc to send to the person you're meeting — who's attending, what your company does, why their perspective matters, topics to discuss.</p>
+                  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px;"><strong style="color: var(--text);">When to use:</strong> When you want to send a professional pre-read to an external stakeholder before a meeting.</p>
+                  <div class="skill-code">
+                    <button class="skill-copy-btn" onclick="copySkill(this)">Copy</button>
+                    <pre>---
 name: prepare-preread-external
 description: Create external prereads — polished documents sent to stakeholders before meetings. Use when preparing a document to share with an external contact before a call or meeting.
 ---
@@ -1520,6 +1506,7 @@ Never write a preread that reads like a first meeting if it isn't one.
 - Define your folder/file naming convention
 - Include a real example preread (sensitive info removed) for reference
 &lt;/customize_this&gt;</pre>
+                  </div>
                 </div>
               </div>
 
@@ -1527,7 +1514,7 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- 2.4 First Workflow -->
+        <!-- 2.3 First Workflow -->
         <div class="section-card" id="first-workflow">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="icon icon-201">🔄</div>
@@ -1546,19 +1533,60 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- 2.5 Going Deeper Glossary -->
-        <div class="section-card" id="glossary-201">
+        <!-- Build a Scheduled Task in CoWork -->
+        <div class="section-card" id="scheduled-task">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">📖</div>
+            <div class="icon icon-201">🧾</div>
             <div class="meta">
-              <h3>Going Deeper Glossary</h3>
-              <p>Terms you'll need as you build</p>
+              <h3>Build a Scheduled Task in CoWork</h3>
+              <p>A scheduled task runs automatically — no clicking required</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
+            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px;">A scheduled task runs automatically on a schedule — no clicking required. Here are some real examples to get you started.</p>
 
-            <div class="glossary-section-label">Technical Terms</div>
+            <div class="nested-card">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Monthly Expense Report</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Each month it will:</p>
+                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li>Scan the month's receipt folder for all PDFs, JPGs, and PNGs</li>
+                  <li>Extract expense details from each receipt</li>
+                  <li>Ask you for any mileage entries (dates and directions)</li>
+                  <li>Build the Excel expense report using your template and employee info</li>
+                  <li>Combine everything into a single PDF</li>
+                </ol>
+                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                  <span style="font-size: 13px; color: var(--muted); font-style: italic;">Prompt coming soon</span>
+                  <a href="MONTHLY_PROCESS.md" style="font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 500;">Monthly Process Guide →</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nested-card" style="opacity: 0.5;">
+              <button class="nested-toggle" style="cursor: default;" disabled>
+                <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Words for New Builds -->
+        <div class="section-card" id="glossary-workshop">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">📖</div>
+            <div class="meta">
+              <h3>New Words for New Builds</h3>
+              <p>Terms you'll need as you start building</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="glossary-section-label" style="margin-top: 16px;">Workshop Terms</div>
             <table class="glossary-table">
               <thead>
                 <tr>
@@ -1568,29 +1596,31 @@ Never write a preread that reads like a first meeting if it isn't one.
               </thead>
               <tbody>
                 <tr>
-                  <td>API (Application Programming Interface)</td>
-                  <td>
-                    A way for two apps to talk to each other. Think of it like a waiter — you place your order, they go to the kitchen, and bring back the result. You probably won't need this until you're building something custom.
-                    <span class="avail">Everywhere, behind the scenes</span>
-                  </td>
+                  <td>Token</td>
+                  <td>Already covered in The Toolbox — <a href="#glossary" style="color: var(--accent); text-decoration: none;">see Words You'll Actually Need →</a></td>
                 </tr>
                 <tr>
-                  <td>SDK (Software Development Kit)</td>
-                  <td>
-                    A pre-packaged toolkit developers use to connect Claude to their own apps. Think of it like IKEA instructions — everything you need, in one box. You probably won't need this until you're building something from scratch.
-                    <span class="avail">For developers building custom tools</span>
-                  </td>
+                  <td>Context Window</td>
+                  <td>How much Claude can 'see' at once in a conversation. Think of it like short-term memory — once it's full, the oldest stuff starts to fall off.</td>
                 </tr>
                 <tr>
-                  <td>MCP (Model Context Protocol)</td>
-                  <td>
-                    A standard way to connect Claude to tools you already use — like Google Drive, Slack, or your calendar. Think of it like a universal adapter that lets Claude plug into your existing apps.
-                    <span class="avail">CoWork and Code</span>
-                  </td>
+                  <td>System Prompt</td>
+                  <td>Behind-the-scenes instructions that tell Claude how to behave before you say anything. Think of it like the briefing you give a new hire before their first day.</td>
+                </tr>
+                <tr>
+                  <td>Slash Command</td>
+                  <td>A shortcut that triggers a Skill or Plugin action. Type /something and Claude knows exactly what to do. Think of it like a speed dial.</td>
+                </tr>
+                <tr>
+                  <td>Connector</td>
+                  <td>A link between Claude and an external tool like Slack, Google Drive, or GitHub. Think of it like a phone cord — connects two things so they can talk.</td>
+                </tr>
+                <tr>
+                  <td>Scheduled Task</td>
+                  <td>A task that runs automatically on a timer without you triggering it. Set it once, forget it.</td>
                 </tr>
               </tbody>
             </table>
-
           </div>
         </div>
 
@@ -1599,7 +1629,6 @@ Never write a preread that reads like a first meeting if it isn't one.
       <!-- ─── 301 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <span class="level-badge level-badge-301">301</span>
           <h2>Build What Didn't Exist Before</h2>
           <p><em>'This is where it gets interesting.'</em></p>
         </div>
@@ -1639,21 +1668,71 @@ Never write a preread that reads like a first meeting if it isn't one.
           <p class="mascot-bubble">"You don't need permission to build something new."</p>
         </div>
 
-        <!-- Personal Dashboard -->
-        <div class="section-card" id="personal-dashboard">
+        <!-- The Deep End -->
+        <div class="section-card" id="glossary-deep">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="icon icon-201">📊</div>
+            <div class="icon icon-201">📖</div>
             <div class="meta">
-              <h3>The Blueprints: Custom Builds Only</h3>
-              <p>A home base for your AI workflows</p>
+              <h3>The Deep End</h3>
+              <p>Terms you'll hit when building something from scratch</p>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <div class="placeholder-banner">
-              <span class="placeholder-icon">📊</span>
-              <strong>Content coming soon</strong>
-              How to set up a personal dashboard that surfaces your active workflows, recent outputs, and quick-launch shortcuts for the tools you use every day.
+            <div class="glossary-section-label" style="margin-top: 16px;">Advanced Terms</div>
+            <table class="glossary-table">
+              <thead>
+                <tr>
+                  <th>Term</th>
+                  <th>What it actually means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>API (Application Programming Interface)</td>
+                  <td>
+                    A way for two apps to talk to each other. Think of it like a waiter — you place your order, they go to the kitchen, and bring back the result. You probably won't need this until you're building something custom.
+                    <span class="avail">Everywhere, behind the scenes</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>SDK (Software Development Kit)</td>
+                  <td>
+                    A pre-packaged toolkit developers use to connect Claude to their own apps. Think of it like IKEA instructions — everything you need, in one box. You probably won't need this until you're building something from scratch.
+                    <span class="avail">For developers building custom tools</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MCP (Model Context Protocol)</td>
+                  <td>
+                    A standard way to connect Claude to tools you already use — like Google Drive, Slack, or your calendar. Think of it like a universal adapter that lets Claude plug into your existing apps.
+                    <span class="avail">CoWork and Code</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Subagent</td>
+                  <td>A mini Claude spun up to handle one specific part of a bigger task. Think of it like assigning one person on your team to handle just the research while you handle the writing.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Custom Builds -->
+        <div class="section-card" id="custom-builds">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="icon icon-201">🏗</div>
+            <div class="meta">
+              <h3>Custom Builds</h3>
+              <p>Projects you build from the ground up</p>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div class="nested-card" style="opacity: 0.5; margin-top: 16px;">
+              <button class="nested-toggle" style="cursor: default;" disabled>
+                <span class="nested-title" style="color: var(--muted);">Personal Dashboard — coming soon</span>
+              </button>
             </div>
           </div>
         </div>
