@@ -862,12 +862,12 @@
                 <tr>
                   <td>Tools</td>
                   <td>Claude Code</td>
-                  <td>Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.<span class="avail">Desktop app · Terminal inside VS Code</span></td>
+                  <td>Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.<span class="avail">Desktop app · Terminal inside VS Code</span><br><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Install VS Code Extension →</a> · <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Read the Docs →</a></td>
                 </tr>
                 <tr>
                   <td>Tools</td>
                   <td>Claude Chrome Extension</td>
-                  <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.<span class="avail">Chrome</span></td>
+                  <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.<span class="avail">Chrome</span><br><a href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Install from Chrome Web Store →</a></td>
                 </tr>
                 <tr>
                   <td>Tools</td>
@@ -1212,6 +1212,15 @@
                 <div class="checklist-item">
                   <div class="check-box"></div>
                   <span>Microsoft 365</span>
+                </div>
+              </div>
+
+              <!-- Browser -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">Browser</div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Chrome Extension — <a href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" style="color: var(--accent); text-decoration: none;">Install →</a></span>
                 </div>
               </div>
 
@@ -1719,6 +1728,37 @@ Never write a preread that reads like a first meeting if it isn't one.
 
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">This is where Claude Code, CoWork, and tools like n8n work together. You build the pipeline once and it runs on its own.</p>
 
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">These are the integrations worth knowing about. Install the ones relevant to your stack:</p>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">In your browser</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Claude Chrome Extension</a> — Claude follows you anywhere you browse</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">In Microsoft Office</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="https://marketplace.microsoft.com/en-us/product/office/WA200009404" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Claude for Excel</a> — analyze data, write formulas, clean spreadsheets without leaving Excel</li>
+                  <li><a href="https://marketplace.microsoft.com/en-us/product/office/WA200010001" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Claude for PowerPoint</a> — build and edit presentations directly in PowerPoint</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">In Slack</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="https://warmautomation.slack.com/marketplace/A08SF47R6P4-claude" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Claude for Slack</a> — use Claude directly inside Slack conversations</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">In VS Code</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2; margin-top: 10px;">
+                  <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Claude Code VS Code Extension</a> — Claude Code lives inside your editor</li>
+                </ul>
+              </div>
+
               <div class="placeholder-banner">
                 <strong>Content coming soon</strong>
                 Real examples from a marketing and people ops workflow including meeting notes, content radar, and weekly wins.
@@ -1832,6 +1872,17 @@ Never write a preread that reads like a first meeting if it isn't one.
               <button class="nested-toggle" style="cursor: default;" disabled>
                 <span class="nested-title" style="color: var(--muted);">Personal Dashboard — coming soon</span>
               </button>
+            </div>
+
+            <div class="nested-card" style="margin-top: 10px;">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Visual Explainer Tool</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8;">A GitHub project that lets non-technical people build visual explainers with Claude. Worth exploring when you're ready to build something custom.</p>
+                <p style="margin-top: 12px;"><a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">View on GitHub →</a></p>
+              </div>
             </div>
           </div>
         </div>
