@@ -751,6 +751,15 @@
           <a href="#mindset" class="toc-link">The Mindset Shift</a>
           <a href="#glossary" class="toc-link">Build Your Vocabulary — Part 1</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
+        </div>
+      </div>
+
+      <div class="toc-section open" id="toc-setup">
+        <div class="toc-section-header" onclick="toggleToc('toc-setup')">
+          Set Up Your Tools
+          <span class="chevron">▾</span>
+        </div>
+        <div class="toc-links">
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
           <a href="#cowork-project-setup" class="toc-link">Set Up Your CoWork Project</a>
@@ -801,21 +810,21 @@
         <p>Your no-jargon starter kit — from setup to "wait, I built that?"</p>
 
         <div style="margin-top: 32px; padding: 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
-          <p style="font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Why I built this</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">Hi, I'm Brandi. I'm not a developer but not too long ago I started using Claude to build things I had no business building. Dashboards. Automations. Entire workflows.</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I broke things constantly. I Googled things I was embarrassed to Google. I once accidentally deleted a file I'd spent three hours on because I didn't know what <code style="font-family: var(--font-mono); font-size: 12px;">rm</code> meant. (Spoiler: it means "remove." Permanently. No recycling bin. Just gone.)</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">But I kept going — and it turns out, the gap between "non-technical" and "building real things" is way smaller than anyone tells you.</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I built this guide to pay it forward. If you're the person on the team who's "not technical" but curious enough to be here — this is for you.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I'm not a developer — my lane is marketing and people and culture. And somehow I'm building dashboards, automations, and entire workflows with AI. I break things. Regularly. I ask Claude to do something and it confidently does the exact wrong thing. Then I fix it and somehow end up with something better than what I originally asked for.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">And the vocabulary? In my world, "PR" meant press release or performance review. Now it means pull request. "Push" doesn't mean shove — it means sending your work to the cloud. You'll have moments like this too. Hint: that's why this guide has vocabulary sections.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">The gap between "non-technical" and "building real things" is way smaller than you might think. This guide is me paying it forward. If you're curious enough to be here — welcome.</p>
 
           <div style="margin-top: 16px; margin-bottom: 16px;">
-            <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">A few things to keep in mind as you go:</p>
+            <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">A few reminders:</p>
             <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2;">
-              <li><strong>Set a pace and give yourself grace.</strong> You don't need to finish this in a day. One section at a time. Come back when you're ready for the next one.</li>
+              <li><strong>Set a pace and give yourself grace.</strong> One section at a time.</li>
               <li><strong>The goal isn't efficiency — it's effectiveness.</strong> This isn't about doing the same work faster. It's about doing work that wasn't even possible before.</li>
-              <li><strong>The love-hate rollercoaster is real.</strong> If you aren't screaming "this is amazing" one minute and "what are you DOING" the next — you probably need to be using Claude more. That's the process. Embrace it.</li>
-              <li><strong>If I can figure this out, so can you.</strong> I promise. We're in this together.</li>
+              <li><strong>The love-hate rollercoaster is real.</strong> If you aren't screaming "this is amazing" one minute and "what are you DOING" the next — use Claude more. That's the process.</li>
+              <li><strong>If I can figure this out, so can you.</strong></li>
             </ul>
           </div>
+
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">— Brandi...the Builder</p>
         </div>
 
         <p style="font-size: 13px; color: var(--muted); line-height: 1.8; font-style: italic; margin-top: 20px;">P.S. — Yes, Claude helped me build this guide. No, the irony is not lost on me.</p>
@@ -824,14 +833,11 @@
       <!-- ─── 101 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <h2>The Toolbox: Everything You Need Before You Start</h2>
-          <p><em>'Every builder starts with an empty toolbox.'</em></p>
-        </div>
-
-        <!-- Mascot 101 -->
-        <div class="mascot-row">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🧰</div>
-          <p class="mascot-bubble">"Don't worry — nobody knows what half this stuff means at first. I definitely didn't."</p>
+          <img src="images/mascot-101.png" alt="" style="width: 56px; flex-shrink: 0;" />
+          <div>
+            <h2>The Toolbox</h2>
+            <p style="margin-left: 0;"><em>'Every builder starts with an empty toolbox.'</em></p>
+          </div>
         </div>
 
         <!-- 0. Mindset -->
@@ -1025,6 +1031,10 @@
                   <td><strong>Code</strong></td>
                 </tr>
                 <tr>
+                  <td>Use Code but don't want to open a terminal — work on a GitHub repo from your browser</td>
+                  <td><strong><a href="https://claude.ai/code" target="_blank" style="color: var(--accent); text-decoration: none;">Code on the Web</a></strong></td>
+                </tr>
+                <tr>
                   <td>Research a page or ask Claude about something you're looking at</td>
                   <td><strong>Chrome Extension</strong></td>
                 </tr>
@@ -1039,6 +1049,18 @@
               </tbody>
             </table>
             <p style="font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.7;">Still not sure? Doing something with a finished document or file? → CoWork. Having a conversation or thinking something through? → Chat. Building something that didn't exist yet? → Code.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ─── Setup ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <img src="images/mascot-101.png" alt="" style="width: 56px; flex-shrink: 0;" />
+          <div>
+            <h2>Set Up Your Tools</h2>
+            <p style="margin-left: 0;"><em>'Do this once. Never think about it again.'</em></p>
           </div>
         </div>
 
@@ -1497,14 +1519,11 @@
       <!-- ─── 201 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <h2>From Toolbox to Workshop</h2>
-          <p><em>'You've got the tools. Time to make something.'</em></p>
-        </div>
-
-        <!-- Mascot 201 -->
-        <div class="mascot-row">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-2-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🔧</div>
-          <p class="mascot-bubble">"Look at you. Sleeves rolled up and actually building things."</p>
+          <img src="images/mascot-201.png" alt="" style="width: 56px; flex-shrink: 0;" />
+          <div>
+            <h2>From Toolbox to Workshop</h2>
+            <p style="margin-left: 0;"><em>'Look at you. Sleeves rolled up and actually building cool sh*t.'</em></p>
+          </div>
         </div>
 
         <!-- 1. Build Your Vocabulary — Part 2 -->
@@ -2315,14 +2334,11 @@ Never write a preread that reads like a first meeting if it isn't one.
       <!-- ─── 301 ─── -->
       <div class="level-block">
         <div class="level-header">
-          <h2>Build What Didn't Exist Before</h2>
-          <p><em>'This is where it gets interesting.'</em></p>
-        </div>
-
-        <!-- Mascot 301 -->
-        <div class="mascot-row">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-2-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🏗️</div>
-          <p class="mascot-bubble">"You don't need permission to build something new."</p>
+          <img src="images/mascot-301.png" alt="" style="width: 56px; flex-shrink: 0;" />
+          <div>
+            <h2>Build What Didn't Exist Before</h2>
+            <p style="margin-left: 0;"><em>'Nobody asked you to build this. That's the point.'</em></p>
+          </div>
         </div>
 
         <!-- 1. Build Your Vocabulary — Part 3 -->
