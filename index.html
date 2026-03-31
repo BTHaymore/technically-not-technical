@@ -270,7 +270,7 @@
       color: var(--accent);
     }
 
-    .hero p {
+    .hero > p {
       font-size: 17px;
       color: var(--muted);
       max-width: 520px;
@@ -748,10 +748,14 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
+          <a href="#mindset" class="toc-link">The Mindset Shift</a>
           <a href="#glossary" class="toc-link">Build Your Vocabulary — Part 1</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
+          <a href="#cowork-project-setup" class="toc-link">Set Up Your CoWork Project</a>
+          <a href="#claude-memory-map" class="toc-link">Where Does Claude Remember You?</a>
+          <a href="#auto-memory" class="toc-link">How Auto-Memory Works</a>
           <a href="#setting-up-tools" class="toc-link">Set Up Your Claude Preferences</a>
         </div>
       </div>
@@ -764,10 +768,14 @@
         </div>
         <div class="toc-links">
           <a href="#glossary-workshop" class="toc-link">Build Your Vocabulary — Part 2</a>
+          <a href="#slash-commands" class="toc-link">Know Your Slash Commands</a>
+          <a href="#context-management" class="toc-link">Manage Your Context Window</a>
+          <a href="#permission-modes" class="toc-link">Permission Modes</a>
           <a href="#build-prompts" class="toc-link">Build Prompts</a>
           <a href="#scheduled-task" class="toc-link">Build Scheduled Tasks</a>
           <a href="#first-skill" class="toc-link">Build Skills</a>
           <a href="#first-workflow" class="toc-link">Connect Your Tools</a>
+          <a href="#hooks-automations" class="toc-link">Hooks &amp; Automations</a>
         </div>
       </div>
 
@@ -790,7 +798,27 @@
       <!-- Hero -->
       <section class="hero">
         <h1>Technically <em>Not</em> Technical</h1>
-        <p>A practical field guide — from getting your tools set up to building your own automations.</p>
+        <p>Your no-jargon starter kit — from setup to "wait, I built that?"</p>
+
+        <div style="margin-top: 32px; padding: 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+          <p style="font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Why I built this</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">Hi, I'm Brandi. I'm not a developer but not too long ago I started using Claude to build things I had no business building. Dashboards. Automations. Entire workflows.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I broke things constantly. I Googled things I was embarrassed to Google. I once accidentally deleted a file I'd spent three hours on because I didn't know what <code style="font-family: var(--font-mono); font-size: 12px;">rm</code> meant. (Spoiler: it means "remove." Permanently. No recycling bin. Just gone.)</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">But I kept going — and it turns out, the gap between "non-technical" and "building real things" is way smaller than anyone tells you.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I built this guide to pay it forward. If you're the person on the team who's "not technical" but curious enough to be here — this is for you.</p>
+
+          <div style="margin-top: 16px; margin-bottom: 16px;">
+            <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">A few things to keep in mind as you go:</p>
+            <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2;">
+              <li><strong>Set a pace and give yourself grace.</strong> You don't need to finish this in a day. One section at a time. Come back when you're ready for the next one.</li>
+              <li><strong>The goal isn't efficiency — it's effectiveness.</strong> This isn't about doing the same work faster. It's about doing work that wasn't even possible before.</li>
+              <li><strong>The love-hate rollercoaster is real.</strong> If you aren't screaming "this is amazing" one minute and "what are you DOING" the next — you probably need to be using Claude more. That's the process. Embrace it.</li>
+              <li><strong>If I can figure this out, so can you.</strong> I promise. We're in this together.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.8; font-style: italic; margin-top: 20px;">P.S. — Yes, Claude helped me build this guide. No, the irony is not lost on me.</p>
       </section>
 
       <!-- ─── 101 ─── -->
@@ -802,32 +830,48 @@
 
         <!-- Mascot 101 -->
         <div class="mascot-row">
-          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" flex-shrink="0" style="flex-shrink:0">
-            <!-- Body -->
-            <rect x="18" y="38" width="28" height="22" rx="4" fill="#4177a6"/>
-            <!-- Arms -->
-            <rect x="8" y="40" width="10" height="6" rx="3" fill="#4177a6"/>
-            <rect x="46" y="40" width="10" height="6" rx="3" fill="#4177a6"/>
-            <!-- Head -->
-            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
-            <!-- Red hair -->
-            <ellipse cx="32" cy="16" rx="14" ry="8" fill="#C0392B"/>
-            <ellipse cx="20" cy="22" rx="5" ry="9" fill="#C0392B"/>
-            <ellipse cx="44" cy="22" rx="5" ry="9" fill="#C0392B"/>
-            <!-- Eyes -->
-            <circle cx="27" cy="28" r="2" fill="#334155"/>
-            <circle cx="37" cy="28" r="2" fill="#334155"/>
-            <!-- Smile -->
-            <path d="M27 34 Q32 38 37 34" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <!-- Legs -->
-            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <!-- Toolbox -->
-            <rect x="6" y="50" width="16" height="10" rx="2" fill="#e67e22"/>
-            <rect x="11" y="48" width="6" height="4" rx="1" fill="#d35400"/>
-            <line x1="6" y1="55" x2="22" y2="55" stroke="#d35400" stroke-width="1"/>
-          </svg>
-          <p class="mascot-bubble">"Don't worry — nobody knows what half this stuff means at first."</p>
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🧰</div>
+          <p class="mascot-bubble">"Don't worry — nobody knows what half this stuff means at first. I definitely didn't."</p>
+        </div>
+
+        <!-- 0. Mindset -->
+        <div class="section-card" id="mindset">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>The Mindset Shift</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Before you learn a single tool, I need you to forget everything you think you know about what you can and can't do. Seriously. Most of the limits you're working around? They don't exist anymore.</p>
+
+              <table class="glossary-table" style="margin-bottom: 24px;">
+                <thead>
+                  <tr>
+                    <th>Stop thinking this</th>
+                    <th>Start thinking this</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>"How do I do this faster?"</td>
+                    <td>"Would I even do this at all if I were starting fresh?"</td>
+                  </tr>
+                  <tr>
+                    <td>"I could never go through all that data."</td>
+                    <td>"Yes, I literally can now."</td>
+                  </tr>
+                  <tr>
+                    <td>"I need to find the perfect prompt."</td>
+                    <td>"I need to build something that works without me prompting every time."</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">This isn't about being more efficient at the same work. It's about doing work that wasn't even possible before — and not needing anyone's permission to start.</p>
+            </div>
+          </div>
         </div>
 
         <!-- 1. Glossary -->
@@ -881,6 +925,11 @@
                 </tr>
                 <tr>
                   <td>Tools</td>
+                  <td>Bash Command</td>
+                  <td>A text instruction you type into the Terminal to make your computer do something — like <code style="font-family: var(--font-mono); font-size: 12px;">cd</code> to move into a folder, <code style="font-family: var(--font-mono); font-size: 12px;">ls</code> to list what's inside, or <code style="font-family: var(--font-mono); font-size: 12px;">rm</code> to delete a file. Think of it like texting your computer a to-do item — short, specific, and it does it immediately. You'll see Claude use these when it works in Code.</td>
+                </tr>
+                <tr>
+                  <td>Tools</td>
                   <td>Typora</td>
                   <td>A markdown editor that makes .md files easy to read and edit. Think of it like opening a markdown file in Word instead of Notepad — clean and readable instead of full of symbols.<span class="avail">Desktop</span></td>
                 </tr>
@@ -892,7 +941,7 @@
                 <tr>
                   <td>How Claude Works</td>
                   <td>Agent</td>
-                  <td>An AI that works on its own — give it a goal, it figures out the steps.</td>
+                  <td>An AI that works on its own — give it a goal, it figures out the steps. Think of it like a head chef calling orders in a kitchen — the chef decides what needs to happen, and the line cooks (sub-agents) each work their station at the same time.</td>
                 </tr>
                 <tr>
                   <td>How Claude Works</td>
@@ -1006,10 +1055,78 @@
             <div style="margin-top: 16px;">
               <p style="font-size: 14px; color: var(--text); margin-bottom: 16px;">A plain text file Claude reads automatically at the start of every session — your tone, tools, preferences, and rules in one place.</p>
 
-              <p style="font-size: 14px; color: var(--text); margin-bottom: 16px;">Personal CLAUDE.md (applies to all your projects) lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Where it lives</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Your personal CLAUDE.md lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;">That <code style="font-family: var(--font-mono); font-size: 12px;">~</code> means your home folder. The <code style="font-family: var(--font-mono); font-size: 12px;">.claude</code> folder is hidden by default (the dot at the front hides it in Finder). This is the only location Claude reads from — do not save copies elsewhere (like your Desktop). If you edit a copy somewhere else, Claude won't see the changes.</p>
+              </div>
 
-              <div style="margin-top: 16px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
-                <span style="font-style: italic;">Prompt coming soon — </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">How to find it</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>In Finder</strong> — press Cmd+Shift+G and paste <code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></li>
+                  <li><strong>In Typora</strong> — File > Open, paste the same path</li>
+                  <li><strong>In Claude Code or CoWork</strong> — just say "show me my CLAUDE.md" or "open my CLAUDE.md"</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">How to create it</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px; margin-bottom: 10px;">The easiest way: open Claude Code or CoWork and say "Create a personal CLAUDE.md for me" — then tell it about yourself. Claude will create the file in the right location automatically. You can also use one of these two methods:</p>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Two methods</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>Method</th>
+                      <th>How it works</th>
+                      <th>Best for</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Setup prompt</strong></td>
+                      <td>Tell Claude about yourself — who you are, how you work, what to avoid — and it writes the file for you</td>
+                      <td>Starting from scratch, personal CLAUDE.md, Chat and CoWork users</td>
+                    </tr>
+                    <tr>
+                      <td><strong><code style="font-family: var(--font-mono); font-size: 12px;">/init</code></strong></td>
+                      <td>Claude Code scans the files already in your project folder and generates a CLAUDE.md based on what it finds</td>
+                      <td>Existing project folders with files in them (Claude Code only)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What makes a CLAUDE.md work</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>Put your most important rules at the top</strong> — Claude pays more attention to what it reads first (this is called primacy bias)</li>
+                  <li><strong>Use bullet points and short headings</strong> — walls of text get skimmed, just like they do by humans</li>
+                  <li><strong>Keep it under 500 lines</strong> — longer files get followed less consistently</li>
+                  <li><strong>Update it when Claude keeps repeating the same mistake</strong> — treat it like a living doc, not a one-time setup</li>
+                  <li><strong>Don't paste full documentation into it</strong> — give Claude summaries and tell it where to find the rest</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What to put in it (in this order)</div>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 6px;">Put the rules that shape Claude's behavior at the top. Put reference info (people, links, tools) at the bottom. Claude pays more attention to what it reads first.</p>
+                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>How you like to work (tone, format, level of detail)</li>
+                  <li>What Claude should never do</li>
+                  <li>Context you always need from Claude</li>
+                  <li>Who you are and your role</li>
+                  <li>Key people and context Claude needs to know</li>
+                  <li>Tools and systems you use</li>
+                  <li>Where things live (links, repos, dashboards)</li>
+                </ol>
+              </div>
+
+              <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
+                <span style="font-style: italic;">Setup Prompt → </span><a href="claude-md-setup-prompt.md" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK] Setup Guide →</a>
               </div>
             </div>
           </div>
@@ -1075,47 +1192,169 @@
           </div>
         </div>
 
-        <!-- Where Does Claude Remember You? callout -->
-        <div style="margin-bottom: 16px; padding: 20px 22px; background: var(--accent-light); border: 1px solid var(--border); border-radius: 12px;">
-          <h4 style="font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 12px;">Where Does Claude Remember You?</h4>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Claude doesn't share memory across tools. Each one needs its own setup — but once it's done, Claude already knows you before you say a word.</p>
-          <table class="glossary-table" style="margin-bottom: 16px;">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Chat</th>
-                <th>CoWork</th>
-                <th>Code</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="font-weight: 600;">Personal preferences</td>
-                <td>Settings > Profile</td>
-                <td>Global Instructions</td>
-                <td><code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></td>
-              </tr>
-              <tr>
-                <td style="font-weight: 600;">Project context</td>
-                <td>Project instructions</td>
-                <td>CLAUDE.md in project folder</td>
-                <td>CLAUDE.md in project folder</td>
-              </tr>
-              <tr>
-                <td style="font-weight: 600;">Reads a .md file?</td>
-                <td>No</td>
-                <td>Yes</td>
-                <td>Yes</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="font-size: 13px; color: var(--text); line-height: 1.8;">
-            <div class="glossary-section-label" style="margin-top: 0;">The simplest mental model</div>
-            <ul style="padding-left: 20px; margin-top: 8px;">
-              <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
-              <li><strong>Use CoWork or Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
-              <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Manually copy the relevant parts to Chat settings and Projects.</li>
-            </ul>
+        <!-- Set Up Your CoWork Project -->
+        <div class="section-card" id="cowork-project-setup">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Set Up Your CoWork Project</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;"><strong>Why this matters:</strong> Chat Projects live in the cloud. CoWork Projects live on your computer. That means CoWork can read your local files, run scheduled tasks on its own, and remember what it learned — all scoped to one project so nothing bleeds into another.</p>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Think of a CoWork Project as a desk drawer — everything Claude needs for one job is in one place: instructions, files, memory, and recurring tasks.</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Three ways to create a CoWork Project</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>Start from scratch</strong> — build a new folder with instructions and files from the ground up</li>
+                  <li><strong>Import from a Chat Project</strong> — search your existing Chat projects and bring their files and instructions over</li>
+                  <li><strong>Use an existing folder</strong> — point CoWork at a folder already on your computer, then add instructions and context</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What each CoWork Project includes</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>Instructions</strong> — tone, formatting, rules that apply to every task inside this project</li>
+                  <li><strong>Context</strong> — link local folders, Chat projects, or URLs so Claude can reference them</li>
+                  <li><strong>Scheduled Tasks</strong> — recurring work Claude runs on its own, scoped to this project</li>
+                  <li><strong>Memory</strong> — Claude remembers what it learns inside this project (does not carry over to other projects)</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Chat Project vs. CoWork Project</div>
+                <table class="glossary-table" style="margin-bottom: 0;">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Chat Project</th>
+                      <th>CoWork Project</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: 600;">Where it lives</td>
+                      <td>Cloud (claude.ai)</td>
+                      <td>Your computer</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">File access</td>
+                      <td>Uploaded files only</td>
+                      <td>Local folders + linked URLs</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Scheduled tasks</td>
+                      <td>No</td>
+                      <td>Yes</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Memory</td>
+                      <td>No</td>
+                      <td>Yes (scoped per project)</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Best for</td>
+                      <td>Quick conversations with consistent context</td>
+                      <td>Ongoing work that needs files, memory, and automation</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <div class="glossary-section-label">Good to know</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li>CoWork Projects are desktop-only — they do not sync across devices</li>
+                  <li>If you already have a Chat Project you like, import it into CoWork to get the same setup plus local file access, memory, and scheduled tasks</li>
+                  <li>Memory is scoped — what Claude learns in one project stays in that project</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Where Does Claude Remember You? -->
+        <div class="section-card" id="claude-memory-map">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Where Does Claude Remember You?</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Claude doesn't share memory across tools. Each one needs its own setup — but once it's done, Claude already knows you before you say a word.</p>
+              <table class="glossary-table" style="margin-bottom: 16px;">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Chat</th>
+                    <th>CoWork</th>
+                    <th>Code</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 600;">Personal preferences</td>
+                    <td>Settings > Profile</td>
+                    <td>Global Instructions</td>
+                    <td><code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Project context</td>
+                    <td>Project instructions</td>
+                    <td>Project instructions + CLAUDE.md</td>
+                    <td>CLAUDE.md in project folder</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Reads a .md file?</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Auto-memory</td>
+                    <td>No</td>
+                    <td>Yes (per project)</td>
+                    <td>Yes (per project)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="glossary-section-label">The simplest mental model</div>
+              <ul style="font-size: 13px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
+                <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
+                <li><strong>Use CoWork</strong> → create a CoWork Project for each area of work. Add a CLAUDE.md for even more context.</li>
+                <li><strong>Use Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
+                <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Manually copy the relevant parts to Chat settings and Projects.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- How Auto-Memory Works -->
+        <div class="section-card" id="auto-memory">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>How Auto-Memory Works</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. These notes live in your project's memory folder and get loaded into every future session. You don't have to manage this. It happens on its own.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Think of it like how your brain works during sleep. Throughout the day, your brain takes in a lot of new information. When you sleep, it replays the day's events — strengthens what matters, deletes what doesn't, and organizes everything into long-term memory. Claude does the same thing between sessions: it reviews what it's written down, keeps what's relevant, and cleans up the rest.</p>
+              <div class="glossary-section-label">What this means for you</div>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
+                <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
+                <li><strong>You don't need to manage the memory files</strong> — Claude handles cleanup on its own</li>
+                <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
+                <li><strong>Check your memory anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -1233,6 +1472,22 @@
                 </div>
               </div>
 
+              <!-- Memory -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Memory
+                  <span class="checklist-group-sub">CoWork and Code</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Auto-memory — on by default in CoWork projects. Check by typing <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> in Code</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span>Correct Claude when it gets something wrong — this is how memory gets built. The more you correct, the better it gets.</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1248,33 +1503,8 @@
 
         <!-- Mascot 201 -->
         <div class="mascot-row">
-          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
-            <!-- Body -->
-            <rect x="18" y="38" width="28" height="22" rx="4" fill="#4177a6"/>
-            <!-- Rolled sleeves -->
-            <rect x="8" y="38" width="10" height="5" rx="2" fill="#4177a6"/>
-            <rect x="8" y="43" width="10" height="3" rx="1" fill="#FDDBB4"/>
-            <rect x="46" y="38" width="10" height="5" rx="2" fill="#4177a6"/>
-            <rect x="46" y="43" width="10" height="3" rx="1" fill="#FDDBB4"/>
-            <!-- Head -->
-            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
-            <!-- Red hair -->
-            <ellipse cx="32" cy="16" rx="14" ry="8" fill="#C0392B"/>
-            <ellipse cx="20" cy="22" rx="5" ry="9" fill="#C0392B"/>
-            <ellipse cx="44" cy="22" rx="5" ry="9" fill="#C0392B"/>
-            <!-- Eyes (slight squint — focused) -->
-            <ellipse cx="27" cy="28" rx="2" ry="1.5" fill="#334155"/>
-            <ellipse cx="37" cy="28" rx="2" ry="1.5" fill="#334155"/>
-            <!-- Smile -->
-            <path d="M27 34 Q32 38 37 34" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <!-- Legs -->
-            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <!-- Wrench in hand -->
-            <rect x="50" y="44" width="3" height="12" rx="1.5" fill="#64748B" transform="rotate(30 52 50)"/>
-            <circle cx="57" cy="43" r="3" fill="none" stroke="#64748B" stroke-width="2"/>
-          </svg>
-          <p class="mascot-bubble">"Look at you. Actually building things."</p>
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-2-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🔧</div>
+          <p class="mascot-bubble">"Look at you. Sleeves rolled up and actually building things."</p>
         </div>
 
         <!-- 1. Build Your Vocabulary — Part 2 -->
@@ -1315,8 +1545,137 @@
                   <td>Scheduled Task</td>
                   <td>A task that runs automatically on a timer without you triggering it. Set it once, forget it.</td>
                 </tr>
+                <tr>
+                  <td>Permission Mode</td>
+                  <td>Controls what Claude can do without asking you first — like editing files, creating new ones, or running commands. Think of it like giving a house key to a house sitter — you decide how much access they get before they start.</td>
+                </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+
+        <!-- Slash Commands -->
+        <div class="section-card" id="slash-commands">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Know Your Slash Commands</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;"><strong>Why this matters:</strong> Slash commands are shortcuts you type directly into Claude. Instead of explaining what you want in a full sentence, you type a / and a keyword and Claude knows exactly what to do. They work in CoWork and Code.</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">The ones worth knowing</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>Command</th>
+                      <th>What it does</th>
+                      <th>When to use it</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/init</code></td>
+                      <td>Scans your project folder and generates a CLAUDE.md automatically</td>
+                      <td>First time setting up a project in Code</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/plan</code></td>
+                      <td>Puts Claude in read-only research mode — it investigates your project and produces a plan before doing anything</td>
+                      <td>Before a complex task where you want Claude to think first, not act</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/compact</code></td>
+                      <td>Compresses the conversation to free up space in the context window</td>
+                      <td>When the conversation is getting long — do this at 50%, not when you're already at the limit</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/context</code></td>
+                      <td>Shows exactly how much of the context window is being used and by what</td>
+                      <td>When Claude starts forgetting things or you want to check how much room is left</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/clear</code></td>
+                      <td>Resets the conversation completely — fresh start</td>
+                      <td>When you're switching to a completely different task</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/model</code></td>
+                      <td>Switches which Claude model you're using mid-conversation</td>
+                      <td>When you want a faster (cheaper) model for simple tasks or a more powerful one for complex work</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/rewind</code></td>
+                      <td>Undoes the last thing Claude did</td>
+                      <td>When Claude made a change you don't want — like an undo button</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/permissions</code></td>
+                      <td>Lets you pre-approve commands so Claude doesn't have to ask every time</td>
+                      <td>When you're tired of clicking "allow" on the same action repeatedly</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/doctor</code></td>
+                      <td>Runs a diagnostic check on your Claude Code installation</td>
+                      <td>When something isn't working and you're not sure why</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">You don't need to memorize these. Just know they exist — and come back to this table when you need one.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Context Management callout -->
+        <!-- Context Management -->
+        <div class="section-card" id="context-management">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Manage Your Context Window</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Every message you send and every response Claude gives takes up space in the context window. Once it's full, Claude starts losing track of what you said earlier. It didn't forget — it ran out of room.</p>
+              <div class="glossary-section-label">How to manage it</div>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
+                <li><strong>Run <code style="font-family: var(--font-mono); font-size: 12px;">/compact</code> at around 50% usage</strong> — don't wait until you're at the limit</li>
+                <li><strong>Run <code style="font-family: var(--font-mono); font-size: 12px;">/context</code> to check</strong> — shows how much space is left and what's using it</li>
+                <li><strong>Start a new conversation for a new topic</strong> — don't pile unrelated tasks into one thread</li>
+                <li><strong>Keep your CLAUDE.md concise</strong> — it loads into every session, so a bloated file eats context before you even start</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Permission Modes -->
+        <div class="section-card" id="permission-modes">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Permission Modes</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">When Claude works with your files, you control how much freedom it gets. Use <strong>Shift+Tab</strong> to cycle between modes.</p>
+
+              <div class="glossary-section-label">The five levels</div>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2.2;">
+                <li><strong>Ask before edits</strong> — asks permission before changing anything. Best when you're learning.</li>
+                <li><strong>Auto Mode</strong> — safe actions run automatically, risky ones get blocked. The sweet spot for most people.</li>
+                <li><strong>Edit automatically</strong> — edits existing files on its own, asks before creating new ones.</li>
+                <li><strong>Full auto</strong> — does everything without asking. Only when you fully trust the task.</li>
+                <li><strong>Plan mode</strong> — read-only. Claude researches and plans but doesn't change anything.</li>
+              </ul>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 16px;">Not sure? Start with Auto Mode. Less interruption than "ask first," less risk than full auto.</p>
+            </div>
           </div>
         </div>
 
@@ -1362,8 +1721,8 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                 </div>
               </div>
 
-              <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--muted);">
-                <span style="font-style: italic;">Prompt Library → </span><a href="#" style="color: var(--accent); text-decoration: none; font-weight: 500;">[INSERT LINK — coming soon]</a>
+              <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text);">
+                <strong>Want more prompts?</strong> <a href="https://power-prompt-share-now.base44.app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Power of the Prompt →</a> — a categorized, growing library of reusable prompts you can copy and adapt.
               </div>
             </div>
           </div>
@@ -1401,17 +1760,39 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
               </div>
             </div>
 
+            <div class="nested-card">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Daily Brand Radar</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">Every morning, Claude searches the web for mentions of your company, product, or key people — then sends a summary to Slack so your team sees it before their first coffee.</p>
+                <p style="font-size: 14px; color: var(--text); margin-bottom: 12px;"><strong>Each day it will:</strong></p>
+                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li>Search the web for mentions of your brand name, product names, and key people</li>
+                  <li>Filter out noise — old results, irrelevant matches, your own site</li>
+                  <li>Categorize what it finds (press coverage, social mentions, competitor references, community posts)</li>
+                  <li>Flag anything that needs a response (complaints, questions, partnership mentions)</li>
+                  <li>Format a summary and post it to your Slack channel</li>
+                </ol>
+                <p style="font-size: 14px; color: var(--text); margin-top: 16px; margin-bottom: 12px;"><strong>What you need:</strong></p>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li>Slack connector turned on</li>
+                  <li>Web search enabled</li>
+                  <li>A CoWork or Code project with a scheduled task set to run daily</li>
+                </ul>
+                <div style="margin-top: 16px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text);">
+                  <strong>Grab the prompt:</strong> <a href="https://power-prompt-share-now.base44.app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Power of the Prompt → Brand Radar</a>
+                </div>
+              </div>
+            </div>
+
             <div class="nested-card" style="opacity: 0.5;">
               <button class="nested-toggle" style="cursor: default;" disabled>
                 <span class="nested-title" style="color: var(--muted);">More examples coming soon</span>
               </button>
             </div>
           </div>
-        </div>
-
-        <!-- CLAUDE.md callout -->
-        <div style="margin-bottom: 16px; padding: 16px; background: var(--accent-light); border: 1px solid var(--border); border-radius: 10px;">
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8;">Before you build a Skill, drop a CLAUDE.md file into your project folder. Claude reads it automatically before starting any task — so it already knows the context, your preferences, and what to avoid. You don't need this for Scheduled Tasks. Open your project folder in CoWork or Code, type "Create a CLAUDE.md for this project" and Claude will generate one based on what it sees.</p>
         </div>
 
         <!-- 4. Skills -->
@@ -1424,7 +1805,10 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">This is where Claude Code comes in — and before you panic, you don't need to know how to code. Claude Code is just Claude with the ability to work directly inside your project folders. Think of it like giving Claude a key to your filing cabinet instead of having to hand it one document at a time. If you can describe what you want done, you can build a Skill.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">This is where Claude Code comes in — and before you panic, you don't need to know how to code. Claude Code is just Claude with the ability to work directly inside your project folders. Think of it like giving Claude a key to your filing cabinet instead of having to hand it one document at a time. If you can describe what you want done, you can build a Skill.</p>
+              <div style="margin-bottom: 20px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text); line-height: 1.8;">
+                <strong>Tip:</strong> Before you build a Skill, drop a CLAUDE.md file into your project folder. Claude reads it automatically before starting any task — so it already knows the context, your preferences, and what to avoid.
+              </div>
 
               <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever.</p>
 
@@ -1495,6 +1879,16 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                   <li>Start with a Gotchas section — document the mistakes Claude keeps making so it stops making them</li>
                   <li>Don't over-instruct — give Claude what it needs, not a rigid script</li>
                   <li>The description field is critical — it's how Claude decides when to trigger the Skill automatically</li>
+                </ul>
+              </div>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Where to find Skills other people have built</div>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 10px;">You don't have to start from scratch. These are community libraries where people share Skills you can install or adapt:</p>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                  <li><a href="https://skillsmp.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">skillsmp.com</a> — the largest open library of Claude Skills</li>
+                  <li><a href="https://skills.sh" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">skills.sh</a> — developer-focused, well-organized</li>
+                  <li><a href="https://github.com/nicobailon/awesome-claude-code-skills" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">awesome-claude-code-skills</a> — curated GitHub list</li>
                 </ul>
               </div>
 
@@ -1759,14 +2153,163 @@ Never write a preread that reads like a first meeting if it isn't one.
                 </ul>
               </div>
 
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">What "connected" actually looks like</div>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px; margin-bottom: 16px;">When your tools are connected through MCP servers or connectors, Claude can reach across systems in a single command. Instead of you copying data between apps, Claude does it.</p>
+                <div style="padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>Example:</strong> "Research this prospect" could trigger Claude to:</p>
+                  <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                    <li>Pull their LinkedIn profile</li>
+                    <li>Check if they exist in your CRM</li>
+                    <li>Score them against your ideal customer profile</li>
+                    <li>Draft a personalized message</li>
+                    <li>Queue it for sending</li>
+                  </ol>
+                  <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">One command. Five systems. No tab-switching.</p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">The difference between connectors and MCP</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Connectors</th>
+                      <th>MCP Servers</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: 600;">Where</td>
+                      <td>Chat, CoWork</td>
+                      <td>CoWork, Code</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Setup</td>
+                      <td>Toggle on in settings — no technical setup</td>
+                      <td>Requires a one-time install command</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Examples</td>
+                      <td>Slack, Atlassian, Box, Microsoft 365</td>
+                      <td>Any API — LinkedIn, CRM, SEO tools, Google Workspace, Figma</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">Best for</td>
+                      <td>Quick access to tools you already use</td>
+                      <td>Deep integrations and custom workflows</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
               <div class="placeholder-banner">
-                <strong>Content coming soon</strong>
+                <strong>Workflow examples coming soon</strong>
                 Real examples from a marketing and people ops workflow including meeting notes, content radar, and weekly wins.
               </div>
             </div>
           </div>
         </div>
 
+        <!-- 6. Hooks & Automations -->
+        <div class="section-card" id="hooks-automations">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Hooks &amp; Automations</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;"><strong>Why this matters:</strong> Hooks let you set up automatic behaviors that fire when Claude does something — like running a formatter after editing a file, or assigning yourself to a PR the moment it's created. You configure them once, and they run every time without you thinking about it.</p>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Hooks live in your <code style="font-family: var(--font-mono); font-size: 12px;">settings.json</code> file. You can set them globally (all projects) or per-project. Claude Code can set these up for you — just describe the behavior you want.</p>
+
+              <div style="margin-bottom: 20px;">
+                <div class="glossary-section-label">How hooks work</div>
+                <table class="glossary-table" style="margin-top: 10px;">
+                  <thead>
+                    <tr>
+                      <th>When</th>
+                      <th>What fires</th>
+                      <th>Example</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="font-weight: 600;">Before a tool runs</td>
+                      <td>PreToolUse</td>
+                      <td>Check if a command is safe before running it</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">After a tool runs</td>
+                      <td>PostToolUse</td>
+                      <td>Auto-format code after Claude edits a file</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">When Claude stops</td>
+                      <td>Stop</td>
+                      <td>Show a summary message when a task completes</td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: 600;">When a session starts</td>
+                      <td>SessionStart</td>
+                      <td>Run a setup script at the beginning of every session</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="nested-card" style="margin-top: 16px;">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">Example: Auto-Assign PRs + Reviewer Reminder</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">This hook fires every time Claude creates a pull request. It automatically assigns you and reminds you to pick a reviewer.</p>
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>What to tell Claude Code:</strong></p>
+                  <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 12px;">
+                    "Add a hook so that when a PR is created, I'm automatically assigned and reminded to add a reviewer."
+                  </div>
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px;"><strong>What it does behind the scenes:</strong></p>
+                  <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
+                    <li>Watches for <code style="font-family: var(--font-mono); font-size: 12px;">gh pr create</code> commands (ignores everything else)</li>
+                    <li>Runs <code style="font-family: var(--font-mono); font-size: 12px;">gh pr edit --add-assignee @me</code> to assign you</li>
+                    <li>Shows a message reminding you to add a reviewer</li>
+                  </ul>
+                  <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">This is a PostToolUse hook on the Bash tool, stored in your global settings.json. You don't need to write any code — just ask Claude Code to set it up.</p>
+                </div>
+              </div>
+
+              <div class="nested-card" style="margin-top: 10px;">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">Example: Auto-Format After Edits</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">This hook runs a formatter (like Prettier) every time Claude writes or edits a file. Keeps your code consistent without you having to remember.</p>
+                  <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>What to tell Claude Code:</strong></p>
+                  <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-family: var(--font-mono); font-size: 13px; color: var(--text); line-height: 1.6;">
+                    "Add a hook to run prettier on any file after Claude edits it."
+                  </div>
+                  <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">PostToolUse hook on Write|Edit. Works with any formatter — Prettier, Black, gofmt, etc.</p>
+                </div>
+              </div>
+
+              <div style="margin-top: 20px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8;"><strong>Key point:</strong> You don't need to know how to write hooks. Just describe the behavior you want to Claude Code, and it will build and test the hook for you. To review what's set up, type <code style="font-family: var(--font-mono); font-size: 12px;">/hooks</code> in Claude Code.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Systems vs. Prompts callout -->
+      <div style="margin-bottom: 48px; padding: 28px 28px; background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+        <p style="font-size: 16px; color: var(--text); line-height: 1.8; font-style: italic; margin-bottom: 12px;">"ChatGPT trained a generation of people to write better prompts. CoWork and Claude Code train you to build better infrastructure. One is a skill that ages out. The other compounds."</p>
+        <p style="font-size: 13px; color: var(--muted);">The prompts you wrote last year are already outdated. The systems you build — your CLAUDE.md, your Skills, your connected tools — keep getting more valuable the longer you use them.</p>
       </div>
 
       <!-- ─── 301 ─── -->
@@ -1778,36 +2321,7 @@ Never write a preread that reads like a first meeting if it isn't one.
 
         <!-- Mascot 301 -->
         <div class="mascot-row">
-          <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0">
-            <!-- Body -->
-            <rect x="18" y="38" width="28" height="22" rx="4" fill="#14B8A6"/>
-            <!-- Arms -->
-            <rect x="8" y="40" width="10" height="6" rx="3" fill="#14B8A6"/>
-            <rect x="46" y="40" width="10" height="6" rx="3" fill="#14B8A6"/>
-            <!-- Head -->
-            <circle cx="32" cy="28" r="14" fill="#FDDBB4"/>
-            <!-- Red hair (mostly hidden under hat) -->
-            <ellipse cx="20" cy="26" rx="4" ry="6" fill="#C0392B"/>
-            <ellipse cx="44" cy="26" rx="4" ry="6" fill="#C0392B"/>
-            <!-- Hard hat -->
-            <ellipse cx="32" cy="17" rx="16" ry="7" fill="#F59E0B"/>
-            <rect x="16" y="17" width="32" height="5" rx="2" fill="#F59E0B"/>
-            <rect x="14" y="20" width="36" height="3" rx="1.5" fill="#D97706"/>
-            <!-- Eyes -->
-            <circle cx="27" cy="29" r="2" fill="#334155"/>
-            <circle cx="37" cy="29" r="2" fill="#334155"/>
-            <!-- Confident smile -->
-            <path d="M26 35 Q32 40 38 35" stroke="#334155" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-            <!-- Legs -->
-            <rect x="22" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <rect x="34" y="58" width="8" height="14" rx="3" fill="#334155"/>
-            <!-- Blueprint roll -->
-            <rect x="48" y="38" width="12" height="8" rx="2" fill="#93C5FD"/>
-            <line x1="50" y1="41" x2="58" y2="41" stroke="#3B82F6" stroke-width="1"/>
-            <line x1="50" y1="43" x2="56" y2="43" stroke="#3B82F6" stroke-width="1"/>
-            <rect x="47" y="37" width="3" height="10" rx="1.5" fill="#60A5FA"/>
-            <rect x="58" y="37" width="3" height="10" rx="1.5" fill="#60A5FA"/>
-          </svg>
+          <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--accent-2-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 22px;" aria-hidden="true">🏗️</div>
           <p class="mascot-bubble">"You don't need permission to build something new."</p>
         </div>
 
@@ -1854,6 +2368,10 @@ Never write a preread that reads like a first meeting if it isn't one.
                   <td>Subagent</td>
                   <td>A mini Claude spun up to handle one specific part of a bigger task. Think of it like assigning one person on your team to handle just the research while you handle the writing.</td>
                 </tr>
+                <tr>
+                  <td>AGENTS.md</td>
+                  <td>A file that gives sub-agents shared context — like a team briefing doc. Your CLAUDE.md tells Claude how to work with you. AGENTS.md tells the agents Claude spins up what they all need to know: company context, positioning, who the team is, where things live. Think of CLAUDE.md as your personal onboarding doc, and AGENTS.md as the company handbook everyone gets on day one.<span class="avail">Code</span></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -1882,6 +2400,33 @@ Never write a preread that reads like a first meeting if it isn't one.
               <div class="nested-body">
                 <p style="font-size: 14px; color: var(--text); line-height: 1.8;">A GitHub project that lets non-technical people build visual explainers with Claude. Worth exploring when you're ready to build something custom.</p>
                 <p style="margin-top: 12px;"><a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">View on GitHub →</a></p>
+              </div>
+            </div>
+
+            <div class="nested-card" style="margin-top: 10px;">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Auto Mode</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8;"><strong>What it does:</strong> Lets Claude Code make decisions about file changes and commands without asking you for permission each time. A classifier checks each action and blocks anything destructive — safe actions proceed automatically.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>Who it's for:</strong> Developers running long, unattended coding sessions. If your workflow involves reviewing drafts and staying in the loop, you probably don't need this yet.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>How to enable:</strong> CLI: <code>claude --enable-auto-mode</code>, then toggle with <code>Shift+Tab</code>. VS Code: enable in Settings, then select from the permission mode dropdown.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>Status:</strong> Research preview (Team plan only as of March 2026). Enterprise and API rollout planned.</p>
+              </div>
+            </div>
+
+            <div class="nested-card" style="margin-top: 10px;">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Auto Dream (Memory Consolidation)</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8;"><strong>What it does:</strong> Automatically cleans up and organizes Claude Code's memory between sessions. Over time, Claude's memory folder can accumulate noise, contradictions, and stale notes. Auto Dream reviews all your past sessions, merges what's still relevant, and removes what's outdated — like your brain consolidating memories during sleep.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>How it works:</strong> Runs in the background after 24+ hours have passed and 5+ sessions have occurred since the last consolidation. It only writes to memory files (read-only for your project code) and uses a lock file so it can't run twice at the same time.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>Four phases:</strong> (1) Orient — reads current memory to understand what exists. (2) Gather signal — searches your session transcripts for corrections, decisions, and recurring themes. (3) Consolidate — merges new info, converts relative dates to absolute, resolves contradictions. (4) Prune and index — keeps the memory index under 200 lines, removes stale pointers.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>How to check:</strong> Run <code>/memory</code> in Claude Code to see if Auto-dream is on. You can also trigger it manually by asking Claude to "dream" or "consolidate memories."</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;"><strong>Status:</strong> Working but not officially announced as of March 2026. May change before formal release.</p>
               </div>
             </div>
           </div>
