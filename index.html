@@ -1521,12 +1521,21 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
 
             <div class="nested-card">
               <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
-                <span class="nested-title">Daily Brand Radar</span>
+                <span class="nested-title">Daily Slack Digest</span>
                 <span class="expand-icon" style="font-size: 14px;">+</span>
               </button>
               <div class="nested-body">
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">Every morning, Claude searches the web for mentions of your company, product, and key people — categorizes what it finds, flags anything needing a response, and posts a summary to Slack.</p>
-                <p style="font-size: 13px; color: var(--muted); margin-bottom: 12px;">Requires: Slack connector, web search, a CoWork or Code project with a daily schedule.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">I built this to summarize a few Slack channels I don't have time to read. Every morning at 9am, it reads the channels, summarizes what happened, and DMs me the highlights. I built it in n8n and it runs without me touching anything.</p>
+              </div>
+            </div>
+
+            <div class="nested-card">
+              <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                <span class="nested-title">Daily Brand Radar — on my list</span>
+                <span class="expand-icon" style="font-size: 14px;">+</span>
+              </button>
+              <div class="nested-body">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">This one I've built the prompt for but haven't set up yet. The idea: every morning, Claude searches the web for mentions of your company, product, and key people — categorizes what it finds, flags anything needing a response, and posts a summary to Slack.</p>
                 <p style="font-size: 13px; color: var(--muted);"><a href="https://power-prompt-share-now.base44.app" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Grab the prompt on Power of the Prompt →</a></p>
               </div>
             </div>
@@ -1589,13 +1598,22 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                     <tr>
                       <td><strong>Your company's</strong></td>
                       <td>Built once and distributed across your team via a marketplace. Everyone gets the same output without knowing how to prompt</td>
-                      <td>Depends on where it's built — see note below</td>
+                      <td>Depends on where it's built</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 
               <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.7;">Tip: start with the gotchas (what Claude keeps getting wrong), keep instructions loose, and make the description specific — it's how Claude decides when to trigger the Skill.</p>
+
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Skills I use</div>
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                  <li><strong>/draft-insider</strong> — Drafts a weekly team briefing by pulling from Slack, Mem, GitHub, and our wiki. I review it before publishing.</li>
+                  <li><strong>/brand-voice</strong> — Our positioning and messaging guide. I use it to write copy and review content for consistency.</li>
+                  <li><strong>Visual Explainer</strong> — Turns any concept into a standalone HTML page. I use it for slide decks, diagrams, and comparison tables.</li>
+                </ul>
+              </div>
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">Where to find Skills other people have built</div>
@@ -1884,6 +1902,10 @@ Never write a preread that reads like a first meeting if it isn't one.
                     <td>Visual Explainer</td>
                     <td>A skill that turns any concept into a standalone HTML page. I use it for slide decks, diagrams, flowcharts, and comparison tables when I need something visual and don't have design skills. <a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">View on GitHub →</a></td>
                   </tr>
+                  <tr>
+                    <td>Personal Dashboard</td>
+                    <td>A custom dashboard I built to pull tasks from Slack, Mem, Outlook, and GitHub into one place. I described what I wanted and Claude built it.</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -1903,14 +1925,7 @@ Never write a preread that reads like a first meeting if it isn't one.
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Claude can connect to the tools you already use — so instead of copying outputs from one place to another, it all happens automatically. You set up the connection once and Claude can reach across systems in a single command.</p>
 
               <div style="margin-bottom: 24px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>Example:</strong> "Research this prospect" could trigger Claude to:</p>
-                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
-                  <li>Pull their LinkedIn profile</li>
-                  <li>Check if they exist in your CRM</li>
-                  <li>Score them against your ideal customer profile</li>
-                  <li>Draft a personalized message</li>
-                </ol>
-                <p style="font-size: 13px; color: var(--muted); margin-top: 12px;">One command. Four systems. No tab-switching.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>How I use it:</strong> My dashboard pulls from four tools every 30 minutes — Slack mentions, Mem action items, Outlook flags, and GitHub issues. I didn't write the integrations by hand. I described what I wanted and Claude built them.</p>
               </div>
 
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything.</p>
