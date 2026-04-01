@@ -1216,7 +1216,8 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;"><strong>Why this matters:</strong> These settings control what Claude can do, what it remembers, and what tools it can connect to. Most people never touch them — which means most people are using maybe half of what Claude can actually do.</p>
+            <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">These settings control what Claude can do, what it remembers, and what tools it can connect to. Most people never touch them — which means most people are using maybe half of what Claude can actually do.</p>
+            <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 16px;">On pricing: Pro ($20/month) is enough to get started. If you're building things daily, Max ($100-200/month) gives you more room to work without hitting rate limits.</p>
             <div class="checklist">
 
               <!-- General -->
@@ -1451,6 +1452,11 @@
                       <td>When Claude made a change you don't want</td>
                     </tr>
                     <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/btw</code></td>
+                      <td>Ask a side question without interrupting the current task</td>
+                      <td>When you want to ask something but don't want to derail what Claude is working on</td>
+                    </tr>
+                    <tr>
                       <td><code style="font-family: var(--font-mono); font-size: 12px;">/memory</code></td>
                       <td>Shows what Claude has remembered about you and this project</td>
                       <td>When you want to see or manage what Claude knows</td>
@@ -1579,7 +1585,7 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
             <div style="margin-top: 16px;">
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">This is where Claude Code comes in — and before you panic, you don't need to know how to code. Claude Code is just Claude with the ability to work directly inside your project folders. Think of it like giving Claude a key to your filing cabinet instead of having to hand it one document at a time. If you can describe what you want done, you can build a Skill.</p>
               <div style="margin-bottom: 20px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text); line-height: 1.8;">
-                <strong>Tip:</strong> Before you build a Skill, drop a CLAUDE.md file into your project folder. Claude reads it automatically before starting any task — so it already knows the context, your preferences, and what to avoid.
+                <strong>Tip:</strong> Before you build a Skill, drop a CLAUDE.md file into your project folder. Claude reads it automatically before starting any task. For complex builds, start with <code style="font-family: var(--font-mono); font-size: 12px;">/plan</code> so Claude thinks through the approach before it acts.
               </div>
 
               <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever.</p>
