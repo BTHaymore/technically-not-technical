@@ -759,6 +759,7 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
+          <a href="#vscode-setup" class="toc-link">Set Up VS Code</a>
           <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
@@ -779,9 +780,8 @@
           <a href="#build-prompts" class="toc-link">Build Prompts</a>
           <a href="#scheduled-task" class="toc-link">Build Scheduled Tasks</a>
           <a href="#first-skill" class="toc-link">Build Skills</a>
-          <a href="#skill-examples" class="toc-link">Skill Examples</a>
-          <a href="#my-stack" class="toc-link">My Stack</a>
           <a href="#first-workflow" class="toc-link">Connect Your Tools</a>
+          <a href="#my-stack" class="toc-link">My Stack</a>
         </div>
       </div>
 
@@ -794,7 +794,6 @@
         <div class="toc-links">
           <a href="#glossary-deep" class="toc-link">Build Your Vocabulary — Part 3</a>
           <a href="#agent-team" class="toc-link">Build Your Agent Team</a>
-          <a href="#hooks-automations" class="toc-link">Hooks</a>
           <a href="#custom-builds" class="toc-link">Custom Builds</a>
         </div>
       </div>
@@ -957,7 +956,20 @@
                 </tr>
               </tbody>
             </table>
-            <p style="font-size: 13px; color: var(--muted); margin-top: 18px; line-height: 1.7;">Still not sure? Doing something with a finished document or file? → CoWork. Having a conversation or thinking something through? → Chat. Building something that didn't exist yet? → Code.</p>
+            <div style="margin-top: 20px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+              <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">Real talk: CoWork vs Code</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">There's a lot of hype around CoWork, and most of what it does you can also do in Claude Code through Visual Studio Code (VS Code). They both edit files, run tasks, and remember what you tell them.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px;"><strong>What CoWork offers that Code doesn't:</strong></p>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 12px;">
+                <li><strong>Dispatch</strong> — assign Claude a task from your phone while you're away from your desk</li>
+                <li><strong>Scheduled tasks</strong> — set something to run on a timer (though you can also do this with n8n or Code on the Web)</li>
+              </ul>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px;"><strong>What Code offers that CoWork doesn't:</strong></p>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 12px;">
+                <li><strong>Full control</strong> — you see exactly what Claude is doing, every command, every file change</li>
+              </ul>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">I spend most of my time in VS Code with Claude Code. The desktop app stays open for the occasional scheduled task and when I want to dispatch something from my phone.</p>
+            </div>
           </div>
         </div>
 
@@ -970,6 +982,26 @@
           <div>
             <h2>Set Up Your Tools</h2>
             <p style="margin-left: 0;"><em>'Do this once. Never think about it again.'</em></p>
+          </div>
+        </div>
+
+        <!-- Set Up VS Code -->
+        <div class="section-card" id="vscode-setup">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Set Up Visual Studio Code (VS Code)</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base. VS Code is a code editor where everything happens — your files, your terminal, and Claude Code all live in one window. Install it, open it, and this is where you'll work.</p>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 16px;">
+                <li><a href="https://code.visualstudio.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Download VS Code →</a></li>
+                <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Install the Claude Code extension →</a></li>
+              </ul>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">Once both are installed, open VS Code, click the Claude icon in the sidebar, and you're ready to go.</p>
+            </div>
           </div>
         </div>
 
@@ -1344,24 +1376,8 @@
                   <td>Controls what Claude can do without asking. You set this up in the previous section — start with Auto Mode.</td>
                 </tr>
                 <tr>
-                  <td>Visual Studio Code (VS Code)</td>
-                  <td>A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.<span class="avail">Desktop</span></td>
-                </tr>
-                <tr>
                   <td>Workflow</td>
                   <td>A series of connected steps that run automatically, often linking Claude to other tools like Slack, email, or your calendar. Think of it like setting up dominoes — you arrange them once and they fall in order every time.</td>
-                </tr>
-                <tr>
-                  <td>Plugin</td>
-                  <td>A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.<span class="avail">CoWork (cross-compatible with Code)</span></td>
-                </tr>
-                <tr>
-                  <td>Knowledge Base</td>
-                  <td>Info you upload to a Chat Project so Claude can reference it without you repeating yourself — PDFs, brand guides, reference docs.</td>
-                </tr>
-                <tr>
-                  <td>Artifacts</td>
-                  <td>Things Claude creates in a side panel — documents, code, visualizations. Shareable via link.</td>
                 </tr>
                 <tr>
                   <td>Pull Request (PR)</td>
@@ -1628,21 +1644,10 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                 </ul>
               </div>
 
-            </div>
-          </div>
-        </div>
-
-        <!-- Skill Examples -->
-        <div class="section-card" id="skill-examples">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>Skill Examples</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">Real examples built for a marketing and people and culture role — generalized so you can adapt them to yours.</p>
+              <div style="margin-bottom: 24px;">
+                <div class="glossary-section-label">Skill examples</div>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 16px;">Real examples built for a marketing and people and culture role — generalized so you can adapt them to yours.</p>
+              </div>
 
               <!-- apply-brand-voice -->
               <div class="nested-card">
@@ -1858,6 +1863,31 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
+        <!-- 5. Connect Your Tools -->
+        <div class="section-card" id="first-workflow">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Connect Your Tools</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Claude can connect to the tools you already use — so instead of copying outputs from one place to another, it all happens automatically. You set up the connection once and Claude can reach across systems in a single command.</p>
+
+              <div style="margin-bottom: 24px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>How I use it:</strong> My dashboard pulls from four tools every 30 minutes — Slack mentions, Mem action items, Outlook flags, and GitHub issues. I didn't write the integrations by hand. I described what I wanted and Claude built them.</p>
+              </div>
+
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything.</p>
+
+              <div class="placeholder-banner">
+                <strong>Workflow examples coming soon</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- My Stack -->
         <div class="section-card" id="my-stack">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
@@ -1914,32 +1944,6 @@ Never write a preread that reads like a first meeting if it isn't one.
             </div>
           </div>
         </div>
-
-        <!-- 5. Connect Your Tools -->
-        <div class="section-card" id="first-workflow">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>Connect Your Tools</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Claude can connect to the tools you already use — so instead of copying outputs from one place to another, it all happens automatically. You set up the connection once and Claude can reach across systems in a single command.</p>
-
-              <div style="margin-bottom: 24px; padding: 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px;">
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>How I use it:</strong> My dashboard pulls from four tools every 30 minutes — Slack mentions, Mem action items, Outlook flags, and GitHub issues. I didn't write the integrations by hand. I described what I wanted and Claude built them.</p>
-              </div>
-
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything.</p>
-
-              <div class="placeholder-banner">
-                <strong>Workflow examples coming soon</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
 
       </div>
 
@@ -2000,6 +2004,10 @@ Never write a preread that reads like a first meeting if it isn't one.
                   <td>AGENTS.md</td>
                   <td>A file that gives sub-agents shared context — like a team briefing doc. Your CLAUDE.md tells Claude how to work with you. AGENTS.md tells the agents Claude spins up what they all need to know: company context, positioning, who the team is, where things live. Think of CLAUDE.md as your personal onboarding doc, and AGENTS.md as the company handbook everyone gets on day one.<span class="avail">Code</span></td>
                 </tr>
+                <tr>
+                  <td>Hook</td>
+                  <td>An automatic behavior that fires when Claude does something — like formatting a file after every edit or assigning you to a pull request when it's created. You describe what you want and Claude sets it up.<span class="avail">Code</span></td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -2031,21 +2039,6 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-        <!-- 3. Hooks -->
-        <div class="section-card" id="hooks-automations">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>Hooks</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Hooks are automatic behaviors you set up in Claude Code — things that fire on their own when something happens. For example: auto-assigning yourself to a pull request the moment it's created, or formatting code every time Claude edits a file.</p>
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">You don't write them — you describe what you want and Claude sets them up. Come back to this when you're comfortable with Skills and Scheduled Tasks.</p>
-            </div>
-          </div>
-        </div>
 
         <!-- 4. Custom Builds -->
         <div class="section-card" id="custom-builds">
