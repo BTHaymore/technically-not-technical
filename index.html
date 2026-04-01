@@ -760,10 +760,10 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
+          <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
           <a href="#cowork-project-setup" class="toc-link">Set Up Your CoWork Project</a>
-          <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
           <a href="#setting-up-tools" class="toc-link">Set Up Your Claude Preferences</a>
         </div>
       </div>
@@ -1027,6 +1027,67 @@
           </div>
         </div>
 
+        <!-- How Claude Remembers You -->
+        <div class="section-card" id="claude-memory">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>How Claude Remembers You</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Claude doesn't share memory across tools. Each one needs its own setup — but once it's done, Claude already knows you before you say a word.</p>
+              <table class="glossary-table" style="margin-bottom: 16px;">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Chat</th>
+                    <th>CoWork</th>
+                    <th>Code</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="font-weight: 600;">Personal preferences</td>
+                    <td>Settings > Profile</td>
+                    <td>Global Instructions</td>
+                    <td><code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Project context</td>
+                    <td>Project instructions</td>
+                    <td>Project instructions + CLAUDE.md</td>
+                    <td>CLAUDE.md in project folder</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600;">Auto-memory</td>
+                    <td>No</td>
+                    <td>Yes (per project)</td>
+                    <td>Yes (per project)</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="glossary-section-label">The simplest mental model</div>
+              <ul style="font-size: 13px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
+                <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
+                <li><strong>Use CoWork</strong> → create a CoWork Project for each area of work</li>
+                <li><strong>Use Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
+                <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Copy the relevant parts to Chat settings and Projects.</li>
+              </ul>
+
+              <div class="glossary-section-label" style="margin-top: 24px;">How auto-memory works (CoWork and Code)</div>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px; margin-bottom: 12px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. Between sessions, Claude reviews what it's written down, keeps what's relevant, and cleans up the rest. You don't manage this. It happens on its own.</p>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
+                <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
+                <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
+                <li><strong>Check anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- 3. CLAUDE.md Setup -->
         <div class="section-card" id="claude-md-setup">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
@@ -1258,68 +1319,6 @@
                   <li>Memory is scoped — what Claude learns in one project stays in that project</li>
                 </ul>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Where Does Claude Remember You? -->
-        <!-- How Claude Remembers You -->
-        <div class="section-card" id="claude-memory">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>How Claude Remembers You</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Claude doesn't share memory across tools. Each one needs its own setup — but once it's done, Claude already knows you before you say a word.</p>
-              <table class="glossary-table" style="margin-bottom: 16px;">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Chat</th>
-                    <th>CoWork</th>
-                    <th>Code</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style="font-weight: 600;">Personal preferences</td>
-                    <td>Settings > Profile</td>
-                    <td>Global Instructions</td>
-                    <td><code style="font-family: var(--font-mono); font-size: 12px;">~/.claude/CLAUDE.md</code></td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight: 600;">Project context</td>
-                    <td>Project instructions</td>
-                    <td>Project instructions + CLAUDE.md</td>
-                    <td>CLAUDE.md in project folder</td>
-                  </tr>
-                  <tr>
-                    <td style="font-weight: 600;">Auto-memory</td>
-                    <td>No</td>
-                    <td>Yes (per project)</td>
-                    <td>Yes (per project)</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <div class="glossary-section-label">The simplest mental model</div>
-              <ul style="font-size: 13px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
-                <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
-                <li><strong>Use CoWork</strong> → create a CoWork Project for each area of work</li>
-                <li><strong>Use Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
-                <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Copy the relevant parts to Chat settings and Projects.</li>
-              </ul>
-
-              <div class="glossary-section-label" style="margin-top: 24px;">How auto-memory works (CoWork and Code)</div>
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px; margin-bottom: 12px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. Between sessions, Claude reviews what it's written down, keeps what's relevant, and cleans up the rest. You don't manage this. It happens on its own.</p>
-              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
-                <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
-                <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
-                <li><strong>Check anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
-              </ul>
             </div>
           </div>
         </div>
