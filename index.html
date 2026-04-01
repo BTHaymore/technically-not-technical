@@ -748,7 +748,6 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#mindset" class="toc-link">The Mindset Shift</a>
           <a href="#glossary" class="toc-link">Build Your Vocabulary — Part 1</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
         </div>
@@ -808,24 +807,23 @@
         <p>Your no-jargon starter kit — from setup to "wait, I built that?"</p>
 
         <div style="margin-top: 32px; padding: 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">Welcome. If you're reading this, you're probably the person on the team who's been told to "just start using AI" without anyone explaining how. Or maybe you've been tinkering on your own and hit a wall. Either way — you're in the right place.</p>
           <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I'm not a developer — my lane is marketing and people and culture. And somehow I'm building dashboards, automations, and entire workflows with AI. I break things. Regularly. I ask Claude to do something and it confidently does the exact wrong thing. Then I fix it and somehow end up with something better than what I originally asked for.</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">And the vocabulary? In my world, "PR" meant press release or performance review. Now it means pull request. "Push" doesn't mean shove — it means sending your work to the cloud. You'll have moments like this too. Hint: that's why this guide has vocabulary sections.</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">The gap between "non-technical" and "building real things" is way smaller than you might think. This guide is me paying it forward. If you're curious enough to be here — welcome.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">And the vocabulary? "PR" used to mean press release or performance review. Now it means pull request. "Push" doesn't mean shove — it means sending your work to the cloud. The vocabulary will trip you up. That's why this guide has vocabulary sections built in.</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">But here's what I've learned: the gap between "non-technical" and "building real things" is way smaller than you might think. This guide is me paying it forward. It leans heavy on Claude because that's what I use — but the concepts apply no matter which AI you work with.</p>
 
           <div style="margin-top: 16px; margin-bottom: 16px;">
             <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">A few reminders:</p>
             <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2;">
               <li><strong>Set a pace and give yourself grace.</strong> One section at a time.</li>
               <li><strong>The goal isn't efficiency — it's effectiveness.</strong> This isn't about doing the same work faster. It's about doing work that wasn't even possible before.</li>
-              <li><strong>The love-hate rollercoaster is real.</strong> If you aren't screaming "this is amazing" one minute and "what are you DOING" the next — use Claude more. That's the process.</li>
-              <li><strong>If I can figure this out, so can you.</strong></li>
+              <li><strong>If I can figure this out, so can you.</strong> I had zero head start. You won't need one either.</li>
             </ul>
           </div>
 
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 4px;">Here's to building cool sh*t,</p>
           <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">— Brandi...the Builder</p>
         </div>
-
-        <p style="font-size: 13px; color: var(--muted); line-height: 1.8; font-style: italic; margin-top: 20px;">P.S. — This guide leans heavy on Claude because that's what I use. But the concepts — context files, skills, scheduled tasks, connecting tools — apply no matter which AI you work with.</p>
       </section>
 
       <!-- ─── 101 ─── -->
@@ -834,47 +832,7 @@
           <img src="images/mascot-101.png" alt="" style="width: 56px; flex-shrink: 0;" />
           <div>
             <h2>The Toolbox</h2>
-            <p style="margin-left: 0;"><em>'Every builder starts with an empty toolbox.'</em></p>
-          </div>
-        </div>
-
-        <!-- 0. Mindset -->
-        <div class="section-card" id="mindset">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>The Mindset Shift</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">Before you learn a single tool, I need you to forget everything you think you know about what you can and can't do. Seriously. Most of the limits you're working around? They don't exist anymore.</p>
-
-              <table class="glossary-table" style="margin-bottom: 24px;">
-                <thead>
-                  <tr>
-                    <th>Stop thinking this</th>
-                    <th>Start thinking this</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>"How do I do this faster?"</td>
-                    <td>"Would I even do this at all if I were starting fresh?"</td>
-                  </tr>
-                  <tr>
-                    <td>"I could never go through all that data."</td>
-                    <td>"Yes, I literally can now."</td>
-                  </tr>
-                  <tr>
-                    <td>"I need to find the perfect prompt."</td>
-                    <td>"I need to build something that works without me prompting every time."</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">This isn't about being more efficient at the same work. It's about doing work that wasn't even possible before — and not needing anyone's permission to start.</p>
-            </div>
+            <p style="margin-left: 0;"><em>'Stop asking how to do it faster. Start asking why you're doing it at all.'</em></p>
           </div>
         </div>
 
@@ -891,69 +849,56 @@
             <table class="glossary-table">
               <thead>
                 <tr>
-                  <th>Category</th>
                   <th>Term</th>
                   <th>What it actually means</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Tools</td>
                   <td>Claude Chat</td>
                   <td>Claude that you have conversations with — brainstorm, write, think out loud. Think of it like texting a really smart friend who never gets tired of your questions.<span class="avail">Browser, mobile, desktop app</span></td>
                 </tr>
                 <tr>
-                  <td>Tools</td>
                   <td>Claude CoWork</td>
                   <td>Claude that can actually do things — touch your files, open your browser, build real deliverables. Think of it like having an assistant who can sit down at your computer and handle the task for you.<span class="avail">Desktop app</span></td>
                 </tr>
                 <tr>
-                  <td>Tools</td>
                   <td>Claude Code</td>
                   <td>Claude that helps you write, edit, and understand code and files in your project. Think of it like having a developer sitting next to you, explaining everything in plain English.<span class="avail">Desktop app · Terminal inside VS Code</span><br><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Install VS Code Extension →</a> · <a href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Read the Docs →</a></td>
                 </tr>
                 <tr>
-                  <td>Tools</td>
                   <td>Claude Chrome Extension</td>
                   <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs. Think of it like having Claude look over your shoulder while you browse.<span class="avail">Chrome</span><br><a href="https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Install from Chrome Web Store →</a></td>
                 </tr>
                 <tr>
-                  <td>Tools</td>
                   <td>Terminal</td>
                   <td>Where you type commands that do things — install stuff, create files, navigate folders. Think of it like a direct line to your computer — instead of clicking through menus, you type exactly what you want it to do.<span class="avail">Inside VS Code · Standalone app</span></td>
                 </tr>
                 <tr>
-                  <td>Tools</td>
                   <td>Bash Command</td>
                   <td>A text instruction you type into the Terminal to make your computer do something — like <code style="font-family: var(--font-mono); font-size: 12px;">cd</code> to move into a folder, <code style="font-family: var(--font-mono); font-size: 12px;">ls</code> to list what's inside, or <code style="font-family: var(--font-mono); font-size: 12px;">rm</code> to delete a file. Think of it like texting your computer a to-do item — short, specific, and it does it immediately. You'll see Claude use these when it works in Code.</td>
                 </tr>
                 <tr>
-                  <td>How Claude Works</td>
                   <td>Prompt</td>
                   <td>The instruction or question you give Claude to get a response. Think of it like placing an order — the more specific you are, the better what comes back. The better your prompt, the better your output.</td>
                 </tr>
                 <tr>
-                  <td>How Claude Works</td>
                   <td>Agent</td>
                   <td>An AI that works on its own — give it a goal, it figures out the steps. Think of it like a head chef calling orders in a kitchen — the chef decides what needs to happen, and the line cooks (sub-agents) each work their station at the same time.</td>
                 </tr>
                 <tr>
-                  <td>How Claude Works</td>
                   <td>Skill</td>
                   <td>A saved set of instructions Claude follows every time — write it once, reuse forever. Works in Chat, CoWork, and Code.</td>
                 </tr>
                 <tr>
-                  <td>Claude Features</td>
                   <td>Projects</td>
                   <td>A workspace where Claude has the same context every time you open it — no re-explaining from scratch.</td>
                 </tr>
                 <tr>
-                  <td>Text &amp; File Basics</td>
                   <td>Markdown (MD)</td>
                   <td>A simple way to format text using symbols — # makes a header, * makes a bullet. It's the language. <a href="https://typora.io/" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Typora</a> is a great app for editing markdown files if you want something clean and readable.</td>
                 </tr>
                 <tr>
-                  <td>Text &amp; File Basics</td>
                   <td>Token</td>
                   <td>The unit Claude uses to measure text — words, punctuation, spaces all count. Think of it like a meter on a taxi — the more you say (and the more Claude responds), the more tokens are used. Matters when you're hitting context limits.</td>
                 </tr>
