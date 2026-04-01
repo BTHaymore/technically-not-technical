@@ -763,8 +763,7 @@
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
           <a href="#cowork-project-setup" class="toc-link">Set Up Your CoWork Project</a>
-          <a href="#claude-memory-map" class="toc-link">Where Does Claude Remember You?</a>
-          <a href="#auto-memory" class="toc-link">How Auto-Memory Works</a>
+          <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
           <a href="#setting-up-tools" class="toc-link">Set Up Your Claude Preferences</a>
         </div>
       </div>
@@ -778,11 +777,10 @@
         <div class="toc-links">
           <a href="#glossary-workshop" class="toc-link">Build Your Vocabulary — Part 2</a>
           <a href="#slash-commands" class="toc-link">Know Your Slash Commands</a>
-          <a href="#context-management" class="toc-link">Manage Your Context Window</a>
-          <a href="#permission-modes" class="toc-link">Permission Modes</a>
           <a href="#build-prompts" class="toc-link">Build Prompts</a>
           <a href="#scheduled-task" class="toc-link">Build Scheduled Tasks</a>
           <a href="#first-skill" class="toc-link">Build Skills</a>
+          <a href="#skill-examples" class="toc-link">Skill Examples</a>
           <a href="#first-workflow" class="toc-link">Connect Your Tools</a>
           <a href="#hooks-automations" class="toc-link">Hooks &amp; Automations</a>
         </div>
@@ -827,7 +825,7 @@
           <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">— Brandi...the Builder</p>
         </div>
 
-        <p style="font-size: 13px; color: var(--muted); line-height: 1.8; font-style: italic; margin-top: 20px;">P.S. — Yes, Claude helped me build this guide. No, the irony is not lost on me.</p>
+        <p style="font-size: 13px; color: var(--muted); line-height: 1.8; font-style: italic; margin-top: 20px;">P.S. — This guide leans heavy on Claude because that's what I use. But the concepts — context files, skills, scheduled tasks, connecting tools — apply no matter which AI you work with.</p>
       </section>
 
       <!-- ─── 101 ─── -->
@@ -921,11 +919,6 @@
                 </tr>
                 <tr>
                   <td>Tools</td>
-                  <td>Visual Studio Code (VS Code)</td>
-                  <td>A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.<span class="avail">Desktop</span></td>
-                </tr>
-                <tr>
-                  <td>Tools</td>
                   <td>Terminal</td>
                   <td>Where you type commands that do things — install stuff, create files, navigate folders. Think of it like a direct line to your computer — instead of clicking through menus, you type exactly what you want it to do.<span class="avail">Inside VS Code · Standalone app</span></td>
                 </tr>
@@ -933,11 +926,6 @@
                   <td>Tools</td>
                   <td>Bash Command</td>
                   <td>A text instruction you type into the Terminal to make your computer do something — like <code style="font-family: var(--font-mono); font-size: 12px;">cd</code> to move into a folder, <code style="font-family: var(--font-mono); font-size: 12px;">ls</code> to list what's inside, or <code style="font-family: var(--font-mono); font-size: 12px;">rm</code> to delete a file. Think of it like texting your computer a to-do item — short, specific, and it does it immediately. You'll see Claude use these when it works in Code.</td>
-                </tr>
-                <tr>
-                  <td>Tools</td>
-                  <td>Typora</td>
-                  <td>A markdown editor that makes .md files easy to read and edit. Think of it like opening a markdown file in Word instead of Notepad — clean and readable instead of full of symbols.<span class="avail">Desktop</span></td>
                 </tr>
                 <tr>
                   <td>How Claude Works</td>
@@ -951,18 +939,8 @@
                 </tr>
                 <tr>
                   <td>How Claude Works</td>
-                  <td>Workflow</td>
-                  <td>A series of connected steps that run automatically, often linking Claude to other tools like Slack, email, or your calendar. Think of it like setting up dominoes — you arrange them once and they fall in order every time.</td>
-                </tr>
-                <tr>
-                  <td>How Claude Works</td>
                   <td>Skill</td>
                   <td>A saved set of instructions Claude follows every time — write it once, reuse forever. Works in Chat, CoWork, and Code.</td>
-                </tr>
-                <tr>
-                  <td>How Claude Works</td>
-                  <td>Plugin</td>
-                  <td>A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.<span class="avail">CoWork (cross-compatible with Code)</span></td>
                 </tr>
                 <tr>
                   <td>Claude Features</td>
@@ -970,24 +948,9 @@
                   <td>A workspace where Claude has the same context every time you open it — no re-explaining from scratch.</td>
                 </tr>
                 <tr>
-                  <td>Claude Features</td>
-                  <td>Knowledge Base</td>
-                  <td>Info you store so Claude can reference it without you repeating yourself.</td>
-                </tr>
-                <tr>
-                  <td>Claude Features</td>
-                  <td>Artifacts</td>
-                  <td>Things Claude creates in a side panel — documents, code, visualizations. Shareable via link.</td>
-                </tr>
-                <tr>
                   <td>Text &amp; File Basics</td>
                   <td>Markdown (MD)</td>
-                  <td>A simple way to format text using symbols — # makes a header, * makes a bullet. It's the language.</td>
-                </tr>
-                <tr>
-                  <td>Text &amp; File Basics</td>
-                  <td>README</td>
-                  <td>A specific file written in Markdown that introduces a project. Think of it like a cover letter for your code. Markdown = English. README = a cover letter written in English.</td>
+                  <td>A simple way to format text using symbols — # makes a header, * makes a bullet. It's the language. <a href="https://typora.io/" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">Typora</a> is a great app for editing markdown files if you want something clean and readable.</td>
                 </tr>
                 <tr>
                   <td>Text &amp; File Basics</td>
@@ -1300,10 +1263,11 @@
         </div>
 
         <!-- Where Does Claude Remember You? -->
-        <div class="section-card" id="claude-memory-map">
+        <!-- How Claude Remembers You -->
+        <div class="section-card" id="claude-memory">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
-              <h3>Where Does Claude Remember You?</h3>
+              <h3>How Claude Remembers You</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
@@ -1333,12 +1297,6 @@
                     <td>CLAUDE.md in project folder</td>
                   </tr>
                   <tr>
-                    <td style="font-weight: 600;">Reads a .md file?</td>
-                    <td>No</td>
-                    <td>Yes</td>
-                    <td>Yes</td>
-                  </tr>
-                  <tr>
                     <td style="font-weight: 600;">Auto-memory</td>
                     <td>No</td>
                     <td>Yes (per project)</td>
@@ -1346,35 +1304,21 @@
                   </tr>
                 </tbody>
               </table>
+
               <div class="glossary-section-label">The simplest mental model</div>
               <ul style="font-size: 13px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
                 <li><strong>Mainly use Chat</strong> → set up Settings > Profile first, then create Projects for recurring topics</li>
-                <li><strong>Use CoWork</strong> → create a CoWork Project for each area of work. Add a CLAUDE.md for even more context.</li>
+                <li><strong>Use CoWork</strong> → create a CoWork Project for each area of work</li>
                 <li><strong>Use Code</strong> → build your CLAUDE.md, it does both jobs in one file</li>
-                <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Manually copy the relevant parts to Chat settings and Projects.</li>
+                <li><strong>Use all three</strong> → CLAUDE.md is your source of truth. Copy the relevant parts to Chat settings and Projects.</li>
               </ul>
-            </div>
-          </div>
-        </div>
 
-        <!-- How Auto-Memory Works -->
-        <div class="section-card" id="auto-memory">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>How Auto-Memory Works</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. These notes live in your project's memory folder and get loaded into every future session. You don't have to manage this. It happens on its own.</p>
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Think of it like how your brain works during sleep. Throughout the day, your brain takes in a lot of new information. When you sleep, it replays the day's events — strengthens what matters, deletes what doesn't, and organizes everything into long-term memory. Claude does the same thing between sessions: it reviews what it's written down, keeps what's relevant, and cleans up the rest.</p>
-              <div class="glossary-section-label">What this means for you</div>
+              <div class="glossary-section-label" style="margin-top: 24px;">How auto-memory works (CoWork and Code)</div>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px; margin-bottom: 12px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. Between sessions, Claude reviews what it's written down, keeps what's relevant, and cleans up the rest. You don't manage this. It happens on its own.</p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
                 <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
-                <li><strong>You don't need to manage the memory files</strong> — Claude handles cleanup on its own</li>
                 <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
-                <li><strong>Check your memory anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
+                <li><strong>Check anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
               </ul>
             </div>
           </div>
@@ -1510,6 +1454,34 @@
                 </div>
               </div>
 
+              <!-- Permission Modes -->
+              <div class="checklist-group">
+                <div class="checklist-group-label">
+                  Permission Modes
+                  <span class="checklist-group-sub">CoWork and Code — Shift+Tab to cycle</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span><strong>Ask before edits</strong> — asks permission before changing anything. Best when you're learning.</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span><strong>Auto Mode</strong> — safe actions run automatically, risky ones get blocked. The sweet spot for most people.</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span><strong>Edit automatically</strong> — edits existing files on its own, asks before creating new ones.</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span><strong>Full auto</strong> — does everything without asking. Only when you fully trust the task.</span>
+                </div>
+                <div class="checklist-item">
+                  <div class="check-box"></div>
+                  <span><strong>Plan mode</strong> — read-only. Claude researches and plans but doesn't change anything.</span>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -1567,6 +1539,30 @@
                 <tr>
                   <td>Permission Mode</td>
                   <td>Controls what Claude can do without asking you first — like editing files, creating new ones, or running commands. Think of it like giving a house key to a house sitter — you decide how much access they get before they start.</td>
+                </tr>
+                <tr>
+                  <td>Visual Studio Code (VS Code)</td>
+                  <td>A text editor for viewing and editing code files — has a built-in Terminal so you don't need to open a separate one. Think of it like a home base for your project files — everything in one place, easy to navigate.<span class="avail">Desktop</span></td>
+                </tr>
+                <tr>
+                  <td>Workflow</td>
+                  <td>A series of connected steps that run automatically, often linking Claude to other tools like Slack, email, or your calendar. Think of it like setting up dominoes — you arrange them once and they fall in order every time.</td>
+                </tr>
+                <tr>
+                  <td>Plugin</td>
+                  <td>A pre-built bundle of Skills + slash commands + tool connections. Think of it like hiring someone who already came trained — no setup required. Skills are the recipes you write yourself. Plugins are the cookbook a specialist hands you on day one.<span class="avail">CoWork (cross-compatible with Code)</span></td>
+                </tr>
+                <tr>
+                  <td>Knowledge Base</td>
+                  <td>Info you upload to a Chat Project so Claude can reference it without you repeating yourself — PDFs, brand guides, reference docs.</td>
+                </tr>
+                <tr>
+                  <td>Artifacts</td>
+                  <td>Things Claude creates in a side panel — documents, code, visualizations. Shareable via link.</td>
+                </tr>
+                <tr>
+                  <td>README</td>
+                  <td>A file written in Markdown that introduces a project. Think of it like a cover letter for your code.</td>
                 </tr>
               </tbody>
             </table>
@@ -1646,54 +1642,10 @@
               </div>
 
               <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">You don't need to memorize these. Just know they exist — and come back to this table when you need one.</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Context Management callout -->
-        <!-- Context Management -->
-        <div class="section-card" id="context-management">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>Manage Your Context Window</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Every message you send and every response Claude gives takes up space in the context window. Once it's full, Claude starts losing track of what you said earlier. It didn't forget — it ran out of room.</p>
-              <div class="glossary-section-label">How to manage it</div>
-              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
-                <li><strong>Run <code style="font-family: var(--font-mono); font-size: 12px;">/compact</code> at around 50% usage</strong> — don't wait until you're at the limit</li>
-                <li><strong>Run <code style="font-family: var(--font-mono); font-size: 12px;">/context</code> to check</strong> — shows how much space is left and what's using it</li>
-                <li><strong>Start a new conversation for a new topic</strong> — don't pile unrelated tasks into one thread</li>
-                <li><strong>Keep your CLAUDE.md concise</strong> — it loads into every session, so a bloated file eats context before you even start</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Permission Modes -->
-        <div class="section-card" id="permission-modes">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>Permission Modes</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">When Claude works with your files, you control how much freedom it gets. Use <strong>Shift+Tab</strong> to cycle between modes.</p>
-
-              <div class="glossary-section-label">The five levels</div>
-              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2.2;">
-                <li><strong>Ask before edits</strong> — asks permission before changing anything. Best when you're learning.</li>
-                <li><strong>Auto Mode</strong> — safe actions run automatically, risky ones get blocked. The sweet spot for most people.</li>
-                <li><strong>Edit automatically</strong> — edits existing files on its own, asks before creating new ones.</li>
-                <li><strong>Full auto</strong> — does everything without asking. Only when you fully trust the task.</li>
-                <li><strong>Plan mode</strong> — read-only. Claude researches and plans but doesn't change anything.</li>
-              </ul>
-              <p style="font-size: 13px; color: var(--muted); line-height: 1.7; margin-top: 16px;">Not sure? Start with Auto Mode. Less interruption than "ask first," less risk than full auto.</p>
+              <div style="margin-top: 20px; padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text); line-height: 1.8;">
+                <strong>About your context window:</strong> Every message takes up space. Once it's full, Claude starts losing track of what you said earlier — it didn't forget, it ran out of room. Run <code style="font-family: var(--font-mono); font-size: 12px;">/compact</code> at around 50% usage (don't wait until you're at the limit), and start a new conversation when you switch topics.
+              </div>
             </div>
           </div>
         </div>
@@ -1911,7 +1863,21 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                 </ul>
               </div>
 
-              <p style="font-size: 13px; color: var(--muted); font-style: italic; margin-bottom: 16px;">The four Skills below are real examples built for a marketing and people ops role — generalized so you can adapt them to yours. These are Code Skills — see the note above about using them in CoWork or Chat.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Examples -->
+        <div class="section-card" id="skill-examples">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Skill Examples</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">Real examples built for a marketing and people and culture role — generalized so you can adapt them to yours. These are Code Skills — see the note in Build Skills about using them in CoWork or Chat.</p>
 
               <!-- apply-brand-voice -->
               <div class="nested-card">
@@ -2323,12 +2289,6 @@ Never write a preread that reads like a first meeting if it isn't one.
           </div>
         </div>
 
-      </div>
-
-      <!-- Systems vs. Prompts callout -->
-      <div style="margin-bottom: 48px; padding: 28px 28px; background: var(--surface); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
-        <p style="font-size: 16px; color: var(--text); line-height: 1.8; font-style: italic; margin-bottom: 12px;">"ChatGPT trained a generation of people to write better prompts. CoWork and Claude Code train you to build better infrastructure. One is a skill that ages out. The other compounds."</p>
-        <p style="font-size: 13px; color: var(--muted);">The prompts you wrote last year are already outdated. The systems you build — your CLAUDE.md, your Skills, your connected tools — keep getting more valuable the longer you use them.</p>
       </div>
 
       <!-- ─── 301 ─── -->
