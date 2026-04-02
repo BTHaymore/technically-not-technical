@@ -740,6 +740,16 @@
       <div class="toc-label">Contents</div>
 
       <!-- 101 Section -->
+      <div class="toc-section open" id="toc-stack">
+        <div class="toc-section-header" onclick="toggleToc('toc-stack')">
+          My Stack
+          <span class="chevron">▾</span>
+        </div>
+        <div class="toc-links">
+          <a href="#my-stack" class="toc-link">My Stack</a>
+        </div>
+      </div>
+
       <div class="toc-section open" id="toc-101">
         <div class="toc-section-header" onclick="toggleToc('toc-101')">
           The Toolbox
@@ -779,7 +789,6 @@
           <a href="#first-workflow" class="toc-link">Connect Your Tools</a>
           <a href="#scheduled-task" class="toc-link">Build Scheduled Tasks</a>
           <a href="#first-skill" class="toc-link">Build Skills</a>
-          <a href="#my-stack" class="toc-link">My Stack</a>
         </div>
       </div>
 
@@ -823,6 +832,77 @@
           <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 0;">— Brandi...the Builder</p>
         </div>
       </section>
+
+      <!-- ─── My Stack ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <div>
+            <h2>My Stack</h2>
+            <p style="margin-left: 0;"><em>'Before we get into the how, here's the what.'</em></p>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">I wanted to show you what my setup actually looks like before diving into the details. This way you have a picture of where you're headed — not everything at once, but the tools that ended up mattering most.</p>
+
+        <div class="section-card" id="my-stack">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>My Stack</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <table class="glossary-table">
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>Why I use it</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>VS Code</td>
+                    <td>A code editor with Claude Code built in. I use it as home base for all my files — everything in one window.</td>
+                  </tr>
+                  <tr>
+                    <td>Typora</td>
+                    <td>A markdown editor that makes .md files clean and readable. I use it to edit my CLAUDE.md without staring at raw symbols.</td>
+                  </tr>
+                  <tr>
+                    <td>Chrome Extension</td>
+                    <td>Claude in your browser. I use it to summarize pages, ask questions, and research without switching tabs.</td>
+                  </tr>
+                  <tr>
+                    <td>n8n</td>
+                    <td>An automation platform that connects tools together. I use it to build workflows — like a daily Slack digest that summarizes channels I don't have time to read.</td>
+                  </tr>
+                  <tr>
+                    <td>Mem</td>
+                    <td>A note-taking app Claude can search directly. I use it for meeting notes, action items, and reference material.</td>
+                  </tr>
+                  <tr>
+                    <td>Power of the Prompt</td>
+                    <td>A categorized prompt library I built on Base44 as a fun side project to complement this guide. I use it to grab reusable prompts instead of rewriting the same ones. <span style="color: var(--muted); font-style: italic;">Link coming soon.</span></td>
+                  </tr>
+                  <tr>
+                    <td>Visual Explainer</td>
+                    <td>A skill that turns any concept into a standalone HTML page. I use it for slide decks, diagrams, flowcharts, and comparison tables when I need something visual and don't have design skills. <a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">View on GitHub →</a></td>
+                  </tr>
+                  <tr>
+                    <td>GitHub</td>
+                    <td>Where all my projects and code live. I use it to track issues, manage work, and keep everything version-controlled. It's also how this guide gets published.</td>
+                  </tr>
+                  <tr>
+                    <td>Personal Dashboard</td>
+                    <td>I built a personal dashboard that pulls tasks from Slack, Mem, Outlook, and GitHub into one place. I described what I wanted and Claude built it.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- ─── 101 ─── -->
       <div class="level-block">
@@ -1843,67 +1923,6 @@ Never write a preread that reads like a first meeting if it isn't one.
                 </div>
               </div>
 
-            </div>
-          </div>
-        </div>
-
-        <!-- My Stack -->
-        <div class="section-card" id="my-stack">
-          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
-            <div class="meta">
-              <h3>My Stack</h3>
-            </div>
-            <span class="expand-icon">+</span>
-          </button>
-          <div class="section-body">
-            <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">These are the tools I actually use — not everything available, just what's made the biggest difference.</p>
-              <table class="glossary-table">
-                <thead>
-                  <tr>
-                    <th>Tool</th>
-                    <th>Why I use it</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>VS Code</td>
-                    <td>A code editor with Claude Code built in. I use it as home base for all my files — everything in one window.</td>
-                  </tr>
-                  <tr>
-                    <td>Typora</td>
-                    <td>A markdown editor that makes .md files clean and readable. I use it to edit my CLAUDE.md without staring at raw symbols.</td>
-                  </tr>
-                  <tr>
-                    <td>Chrome Extension</td>
-                    <td>Claude in your browser. I use it to summarize pages, ask questions, and research without switching tabs.</td>
-                  </tr>
-                  <tr>
-                    <td>n8n</td>
-                    <td>An automation platform that connects tools together. I use it to build workflows — like a daily Slack digest that summarizes channels I don't have time to read.</td>
-                  </tr>
-                  <tr>
-                    <td>Mem</td>
-                    <td>A note-taking app Claude can search directly. I use it for meeting notes, action items, and reference material.</td>
-                  </tr>
-                  <tr>
-                    <td>Power of the Prompt</td>
-                    <td>A categorized prompt library I built on Base44 as a fun side project to complement this guide. I use it to grab reusable prompts instead of rewriting the same ones. <span style="color: var(--muted); font-style: italic;">Link coming soon.</span></td>
-                  </tr>
-                  <tr>
-                    <td>Visual Explainer</td>
-                    <td>A skill that turns any concept into a standalone HTML page. I use it for slide decks, diagrams, flowcharts, and comparison tables when I need something visual and don't have design skills. <a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">View on GitHub →</a></td>
-                  </tr>
-                  <tr>
-                    <td>GitHub</td>
-                    <td>Where all my projects and code live. I use it to track issues, manage work, and keep everything version-controlled. It's also how this guide gets published.</td>
-                  </tr>
-                  <tr>
-                    <td>Personal Dashboard</td>
-                    <td>I built a personal dashboard that pulls tasks from Slack, Mem, Outlook, and GitHub into one place. I described what I wanted and Claude built it.</td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
