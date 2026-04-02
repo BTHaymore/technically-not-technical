@@ -717,8 +717,15 @@
     /* ── Responsive ── */
     @media (max-width: 768px) {
       .sidebar { display: none; }
-      .main { margin-left: 0; padding: 24px 20px 64px; }
-      .site-footer { margin-left: 0; padding: 24px 20px; }
+      .main { margin-left: 0; padding: 24px 16px 64px; }
+      .site-footer { margin-left: 0; padding: 24px 16px; }
+      .glossary-table { font-size: 13px; }
+      .glossary-table td:nth-child(1) { white-space: normal; }
+      .glossary-table td { padding: 10px 8px; }
+      .section-body { padding: 0 16px 20px; }
+      .hero h1 { font-size: 28px; }
+      .level-header h2 { font-size: 20px; }
+      .skill-code pre { font-size: 11px; }
     }
   </style>
 </head>
@@ -843,17 +850,15 @@
           </div>
         </div>
 
-        <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">I wanted to show you what my setup actually looks like before diving into the details. This way you have a picture of where you're headed — not everything at once, but the tools that ended up mattering most.</p>
-
         <div class="section-card" id="my-stack">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
-              <h3>My Stack</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">I wanted to show you what my setup looks like before diving into the details. This way you have a picture of where you're headed — not everything at once, just the tools that ended up mattering most.</p>
               <table class="glossary-table">
                 <thead>
                   <tr>
@@ -976,8 +981,7 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <p style="font-size: 13px; color: var(--muted); margin-top: 16px; margin-bottom: 20px; line-height: 1.7;">On cost: Claude Pro at $20/month is enough to get started. If you're building daily, Max at $100-200/month gives you more room.</p>
-            <table class="glossary-table">
+            <table class="glossary-table" style="margin-top: 16px;">
               <thead>
                 <tr>
                   <th>If you need to…</th>
@@ -1016,8 +1020,9 @@
                 <li><strong>Full control</strong> — you see exactly what Claude is doing, every command, every file change</li>
                 <li><strong>Version control</strong> — built-in git means you can track changes, undo mistakes, and collaborate with your team</li>
               </ul>
-              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">I spend most of my time in VS Code with Claude Code. The desktop app stays open for the occasional scheduled task and when I want to dispatch something from my phone.</p>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">I spend most of my time in VS Code with Claude Code. The desktop app stays open for the occasional scheduled task.</p>
             </div>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 16px; line-height: 1.7;">On cost: Claude Pro at $20/month is enough to get started. If you're building daily, Max at $100-200/month gives you more room.</p>
           </div>
         </div>
 
@@ -1098,7 +1103,7 @@
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base — one place where your files, your terminal, and Claude all live in the same window. I use Visual Studio Code (VS Code) because Claude Code is built right into it and I get full control over what's happening. The Claude desktop app works too, but VS Code gives you more visibility and version control. There are other options out there — pick what works for you.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base — one place where your files, your terminal, and Claude all live in the same window. I use Visual Studio Code (VS Code) because Claude Code is built right into it and I get full control over what's happening. The Claude desktop app works too, but VS Code gives you more visibility and version control. There are other options like Cursor — pick what works for you.</p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 16px;">
                 <li><a href="https://code.visualstudio.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Download VS Code →</a></li>
                 <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Install the Claude Code extension →</a></li>
@@ -1157,7 +1162,7 @@
               <div class="checklist-group">
                 <div class="checklist-group-label">
                   Connectors
-                  <span class="checklist-group-sub">install what applies to you</span>
+                  <span class="checklist-group-sub">these are the ones I use — yours may be different</span>
                 </div>
                 <div class="checklist-item">
                   <div class="check-box"></div>
@@ -1242,7 +1247,7 @@
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">How to create it</div>
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Open Claude Code or CoWork and say "Create a personal CLAUDE.md for me" — then tell it about yourself. Claude will create the file in the right location automatically.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Open Claude (Chat, CoWork, or Code) and say "Create a personal CLAUDE.md for me" — then tell it about yourself. Claude will create the file in the right location automatically.</p>
               </div>
 
               <div style="margin-bottom: 24px;">
@@ -1363,16 +1368,8 @@
                   <td>How much Claude can 'see' at once in a conversation. Think of it like short-term memory — once it's full, the oldest stuff starts to fall off.</td>
                 </tr>
                 <tr>
-                  <td>System Prompt</td>
-                  <td>Instructions that run behind the scenes before you say anything — like your CLAUDE.md. You don't see them, but they shape how Claude responds.</td>
-                </tr>
-                <tr>
                   <td>Slash Command</td>
                   <td>A shortcut you type directly into Claude. Type /something and Claude knows exactly what to do. Think of it like a speed dial.</td>
-                </tr>
-                <tr>
-                  <td>Permission Mode</td>
-                  <td>Controls what Claude can do without asking. You set this up in the previous section — start with Auto Mode.</td>
                 </tr>
                 <tr>
                   <td>Connector</td>
@@ -1395,10 +1392,6 @@
                   <td>A request to merge your changes into a project. Think of it like raising your hand and saying "here's what I changed — can someone review it before it goes live?" And yes, "PR" means something completely different here than the press releases and performance reviews you're used to.</td>
                 </tr>
                 <tr>
-                  <td>README</td>
-                  <td>A file written in Markdown that introduces a project. Think of it like a cover letter for your code.</td>
-                </tr>
-                <tr>
                   <td>Prompt</td>
                   <td>The instruction or question you give Claude to get a response. Think of it like placing an order — the more specific you are, the better what comes back.</td>
                 </tr>
@@ -1409,10 +1402,6 @@
                 <tr>
                   <td>Agent</td>
                   <td>An AI that works on its own — give it a goal, it figures out the steps.</td>
-                </tr>
-                <tr>
-                  <td>Bash Command</td>
-                  <td>A text instruction you type into the Terminal to make your computer do something — move into a folder, list what's inside, or delete a file. You'll see Claude use these when it works in Code.</td>
                 </tr>
                 <tr>
                   <td>Token</td>
@@ -1488,7 +1477,7 @@
                     <tr>
                       <td><code style="font-family: var(--font-mono); font-size: 12px;">/btw</code></td>
                       <td>Ask a side question without interrupting the current task</td>
-                      <td>When you have a squirrel moment and need to ask something without derailing what Claude is working on</td>
+                      <td>When you have a squirrel moment and need to ask something without derailing what Claude is working on (terminal sessions only)</td>
                     </tr>
                     <tr>
                       <td><code style="font-family: var(--font-mono); font-size: 12px;">/memory</code></td>
@@ -1574,9 +1563,7 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
 
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything.</p>
 
-              <div class="placeholder-banner">
-                <strong>Workflow examples coming soon</strong>
-              </div>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">I'll add workflow examples as I build them. For now, check the scheduled tasks section for real examples of automation in action.</p>
             </div>
           </div>
         </div>
@@ -1684,21 +1671,10 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
                 </table>
               </div>
 
-              <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.7;">Tip: start with the gotchas (what Claude keeps getting wrong), keep instructions loose, and make the description specific — it's how Claude decides when to trigger the Skill.</p>
-
-              <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">Where to find Skills</div>
-                <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 10px;">You don't have to start from scratch. These are community libraries where people share Skills you can install or adapt:</p>
-                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2;">
-                  <li><a href="https://skillsmp.com" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">skillsmp.com</a> — the largest open library of Claude Skills</li>
-                  <li><a href="https://skills.sh" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">skills.sh</a> — developer-focused, well-organized</li>
-                  <li><a href="https://github.com/nicobailon/awesome-claude-code-skills" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">awesome-claude-code-skills</a> — curated GitHub list</li>
-                </ul>
-              </div>
-
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">Pro tips</div>
                 <ul style="font-size: 13px; color: var(--muted); padding-left: 20px; line-height: 2; margin-top: 8px;">
+                  <li>Start with the gotchas — document what Claude keeps getting wrong so it stops making them</li>
                   <li>When naming a new skill, start with a verb — it makes the purpose clear at a glance</li>
                   <li>For complex builds, start with <code style="font-family: var(--font-mono); font-size: 12px;">/plan</code> so Claude thinks through the approach before it acts</li>
                   <li>Drop a CLAUDE.md file into your project folder before building — Claude reads it automatically</li>
@@ -1707,12 +1683,30 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">Skill Examples (some I built, some I borrowed)</div>
-                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px; margin-bottom: 16px;">
-                  <li><strong>/draft-insider</strong> — Drafts a weekly team briefing by pulling from Slack, Mem, GitHub, and our wiki. I review it before it's published to our announcements channel in Slack.</li>
-                  <li><strong>/brand-voice</strong> — Our positioning and messaging guide. I use it to write copy and review content for consistency.</li>
-                  <li><strong>/visual-explainer</strong> — Turns any concept into a standalone HTML page. I use it for slide decks, diagrams, and comparison tables. <a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: 500;">View on GitHub →</a></li>
-                </ul>
-                <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">Full copyable templates below — expand any to see the code.</p>
+              </div>
+
+              <!-- draft-insider -->
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">/draft-insider</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Drafts a weekly team briefing by pulling from Slack, Mem, GitHub, and our wiki. I review it before it's published to our announcements channel in Slack.</p>
+                  <p style="font-size: 12px; color: var(--muted);"><strong style="color: var(--text);">Built by:</strong> Me. <strong style="color: var(--text);">When to use:</strong> Weekly, before publishing internal updates.</p>
+                </div>
+              </div>
+
+              <!-- visual-explainer -->
+              <div class="nested-card">
+                <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
+                  <span class="nested-title">/visual-explainer</span>
+                  <span class="expand-icon" style="font-size: 14px;">+</span>
+                </button>
+                <div class="nested-body">
+                  <p style="font-size: 13px; color: var(--muted); margin-bottom: 8px;">Turns any concept into a standalone HTML page — slide decks, diagrams, flowcharts, and comparison tables.</p>
+                  <p style="font-size: 12px; color: var(--muted);"><strong style="color: var(--text);">Built by:</strong> Borrowed. <a href="https://github.com/nicobailon/visual-explainer" target="_blank" style="color: var(--accent); text-decoration: none;">View on GitHub →</a> <strong style="color: var(--text);">When to use:</strong> When you need something visual and don't have design skills.</p>
+                </div>
               </div>
 
               <!-- apply-brand-voice -->
@@ -1969,7 +1963,7 @@ Never write a preread that reads like a first meeting if it isn't one.
                 <tr>
                   <td>SDK (Software Development Kit)</td>
                   <td>
-                    A pre-packaged toolkit developers use to connect Claude to their own apps. Think of it like IKEA instructions — everything you need, in one box. You probably won't need this until you're building something from scratch.
+                    A pre-packaged toolkit developers use to connect Claude to their own apps. Think of it like a box of pre-cut building blocks — the pieces are ready, you just assemble them. You probably won't need this until you're building something from scratch.
                     <span class="avail">For developers building custom tools</span>
                   </td>
                 </tr>
