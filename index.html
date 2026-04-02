@@ -937,10 +937,6 @@
                   <td><strong>Code</strong></td>
                 </tr>
                 <tr>
-                  <td>Run Code from your browser — no terminal, no install</td>
-                  <td><strong><a href="https://claude.ai/code" target="_blank" style="color: var(--accent); text-decoration: none;">Code on the Web</a></strong></td>
-                </tr>
-                <tr>
                   <td>Research a page or ask Claude about something you're looking at</td>
                   <td><strong>Claude Chrome Extension</strong></td>
                 </tr>
@@ -952,11 +948,12 @@
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px;"><strong>What CoWork offers that Code doesn't:</strong></p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 12px;">
                 <li><strong>Dispatch</strong> — assign Claude a task from your phone while you're away from your desk</li>
-                <li><strong>Scheduled tasks</strong> — set something to run on a timer (though you can also do this with n8n or Code on the Web)</li>
+                <li><strong>Scheduled tasks</strong> — set something to run on a timer (though you can also do this with n8n)</li>
               </ul>
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 8px;"><strong>What Code offers that CoWork doesn't:</strong></p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 12px;">
                 <li><strong>Full control</strong> — you see exactly what Claude is doing, every command, every file change</li>
+                <li><strong>Version control</strong> — built-in git means you can track changes, undo mistakes, and collaborate with your team</li>
               </ul>
               <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">I spend most of my time in VS Code with Claude Code. The desktop app stays open for the occasional scheduled task and when I want to dispatch something from my phone.</p>
             </div>
@@ -1028,7 +1025,9 @@
           </div>
         </div>
 
-        <!-- Set Up VS Code -->
+        <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.7;">You don't need all of these. Start with your Home Base and CLAUDE.md. Add the rest as you need them.</p>
+
+        <!-- Set Up Your Home Base -->
         <div class="section-card" id="vscode-setup">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
@@ -1038,7 +1037,7 @@
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base — one place where your files, your terminal, and Claude all live in the same window. I use Visual Studio Code (VS Code) because Claude Code is built right into it. Other options include Cursor and Windsurf — pick what works for you.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base — one place where your files, your terminal, and Claude all live in the same window. I use Visual Studio Code (VS Code) because Claude Code is built right into it and I get full control over what's happening. The Claude desktop app works too, but VS Code gives you more visibility and version control. There are other options out there — pick what works for you.</p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 16px;">
                 <li><a href="https://code.visualstudio.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Download VS Code →</a></li>
                 <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Install the Claude Code extension →</a></li>
@@ -1062,8 +1061,8 @@
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">Where it lives and how to find it</div>
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Your personal CLAUDE.md lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code></p>
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;">That's a hidden folder in your home directory. Don't save copies elsewhere — Claude only reads from this location. To find it: press <strong>Cmd+Shift+G</strong> in Finder and paste the path above, or just ask Claude in your best Jerry Maguire voice "show me my CLAUDE.md."</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 10px;">Your personal CLAUDE.md lives at: <code style="font-family: var(--font-mono); font-size: 13px; background: var(--bg); padding: 2px 8px; border-radius: 4px;">~/.claude/CLAUDE.md</code> — that means it's in a hidden folder called <code style="font-family: var(--font-mono); font-size: 12px;">.claude</code> inside your home folder (the <code style="font-family: var(--font-mono); font-size: 12px;">~</code>). The dot at the front makes it invisible in Finder.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px;">Don't save copies elsewhere — Claude only reads from this location. To find it: press <strong>Cmd+Shift+G</strong> in Finder and paste the path above, or just ask Claude in your best Jerry Maguire voice "show me my CLAUDE.md."</p>
               </div>
 
               <div style="margin-bottom: 24px;">
@@ -1072,14 +1071,14 @@
               </div>
 
               <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">What to put in it</div>
+                <div class="glossary-section-label">What to put in your CLAUDE.md</div>
                 <p style="font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 6px;">Put the most important rules first — Claude pays more attention to what it reads first.</p>
-                <ol style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
+                <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
                   <li>How you like to work (tone, format, level of detail)</li>
                   <li>What Claude should never do</li>
                   <li>Who you are and your role</li>
                   <li>Tools and systems you use</li>
-                </ol>
+                </ul>
                 <p style="font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.7;">Use bullet points, keep it short, and update it when Claude keeps repeating the same mistake. Treat it like a living doc.</p>
               </div>
 
@@ -1496,11 +1495,11 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
 
             <div class="nested-card">
               <button class="nested-toggle" onclick="toggleNested(this)" aria-expanded="false">
-                <span class="nested-title">Daily Slack Digest</span>
+                <span class="nested-title">Daily Slack Digest (n8n workflow)</span>
                 <span class="expand-icon" style="font-size: 14px;">+</span>
               </button>
               <div class="nested-body">
-                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">I built this to summarize a few Slack channels I don't have time to read. Every morning at 9am, it reads the channels, summarizes what happened, and DMs me the highlights. I built it in n8n and it runs without me touching anything.</p>
+                <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;">I built this in n8n (not Claude) to summarize a few Slack channels I don't have time to read. Every morning at 9am, it reads the channels, summarizes what happened, and DMs me the highlights. It runs without me touching anything.</p>
               </div>
             </div>
 
@@ -1582,12 +1581,13 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
               <p style="font-size: 13px; color: var(--muted); margin-bottom: 20px; line-height: 1.7;">Tip: start with the gotchas (what Claude keeps getting wrong), keep instructions loose, and make the description specific — it's how Claude decides when to trigger the Skill.</p>
 
               <div style="margin-bottom: 24px;">
-                <div class="glossary-section-label">Skills I use</div>
+                <div class="glossary-section-label">Skills I use (some I built, some I borrowed)</div>
                 <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-top: 10px;">
-                  <li><strong>/draft-insider</strong> — Drafts a weekly team briefing by pulling from Slack, Mem, GitHub, and our wiki. I review it before publishing.</li>
+                  <li><strong>/draft-insider</strong> — Drafts a weekly team briefing by pulling from Slack, Mem, GitHub, and our wiki. I review it before it's published to our announcements channel in Slack.</li>
                   <li><strong>/brand-voice</strong> — Our positioning and messaging guide. I use it to write copy and review content for consistency.</li>
-                  <li><strong>Visual Explainer</strong> — Turns any concept into a standalone HTML page. I use it for slide decks, diagrams, and comparison tables.</li>
+                  <li><strong>/visual-explainer</strong> — Turns any concept into a standalone HTML page. I use it for slide decks, diagrams, and comparison tables.</li>
                 </ul>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.7;">Pro tip: when naming a new skill, start with a verb — it makes the purpose clear at a glance.</p>
               </div>
 
               <div style="margin-bottom: 24px;">
@@ -1835,7 +1835,7 @@ Never write a preread that reads like a first meeting if it isn't one.
                 <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 12px;"><strong>How I use it:</strong> My dashboard pulls from four tools every 30 minutes — Slack mentions, Mem action items, Outlook flags, and GitHub issues. I didn't write the integrations by hand. I described what I wanted and Claude built them.</p>
               </div>
 
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything. You can also run all of this from your browser with <a href="https://claude.ai/code" target="_blank" style="color: var(--accent); text-decoration: none;">Claude Code on the Web</a> — no terminal needed.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">There are two ways to connect: <strong>Connectors</strong> are one-click toggles in Chat and CoWork settings (Slack, GitHub, Box, etc.). <strong>MCP servers</strong> go deeper and need a one-time install command in CoWork or Code — but can connect to almost anything.</p>
 
               <div class="placeholder-banner">
                 <strong>Workflow examples coming soon</strong>
@@ -1885,7 +1885,7 @@ Never write a preread that reads like a first meeting if it isn't one.
                   </tr>
                   <tr>
                     <td>Power of the Prompt</td>
-                    <td>A categorized prompt library. I use it to grab reusable prompts instead of rewriting the same ones. <span style="color: var(--muted); font-style: italic;">Link coming soon.</span></td>
+                    <td>A categorized prompt library I built on Base44 as a fun side project to complement this guide. I use it to grab reusable prompts instead of rewriting the same ones. <span style="color: var(--muted); font-style: italic;">Link coming soon.</span></td>
                   </tr>
                   <tr>
                     <td>Visual Explainer</td>
@@ -1897,7 +1897,7 @@ Never write a preread that reads like a first meeting if it isn't one.
                   </tr>
                   <tr>
                     <td>Personal Dashboard</td>
-                    <td>A custom dashboard I built to pull tasks from Slack, Mem, Outlook, and GitHub into one place. I described what I wanted and Claude built it.</td>
+                    <td>I built a personal dashboard that pulls tasks from Slack, Mem, Outlook, and GitHub into one place. I described what I wanted and Claude built it.</td>
                   </tr>
                 </tbody>
               </table>
@@ -1994,7 +1994,7 @@ Never write a preread that reads like a first meeting if it isn't one.
                 <li>Start with the agent whose jobs are the most concrete and repeatable</li>
               </ul>
 
-              <p style="font-size: 13px; color: var(--muted); margin-top: 20px; line-height: 1.7;">More coming soon — including a real example of an agent team built for marketing and people ops.</p>
+              <p style="font-size: 13px; color: var(--muted); margin-top: 20px; line-height: 1.7;">More coming soon — including a real example of my agent team.</p>
             </div>
           </div>
         </div>
