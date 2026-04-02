@@ -748,6 +748,7 @@
         <div class="toc-links">
           <a href="#glossary" class="toc-link">Build Your Vocabulary — Part 1</a>
           <a href="#decision-framework" class="toc-link">Which Tool Do I Grab?</a>
+          <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
         </div>
       </div>
 
@@ -757,8 +758,7 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
-          <a href="#claude-memory" class="toc-link">How Claude Remembers You</a>
-          <a href="#vscode-setup" class="toc-link">Set Up VS Code</a>
+          <a href="#vscode-setup" class="toc-link">Set Up Your Home Base</a>
           <a href="#claude-md-setup" class="toc-link">Set Up Your CLAUDE.md</a>
           <a href="#chat-project-setup" class="toc-link">Set Up Your Chat Project</a>
           <a href="#cowork-project-setup" class="toc-link">Set Up Your CoWork Project</a>
@@ -807,15 +807,15 @@
 
         <div style="margin-top: 32px; padding: 28px 32px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
           <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">Welcome. If you're reading this, you might be the person on the team who's been told to "just start using AI" without anyone explaining how. Or maybe you've been tinkering on your own and hit a wall. Either way — you're in the right place.</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">First things first — I'm not a developer. My work world is typically a blend of marketing and culture. And somehow I'm building dashboards, automations, and entire workflows with AI. I break things. Regularly. I ask Claude to do something and it confidently does the exact wrong thing. Then I fix it and somehow end up with something better than what I originally asked for. (Not sure if my please and thank yous to Claude actually work — but where I'm from, you say thank you even to the self-checkout machine.)</p>
-          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I built this guide because the gap between "non-technical" and "building real things" is way smaller than you might think. It leans heavy on Claude — that's what I use — but the concepts apply no matter which AI you work with. (On cost: Claude Pro at $20/month is enough to get started. If you're building daily, Max at $100-200/month gives you more room.)</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">First things first — I'm not a developer. My work world is typically a blend of marketing and culture. And yet I'm building dashboards, automations, and entire workflows with AI. I break things. Regularly. I ask Claude to do something and it confidently does the exact wrong thing. Then I fix it and somehow end up with something better than what I originally asked for. (Not sure if my please and thank yous to Claude actually work — but I've also been caught saying thank you to a self-checkout machine.)</p>
+          <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 14px;">I built this guide because the gap between "non-technical" and "building real things" is way smaller than you might think. It leans heavy on Claude — that's what I use — but the concepts apply no matter which AI you work with.</p>
 
           <div style="margin-top: 16px; margin-bottom: 16px;">
             <p style="font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px;">A few reminders:</p>
             <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2;">
               <li><strong>Set a pace and give yourself grace.</strong> One section at a time.</li>
               <li><strong>The goal isn't efficiency — it's effectiveness.</strong> This isn't about doing the same work faster. It's about doing work that wasn't even possible before.</li>
-              <li><strong>If I can figure this out, so can you.</strong> I had zero head start. You won't need one either.</li>
+              <li><strong>If I can figure this out, so can you.</strong> I didn't have a cheat sheet. Now you do.</li>
             </ul>
           </div>
 
@@ -915,7 +915,7 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <p style="font-size: 14px; color: var(--muted); margin-top: 16px; margin-bottom: 20px; font-style: italic;">The right tool makes the job easier. The wrong one just makes it take longer.</p>
+            <p style="font-size: 13px; color: var(--muted); margin-top: 16px; margin-bottom: 20px; line-height: 1.7;">On cost: Claude Pro at $20/month is enough to get started. If you're building daily, Max at $100-200/month gives you more room.</p>
             <table class="glossary-table">
               <thead>
                 <tr>
@@ -963,18 +963,6 @@
           </div>
         </div>
 
-      </div>
-
-      <!-- ─── Setup ─── -->
-      <div class="level-block">
-        <div class="level-header">
-          <img src="images/mascot-101.png" alt="" style="width: 56px; flex-shrink: 0;" />
-          <div>
-            <h2>Set Up Your Tools</h2>
-            <p style="margin-left: 0;"><em>'Do this once. Never think about it again.'</em></p>
-          </div>
-        </div>
-
         <!-- How Claude Remembers You -->
         <div class="section-card" id="claude-memory">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
@@ -1017,8 +1005,6 @@
                 </tbody>
               </table>
 
-              <p style="font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.7;">The sections below walk you through setting each one up — pick the tool you use most and start there.</p>
-
               <div class="glossary-section-label" style="margin-top: 24px;">How auto-memory works (CoWork and Code)</div>
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-top: 8px; margin-bottom: 12px;">When you correct Claude — "no, we use Slack for that, not email" — it writes that down automatically. Between sessions, Claude reviews what it's written down, keeps what's relevant, and cleans up the rest. You don't manage this. It happens on its own.</p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
@@ -1030,17 +1016,29 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- ─── Setup ─── -->
+      <div class="level-block">
+        <div class="level-header">
+          <img src="images/mascot-101.png" alt="" style="width: 56px; flex-shrink: 0;" />
+          <div>
+            <h2>Set Up Your Tools</h2>
+            <p style="margin-left: 0;"><em>'Do this once. Never think about it again.'</em></p>
+          </div>
+        </div>
+
         <!-- Set Up VS Code -->
         <div class="section-card" id="vscode-setup">
           <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
             <div class="meta">
-              <h3>Set Up Visual Studio Code (VS Code)</h3>
+              <h3>Set Up Your Home Base</h3>
             </div>
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
             <div style="margin-top: 16px;">
-              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base. VS Code is a code editor where everything happens — your files, your terminal, and Claude Code all live in one window. Install it, open it, and this is where you'll work.</p>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you set anything else up, you need a home base — one place where your files, your terminal, and Claude all live in the same window. I use Visual Studio Code (VS Code) because Claude Code is built right into it. Other options include Cursor and Windsurf — pick what works for you.</p>
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2; margin-bottom: 16px;">
                 <li><a href="https://code.visualstudio.com/" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Download VS Code →</a></li>
                 <li><a href="https://marketplace.visualstudio.com/items?itemName=anthropic.claude-code" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 500;">Install the Claude Code extension →</a></li>
@@ -1306,7 +1304,7 @@
                 </tr>
                 <tr>
                   <td>System Prompt</td>
-                  <td>Behind-the-scenes instructions that tell Claude how to behave before you say anything — like your CLAUDE.md or Project instructions. Think of it like the briefing you give a new hire before their first day.</td>
+                  <td>Instructions that run behind the scenes before you say anything — like your CLAUDE.md. You don't see them, but they shape how Claude responds.</td>
                 </tr>
                 <tr>
                   <td>Slash Command</td>
