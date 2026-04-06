@@ -791,6 +791,7 @@
           <span class="chevron">▾</span>
         </div>
         <div class="toc-links">
+          <a href="#first-change" class="toc-link">Make Your First Change</a>
           <a href="#glossary-workshop" class="toc-link">Build Your Vocabulary — Part 2</a>
           <a href="#slash-commands" class="toc-link">Know Your Slash Commands</a>
           <a href="#build-prompts" class="toc-link">Build Prompts</a>
@@ -1075,7 +1076,7 @@
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
                 <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
                 <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
-                <li><strong>Teach Claude something permanently</strong> — start any message with <code style="font-family: var(--font-mono); font-size: 12px;">#</code> and it saves to memory. Example: <code style="font-family: var(--font-mono); font-size: 12px;"># always run tests before committing</code></li>
+                <li><strong>Teach Claude something permanently</strong> — start any message with <code style="font-family: var(--font-mono); font-size: 12px;">#</code> and it saves to memory. Examples: <code style="font-family: var(--font-mono); font-size: 12px;"># always run tests before committing</code> or <code style="font-family: var(--font-mono); font-size: 12px;"># use conventional commit format</code>. Teach it your conventions once and it remembers them.</li>
                 <li><strong>Check and clean your memory</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered. Review it regularly and remove anything outdated.</li>
               </ul>
             </div>
@@ -1262,7 +1263,7 @@
                   <li>Who you are and your role</li>
                   <li>Tools and systems you use</li>
                 </ul>
-                <p style="font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.7;">Use bullet points, keep it short, and update it when Claude keeps repeating the same mistake. Treat it like a living doc.</p>
+                <p style="font-size: 13px; color: var(--muted); margin-top: 12px; line-height: 1.7;">Use bullet points, keep it short, and update it when Claude keeps repeating the same mistake. Treat it like a living doc. If you work with a team, commit your CLAUDE.md to your project repo so everyone benefits from it.</p>
               </div>
 
               <div style="padding: 14px 16px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--text);">
@@ -1346,6 +1347,29 @@
           <div>
             <h2>From Toolbox to Workshop</h2>
             <p style="margin-left: 0;"><em>'Look at you. Sleeves rolled up and actually building cool sh*t.'</em></p>
+          </div>
+        </div>
+
+        <!-- Make Your First Change -->
+        <div class="section-card" id="first-change">
+          <button class="section-toggle" onclick="toggleSection(this)" aria-expanded="false">
+            <div class="meta">
+              <h3>Make Your First Change</h3>
+            </div>
+            <span class="expand-icon">+</span>
+          </button>
+          <div class="section-body">
+            <div style="margin-top: 16px;">
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Before you learn anything else, try something small. Open your project in VS Code and ask Claude to do one thing:</p>
+              <ul style="font-size: 14px; color: var(--text); padding-left: 20px; line-height: 2.2; margin-bottom: 16px;">
+                <li>Fix a typo</li>
+                <li>Add a comment to a file</li>
+                <li>Rename something</li>
+                <li>Create a new file</li>
+              </ul>
+              <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">Watch it work. Give it feedback if something's off. When you're happy with the result, say "commit and push this change." That's it — you just shipped something.</p>
+              <p style="font-size: 13px; color: var(--muted); line-height: 1.7;">Everything after this is just doing more of the same, at bigger scale.</p>
+            </div>
           </div>
         </div>
 
@@ -1653,7 +1677,7 @@ Here is the relevant context: [paste anything Claude needs to know]</pre>
           <div class="section-body">
             <div style="margin-top: 16px;">
               <p style="font-size: 14px; color: var(--text); line-height: 1.8; margin-bottom: 16px;">This is where Claude Code comes in — and before you panic, you don't need to know how to code. Claude Code is just Claude with the ability to work directly inside your project folders. Think of it like giving Claude a key to your filing cabinet instead of having to hand it one document at a time. If you can describe what you want done, you can build a Skill.</p>
-              <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever.</p>
+              <p style="font-size: 14px; color: var(--text); margin-bottom: 20px;">A Skill is a saved set of instructions Claude follows every time — write it once, use it forever. And a skill isn't just a single file — it's a folder. You can include reference docs, templates, scripts, and data alongside the instructions.</p>
 
               <div style="margin-bottom: 24px;">
                 <div class="glossary-section-label">When should you build one?</div>
