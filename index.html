@@ -953,7 +953,7 @@
                 </tr>
                 <tr>
                   <td>Claude Chrome Extension</td>
-                  <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages without switching tabs.<span class="avail">Chrome</span></td>
+                  <td>Claude that travels with you while you browse — highlight text, ask questions, summarize pages, and even record browser workflows you can replay later.<span class="avail">Chrome</span></td>
                 </tr>
                 <tr>
                   <td>Terminal / CLI</td>
@@ -982,7 +982,8 @@
             <span class="expand-icon">+</span>
           </button>
           <div class="section-body">
-            <table class="glossary-table" style="margin-top: 16px;">
+            <p style="font-size: 14px; color: var(--text); margin-top: 16px; margin-bottom: 16px; line-height: 1.8;">The simplest way to think about it: <strong>Chat</strong> is for thinking out loud. <strong>CoWork</strong> is for getting things done on your computer. <strong>Code</strong> is for building and full control. Each one has its lane — here's how to pick.</p>
+            <table class="glossary-table">
               <thead>
                 <tr>
                   <th>If you need to…</th>
@@ -1074,7 +1075,8 @@
               <ul style="font-size: 14px; color: var(--text); padding-left: 20px; margin-top: 8px; line-height: 2;">
                 <li><strong>Correct Claude when it gets something wrong</strong> — that's how it learns</li>
                 <li><strong>Memory is scoped per project</strong> — what Claude learns in one project doesn't bleed into another</li>
-                <li><strong>Check anytime</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered</li>
+                <li><strong>Teach Claude something permanently</strong> — start any message with <code style="font-family: var(--font-mono); font-size: 12px;">#</code> and it saves to memory. Example: <code style="font-family: var(--font-mono); font-size: 12px;"># always run tests before committing</code></li>
+                <li><strong>Check and clean your memory</strong> — type <code style="font-family: var(--font-mono); font-size: 12px;">/memory</code> to see what Claude has remembered. Review it regularly and remove anything outdated.</li>
               </ul>
             </div>
           </div>
@@ -1484,6 +1486,11 @@
                       <td><code style="font-family: var(--font-mono); font-size: 12px;">/memory</code></td>
                       <td>Shows what Claude has remembered about you and this project</td>
                       <td>When you want to see or manage what Claude knows</td>
+                    </tr>
+                    <tr>
+                      <td><code style="font-family: var(--font-mono); font-size: 12px;">/loop</code></td>
+                      <td>Runs a command on a recurring interval</td>
+                      <td>When you want something to repeat automatically — like checking a deploy every 5 minutes</td>
                     </tr>
                   </tbody>
                 </table>
