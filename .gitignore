@@ -29,6 +29,8 @@ lerna-debug.log*
 # Screenshots
 *.png
 *.jpeg
+# Exception: mascot images for the guide
+!images/mascot-*.png
 .playwright-mcp
 
 # Claude settings
